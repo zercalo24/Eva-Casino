@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gamblerexpert.com/sitemap.xml
+
+# Crawl-delay для вежливости
+Crawl-delay: 1
