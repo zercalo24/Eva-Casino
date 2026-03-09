@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVA CASINO — Играй. Побеждай. Живи.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #D4AF37;
+  --gold2: #F5D06A;
+  --gold3: #8B6914;
+  --black: #050507;
+  --dark: #0C0C10;
+  --dark2: #121218;
+  --dark3: #1A1A24;
+  --dark4: #22222E;
+  --red: #C0392B;
+  --red2: #E74C3C;
+  --white: #F8F4EE;
+  --gray: rgba(248,244,238,0.5);
+  --gray2: rgba(248,244,238,0.25);
+  --gray3: rgba(248,244,238,0.08);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CURSOR ── */
+#cur { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .15s; mix-blend-mode:screen; }
+#cur2 { position:fixed; width:32px; height:32px; border:1px solid rgba(212,175,55,.4); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:all .25s ease; }
+body:hover #cur { opacity:1; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 60px; height: 72px;
+  background: linear-gradient(to bottom, rgba(5,5,7,.97) 0%, rgba(5,5,7,0) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212,175,55,.08);
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(212,175,55,.3);
+  cursor: none;
+}
+.logo span { color: var(--white); font-weight: 400; }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a {
+  color: var(--gray);
+  text-decoration:none;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition: color .3s;
+  cursor: none;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-btns { display:flex; gap:12px; }
+.btn-nav-login {
+  background: transparent;
+  border: 1px solid var(--gray2);
+  color: var(--white);
+  padding: 9px 24px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem; letter-spacing:.15em; text-transform:uppercase;
+  cursor:none; transition:all .3s;
+}
+.btn-nav-login:hover { border-color:var(--gold); color:var(--gold); }
+.btn-nav-reg {
+  background: var(--gold);
+  border: none;
+  color: var(--black);
+  padding: 9px 24px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+  cursor:none; transition:all .3s;
+}
+.btn-nav-reg:hover { background: var(--gold2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; text-align:center;
+  padding: 100px 40px 60px;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 100% 70% at 50% 100%, rgba(212,175,55,.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 10% 30%, rgba(192,57,43,.06) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 90% 20%, rgba(212,175,55,.05) 0%, transparent 50%);
+}
+.hero-particles {
+  position:absolute; inset:0; overflow:hidden;
+}
+.particle {
+  position:absolute; border-radius:50%;
+  background:var(--gold); opacity:0;
+  animation: floatUp linear infinite;
+}
+.hero-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(212,175,55,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 70%);
+}
+.hero-content { position:relative; z-index:2; max-width: 900px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  border: 1px solid rgba(212,175,55,.3);
+  padding: 8px 20px; margin-bottom:32px;
+  font-size:.65rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--gold);
+  opacity:0; animation: fadeUp .7s ease .2s forwards;
+}
+.hero-badge::before { content:'★'; font-size:.8rem; }
+.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size: clamp(4rem, 12vw, 11rem);
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:-.01em;
+  opacity:0; animation: fadeUp 1s ease .4s forwards;
+}
+.hero-title .t1 { display:block; color:var(--white); }
+.hero-title .t2 {
+  display:block;
+  background: linear-gradient(135deg, var(--gold3), var(--gold), var(--gold2), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title .t3 {
+  display:block;
+  -webkit-text-stroke: 1px rgba(212,175,55,.35);
+  color:transparent;
+  font-style:italic;
+}
+.hero-sub {
+  font-size: clamp(.9rem, 1.5vw, 1.1rem);
+  color: var(--gray);
+  margin-top:24px; letter-spacing:.06em;
+  font-weight:300;
+  opacity:0; animation: fadeUp .8s ease .7s forwards;
+}
+.hero-actions {
+  display:flex; gap:16px; justify-content:center;
+  margin-top:48px;
+  opacity:0; animation: fadeUp .8s ease .9s forwards;
+}
+.btn-hero-main {
+  background: linear-gradient(135deg, var(--gold3), var(--gold));
+  color:var(--black); border:none;
+  padding: 18px 52px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.8rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  cursor:none; text-decoration:none;
+  transition:all .3s; position:relative; overflow:hidden;
+  box-shadow: 0 8px 40px rgba(212,175,55,.25);
+}
+.btn-hero-main:hover { transform:translateY(-3px); box-shadow:0 16px 50px rgba(212,175,55,.4); }
+.btn-hero-ghost {
+  background:transparent; color:var(--white);
+  border: 1px solid rgba(248,244,238,.2);
+  padding: 18px 52px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.8rem; letter-spacing:.2em; text-transform:uppercase;
+  cursor:none; text-decoration:none;
+  transition:all .3s;
+}
+.btn-hero-ghost:hover { border-color:var(--gold); color:var(--gold); }
+
+.hero-stats {
+  display:flex; gap:48px; justify-content:center; margin-top:72px;
+  opacity:0; animation: fadeUp .8s ease 1.1s forwards;
+}
+.hstat { text-align:center; }
+.hstat-num {
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem; font-weight:700;
+  color:var(--gold); line-height:1;
+  margin-bottom:6px;
+}
+.hstat-label { font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gray2); }
+
+.hero-scroll {
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  opacity:0; animation: fadeIn 1s ease 1.5s forwards;
+}
+.hero-scroll span { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gray2); }
+.scroll-bar { width:1px; height:50px; background:linear-gradient(to bottom,var(--gold),transparent); animation:pulse 2s ease infinite; }
+
+/* ── TICKER ── */
+.ticker { background:var(--gold); padding:12px 0; overflow:hidden; white-space:nowrap; }
+.ticker-inner { display:inline-flex; animation:tick 20s linear infinite; }
+.ti { font-family:'Playfair Display',serif; font-size:.85rem; letter-spacing:.25em; color:var(--black); padding:0 32px; font-weight:700; }
+.td { color:rgba(0,0,0,.3); font-size:.7rem; }
+
+/* ── SECTION COMMON ── */
+.section-wrap { padding:120px 60px; }
+.sec-label { font-size:.62rem; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+.sec-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,4rem);
+  font-weight:700; line-height:1.05;
+  margin-bottom:60px;
+}
+.sec-title em { font-style:italic; color:var(--gold); }
+
+/* ── SLOTS ── */
+.slots { background:var(--dark2); }
+.slots-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
+.slots-tabs { display:flex; gap:4px; }
+.stab {
+  background:transparent; border:1px solid var(--gray3);
+  color:var(--gray); padding:8px 20px;
+  font-family:'Montserrat',sans-serif;
+  font-size:.68rem; letter-spacing:.15em; text-transform:uppercase;
+  cursor:none; transition:all .3s;
+}
+.stab.active, .stab:hover { background:var(--gold); color:var(--black); border-color:var(--gold); font-weight:700; }
+.slots-grid {
+  display:grid; grid-template-columns:repeat(5,1fr); gap:16px;
+  margin-bottom:48px;
+}
+.slot-card {
+  position:relative; border-radius:4px; overflow:hidden;
+  aspect-ratio:3/4; cursor:none;
+  background:var(--dark3);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.slot-card:hover { transform:translateY(-8px) scale(1.02); }
+.slot-card:hover .slot-overlay { opacity:1; }
+.slot-card:hover .slot-play { opacity:1; transform:scale(1) translateY(0); }
+.slot-bg {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:3rem;
+}
+.slot-gradient { position:absolute; inset:0; }
+.slot-card:nth-child(1) .slot-gradient { background:linear-gradient(160deg,#1a0a00,#3d1f00,#0a0500); }
+.slot-card:nth-child(2) .slot-gradient { background:linear-gradient(160deg,#000d20,#001840,#000508); }
+.slot-card:nth-child(3) .slot-gradient { background:linear-gradient(160deg,#0d0020,#1e0040,#050010); }
+.slot-card:nth-child(4) .slot-gradient { background:linear-gradient(160deg,#001a0d,#003020,#000a05); }
+.slot-card:nth-child(5) .slot-gradient { background:linear-gradient(160deg,#1a0000,#350010,#0a0000); }
+.slot-card:nth-child(6) .slot-gradient { background:linear-gradient(160deg,#15100a,#2a200f,#080600); }
+.slot-card:nth-child(7) .slot-gradient { background:linear-gradient(160deg,#001015,#001f30,#000508); }
+.slot-card:nth-child(8) .slot-gradient { background:linear-gradient(160deg,#0a0020,#180050,#040010); }
+.slot-card:nth-child(9) .slot-gradient { background:linear-gradient(160deg,#1a1000,#352000,#080500); }
+.slot-card:nth-child(10) .slot-gradient { background:linear-gradient(160deg,#0a1500,#152a00,#030800); }
+.slot-shine {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 50%,rgba(0,0,0,.2) 100%);
+}
+.slot-overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.6);
+  opacity:0; transition:opacity .3s;
+  display:flex; align-items:center; justify-content:center;
+}
+.slot-play {
+  width:56px; height:56px;
+  background:var(--gold);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; color:var(--black);
+  opacity:0; transform:scale(.7) translateY(10px);
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+}
+.slot-info {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:20px 16px 16px;
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 100%);
+}
+.slot-name { font-size:.78rem; font-weight:600; letter-spacing:.05em; margin-bottom:4px; }
+.slot-provider { font-size:.62rem; color:var(--gray2); letter-spacing:.1em; }
+.slot-rtp {
+  position:absolute; top:10px; right:10px;
+  background:rgba(212,175,55,.15);
+  border:1px solid rgba(212,175,55,.3);
+  color:var(--gold);
+  font-size:.6rem; font-weight:700; letter-spacing:.1em;
+  padding:3px 8px;
+}
+.slot-hot {
+  position:absolute; top:10px; left:10px;
+  background:var(--red2);
+  color:white;
+  font-size:.6rem; font-weight:700; letter-spacing:.08em;
+  padding:3px 8px;
+}
+
+/* ── BONUS ── */
+.bonus { position:relative; overflow:hidden; }
+.bonus-bg-text {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-family:'Playfair Display',serif;
+  font-size:20vw; font-weight:900;
+  color:rgba(212,175,55,.02);
+  white-space:nowrap; pointer-events:none;
+  letter-spacing:-.05em;
+}
+.bonus-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; position:relative; }
+.bonus-card {
+  padding:56px 48px;
+  background:var(--dark3);
+  position:relative; overflow:hidden;
+  cursor:none;
+  transition:background .4s;
+}
+.bonus-card:hover { background:var(--dark4); }
+.bonus-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,var(--bc),transparent);
+  opacity:0; transition:opacity .4s;
+}
+.bonus-card:hover::before { opacity:1; }
+.bonus-card:nth-child(1) { --bc: var(--gold); }
+.bonus-card:nth-child(2) { --bc: var(--red2); }
+.bonus-card:nth-child(3) { --bc: #27AE60; }
+.bc-num {
+  font-family:'Playfair Display',serif;
+  font-size:4.5rem; font-weight:900;
+  line-height:1; margin-bottom:12px;
+}
+.bonus-card:nth-child(1) .bc-num { color:var(--gold); }
+.bonus-card:nth-child(2) .bc-num { color:var(--red2); }
+.bonus-card:nth-child(3) .bc-num { color:#2ECC71; }
+.bc-tag {
+  display:inline-block; font-size:.6rem; letter-spacing:.25em; text-transform:uppercase;
+  border:1px solid; padding:4px 12px; margin-bottom:20px;
+}
+.bonus-card:nth-child(1) .bc-tag { color:var(--gold); border-color:rgba(212,175,55,.3); }
+.bonus-card:nth-child(2) .bc-tag { color:var(--red2); border-color:rgba(231,76,60,.3); }
+.bonus-card:nth-child(3) .bc-tag { color:#2ECC71; border-color:rgba(46,204,113,.3); }
+.bc-title { font-size:1.05rem; font-weight:600; margin-bottom:10px; }
+.bc-desc { font-size:.8rem; color:var(--gray); line-height:1.7; margin-bottom:28px; }
+.bc-deco {
+  position:absolute; bottom:-15px; right:20px;
+  font-family:'Playfair Display',serif;
+  font-size:7rem; font-weight:900;
+  color:rgba(255,255,255,.025); line-height:1; pointer-events:none;
+}
+
+/* ── REGISTER MODAL ── */
+.modal-overlay {
+  position:fixed; inset:0; z-index:500;
+  background:rgba(5,5,7,.92);
+  backdrop-filter:blur(12px);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none;
+  transition:opacity .4s;
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal {
+  background:var(--dark2);
+  border:1px solid rgba(212,175,55,.15);
+  width:100%; max-width:480px;
+  position:relative;
+  transform:translateY(30px) scale(.97);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(212,175,55,.05);
+}
+.modal-overlay.open .modal { transform:translateY(0) scale(1); }
+.modal-header {
+  padding:40px 48px 0;
+  border-bottom:1px solid var(--gray3);
+  padding-bottom:28px;
+}
+.modal-logo {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; font-weight:900; letter-spacing:.12em;
+  color:var(--gold); margin-bottom:8px; display:block;
+}
+.modal-title { font-size:1.4rem; font-weight:700; margin-bottom:4px; }
+.modal-sub { font-size:.78rem; color:var(--gray); }
+.modal-body { padding:32px 48px 40px; }
+.modal-tabs { display:flex; gap:0; margin-bottom:32px; border-bottom:1px solid var(--gray3); }
+.mtab {
+  flex:1; text-align:center; padding:12px;
+  font-size:.72rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gray2); cursor:none; border-bottom:2px solid transparent;
+  transition:all .3s; background:transparent; border-left:none; border-right:none; border-top:none;
+  font-family:'Montserrat',sans-serif;
+}
+.mtab.active { color:var(--gold); border-bottom-color:var(--gold); }
+.form-group { margin-bottom:20px; }
+.form-group label { display:block; font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gray2); margin-bottom:8px; }
+.form-group input {
+  width:100%; background:var(--dark3);
+  border:1px solid var(--gray3);
+  color:var(--white); padding:14px 18px;
+  font-family:'Montserrat',sans-serif; font-size:.85rem;
+  transition:border-color .3s;
+  outline:none;
+}
+.form-group input:focus { border-color:rgba(212,175,55,.5); }
+.form-group input::placeholder { color:var(--gray2); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-bonus-badge {
+  background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(212,175,55,.05));
+  border:1px solid rgba(212,175,55,.2);
+  padding:16px 20px; margin-bottom:24px;
+  display:flex; align-items:center; gap:14px;
+}
+.fbb-icon { font-size:1.8rem; }
+.fbb-text strong { display:block; font-size:.85rem; color:var(--gold); margin-bottom:2px; }
+.fbb-text span { font-size:.72rem; color:var(--gray); }
+.btn-submit {
+  width:100%; background:linear-gradient(135deg,var(--gold3),var(--gold));
+  color:var(--black); border:none;
+  padding:16px; font-family:'Montserrat',sans-serif;
+  font-size:.78rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+  cursor:none; transition:all .3s;
+  box-shadow:0 8px 30px rgba(212,175,55,.2);
+}
+.btn-submit:hover { transform:translateY(-2px); box-shadow:0 14px 40px rgba(212,175,55,.35); }
+.form-footer { text-align:center; margin-top:16px; font-size:.72rem; color:var(--gray2); }
+.form-footer a { color:var(--gold); text-decoration:none; cursor:none; }
+.modal-close {
+  position:absolute; top:16px; right:20px;
+  background:transparent; border:none; color:var(--gray2);
+  font-size:1.4rem; cursor:none; line-height:1;
+  transition:color .3s;
+}
+.modal-close:hover { color:var(--gold); }
+
+/* ── LIVE CASINO ── */
+.live { background:var(--dark); }
+.live-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.live-card {
+  position:relative; aspect-ratio:9/12;
+  overflow:hidden; cursor:none;
+  border:1px solid var(--gray3);
+  transition:border-color .4s, transform .4s;
+}
+.live-card:hover { border-color:rgba(212,175,55,.3); transform:translateY(-6px); }
+.live-bg { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:4rem; }
+.live-card:nth-child(1) .live-bg { background:linear-gradient(160deg,#0d1500,#1a2800); }
+.live-card:nth-child(2) .live-bg { background:linear-gradient(160deg,#0d0000,#280010); }
+.live-card:nth-child(3) .live-bg { background:linear-gradient(160deg,#00100d,#002825); }
+.live-card:nth-child(4) .live-bg { background:linear-gradient(160deg,#0d0800,#281500); }
+.live-badge {
+  position:absolute; top:14px; left:14px;
+  background:var(--red2); color:white;
+  font-size:.58rem; font-weight:700; letter-spacing:.12em;
+  padding:4px 10px; display:flex; align-items:center; gap:6px;
+}
+.live-dot { width:6px; height:6px; background:white; border-radius:50%; animation:blink 1.5s ease infinite; }
+.live-players {
+  position:absolute; top:14px; right:14px;
+  background:rgba(0,0,0,.6); color:var(--gray);
+  font-size:.62rem; padding:4px 10px;
+}
+.live-info {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:24px 20px 20px;
+  background:linear-gradient(to top,rgba(0,0,0,.95),transparent);
+}
+.live-name { font-size:.9rem; font-weight:700; margin-bottom:4px; }
+.live-limit { font-size:.68rem; color:var(--gold); letter-spacing:.08em; }
+
+/* ── VIP ── */
+.vip {
+  background: linear-gradient(135deg, var(--dark2) 0%, #0a0818 100%);
+  padding:120px 60px;
+  position:relative; overflow:hidden;
+}
+.vip::before {
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(212,175,55,.08) 0%,transparent 60%);
+}
+.vip-content { position:relative; text-align:center; max-width:700px; margin:0 auto; }
+.vip-crown { font-size:4rem; display:block; margin-bottom:24px; }
+.vip-levels { display:flex; gap:12px; justify-content:center; margin-top:60px; flex-wrap:wrap; }
+.vip-level {
+  flex:1; min-width:120px; padding:28px 20px;
+  border:1px solid var(--gray3);
+  text-align:center; cursor:none;
+  transition:all .4s; position:relative; overflow:hidden;
+}
+.vip-level::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:var(--lc); transform:scaleX(0); transition:transform .4s;
+}
+.vip-level:hover::before { transform:scaleX(1); }
+.vip-level:hover { border-color:rgba(212,175,55,.2); transform:translateY(-4px); }
+.vl-icon { font-size:1.8rem; display:block; margin-bottom:10px; }
+.vl-name { font-size:.72rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; margin-bottom:4px; }
+.vl-perk { font-size:.62rem; color:var(--gray2); }
+.vip-level:nth-child(1) { --lc:#CD7F32; }
+.vip-level:nth-child(2) { --lc:#A8A9AD; }
+.vip-level:nth-child(3) { --lc:#D4AF37; }
+.vip-level:nth-child(4) { --lc:#B9F2FF; }
+.vip-level:nth-child(5) { --lc:#FF6B6B; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--black);
+  border-top:1px solid rgba(212,175,55,.08);
+  padding:80px 60px 40px;
+}
+.footer-top { display:grid; grid-template-columns:2.5fr 1fr 1fr 1fr; gap:60px; margin-bottom:60px; }
+.footer-logo { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:var(--gold); display:block; margin-bottom:16px; letter-spacing:.12em; }
+.footer-desc { font-size:.78rem; color:var(--gray2); line-height:1.8; max-width:280px; }
+.footer-col h5 { font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:24px; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.footer-col a { font-size:.8rem; color:var(--gray2); text-decoration:none; cursor:none; transition:color .3s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:32px; border-top:1px solid var(--gray3);
+}
+.footer-bottom p { font-size:.7rem; color:rgba(248,244,238,.18); }
+.age { display:flex; align-items:center; gap:10px; }
+.age-badge {
+  width:34px; height:34px;
+  border:1px solid rgba(248,244,238,.15);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.68rem; font-weight:700;
+  color:rgba(248,244,238,.3);
+}
+.age-txt { font-size:.68rem; color:rgba(248,244,238,.25); }
+.pay-icons { display:flex; gap:16px; align-items:center; }
+.pay-icon {
+  background:var(--dark3); border:1px solid var(--gray3);
+  padding:6px 14px; font-size:.65rem; font-weight:700; letter-spacing:.08em;
+  color:var(--gray2);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes pulse { 0%,100%{opacity:1;transform:scaleY(1)} 50%{opacity:.4;transform:scaleY(.6)} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+@keyframes floatUp {
+  0%{opacity:0;transform:translateY(0) scale(1)}
+  10%{opacity:.6}
+  90%{opacity:.2}
+  100%{opacity:0;transform:translateY(-100vh) scale(0)}
+}
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .section-wrap{padding:80px 24px;}
+  .slots-grid{grid-template-columns:repeat(2,1fr);}
+  .live-grid{grid-template-columns:repeat(2,1fr);}
+  .bonus-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:40px;}
+  .vip-levels{gap:8px;}
+  .hero-stats{gap:28px;}
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- MODAL REGISTER -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <span class="modal-logo">EVA CASINO</span>
+      <div class="modal-title" id="modal-title">Создать аккаунт</div>
+      <div class="modal-sub" id="modal-sub">Получи бонус 500% на первый депозит</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tabs">
+        <button class="mtab active" onclick="switchTab('reg',this)">Регистрация</button>
+        <button class="mtab" onclick="switchTab('login',this)">Войти</button>
+      </div>
+
+      <!-- REG FORM -->
+      <div id="reg-form">
+        <div class="form-bonus-badge">
+          <div class="fbb-icon">🎁</div>
+          <div class="fbb-text">
+            <strong>Бонус при регистрации: 500%</strong>
+            <span>До ₽200 000 + 200 фриспинов</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Имя</label>
+            <input type="text" placeholder="Александр">
+          </div>
+          <div class="form-group">
+            <label>Фамилия</label>
+            <input type="text" placeholder="Иванов">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input type="password" placeholder="Минимум 8 символов">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Телефон</label>
+            <input type="tel" placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form-group">
+            <label>Дата рождения</label>
+            <input type="date">
+          </div>
+        </div>
+        <button class="btn-submit" onclick="handleReg()">Зарегистрироваться →</button>
+        <div class="form-footer">Уже есть аккаунт? <a href="#" onclick="switchTab('login',null)">Войти</a></div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div id="login-form" style="display:none">
+        <div class="form-group" style="margin-bottom:24px">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group" style="margin-bottom:28px">
+          <label>Пароль</label>
+          <input type="password" placeholder="Ваш пароль">
+        </div>
+        <button class="btn-submit">Войти в аккаунт →</button>
+        <div class="form-footer"><a href="#">Забыли пароль?</a> · <a href="#" onclick="switchTab('reg',null)">Регистрация</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">EVA <span>CASINO</span></div>
+  <ul class="nav-links">
+    <li><a href="#slots">Слоты</a></li>
+    <li><a href="#live">Live Casino</a></li>
+    <li><a href="#bonus">Бонусы</a></li>
+    <li><a href="#vip">VIP</a></li>
+  </ul>
+  <div class="nav-btns">
+    <button class="btn-nav-login" onclick="openModal('login')">Войти</button>
+    <button class="btn-nav-reg" onclick="openModal('reg')">Регистрация</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Лицензированное казино · MGA · SSL</div>
+    <h1 class="hero-title">
+      <span class="t1">ИГРАЙ</span>
+      <span class="t2">EVA</span>
+      <span class="t3">CASINO</span>
+    </h1>
+    <p class="hero-sub">Более 3200 игр · Живые дилеры · Мгновенные выплаты</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-hero-main" onclick="openModal('reg');return false;">Получить бонус 500%</a>
+      <a href="#slots" class="btn-hero-ghost">Смотреть игры</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num" data-target="3200">0</div>
+        <div class="hstat-label">Игр</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="1400000" data-suffix="M">0</div>
+        <div class="hstat-label">Игроков</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="97" data-suffix="%">0</div>
+        <div class="hstat-label">Средний RTP</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="15" data-suffix="мин">0</div>
+        <div class="hstat-label">Вывод средств</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Прокрутить</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti">СЛОТЫ</span><span class="td">◆</span>
+    <span class="ti">РУЛЕТКА</span><span class="td">◆</span>
+    <span class="ti">БЛЭКДЖЕК</span><span class="td">◆</span>
+    <span class="ti">ПОКЕР</span><span class="td">◆</span>
+    <span class="ti">БАККАРА</span><span class="td">◆</span>
+    <span class="ti">LIVE CASINO</span><span class="td">◆</span>
+    <span class="ti">CRASH GAMES</span><span class="td">◆</span>
+    <span class="ti">ТУРНИРЫ</span><span class="td">◆</span>
+    <span class="ti">СЛОТЫ</span><span class="td">◆</span>
+    <span class="ti">РУЛЕТКА</span><span class="td">◆</span>
+    <span class="ti">БЛЭКДЖЕК</span><span class="td">◆</span>
+    <span class="ti">ПОКЕР</span><span class="td">◆</span>
+    <span class="ti">БАККАРА</span><span class="td">◆</span>
+    <span class="ti">LIVE CASINO</span><span class="td">◆</span>
+    <span class="ti">CRASH GAMES</span><span class="td">◆</span>
+    <span class="ti">ТУРНИРЫ</span><span class="td">◆</span>
+  </div>
+</div>
+
+<!-- SLOTS -->
+<section class="section-wrap slots" id="slots">
+  <div class="slots-header">
+    <div>
+      <div class="sec-label">Игровые автоматы</div>
+      <h2 class="sec-title">Популярные <em>слоты</em></h2>
+    </div>
+    <div class="slots-tabs">
+      <button class="stab active">Все</button>
+      <button class="stab">Новинки</button>
+      <button class="stab">Джекпот</button>
+      <button class="stab">Megaways</button>
+    </div>
+  </div>
+  <div class="slots-grid">
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🔥</span></div><div class="slot-hot">HOT</div><div class="slot-rtp">RTP 97%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Gates of Olympus</div><div class="slot-provider">Pragmatic Play</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">💎</span></div><div class="slot-rtp">RTP 96.5%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Sweet Bonanza</div><div class="slot-provider">Pragmatic Play</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">⚡</span></div><div class="slot-hot">NEW</div><div class="slot-rtp">RTP 96.7%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Dog House Megaways</div><div class="slot-provider">Pragmatic Play</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🍀</span></div><div class="slot-rtp">RTP 97.1%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Starburst XXXtreme</div><div class="slot-provider">NetEnt</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🎭</span></div><div class="slot-hot">HOT</div><div class="slot-rtp">RTP 96.3%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Big Bass Bonanza</div><div class="slot-provider">Pragmatic Play</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">👑</span></div><div class="slot-rtp">RTP 95.9%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Book of Ra Deluxe</div><div class="slot-provider">Novomatic</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🌊</span></div><div class="slot-hot">NEW</div><div class="slot-rtp">RTP 96.8%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Wanted Dead or Wild</div><div class="slot-provider">Hacksaw</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🏆</span></div><div class="slot-rtp">RTP 97.3%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Reactoonz 2</div><div class="slot-provider">Play'n GO</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🎰</span></div><div class="slot-hot">JACKPOT</div><div class="slot-rtp">RTP 96.1%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Mega Moolah</div><div class="slot-provider">Microgaming</div></div></div>
+    <div class="slot-card"><div class="slot-bg"><div class="slot-gradient"></div><div class="slot-shine"></div><span style="position:relative;z-index:1">🌺</span></div><div class="slot-rtp">RTP 96.4%</div><div class="slot-overlay"><div class="slot-play">▶</div></div><div class="slot-info"><div class="slot-name">Gonzo's Quest Megaways</div><div class="slot-provider">NetEnt</div></div></div>
+  </div>
+  <div style="text-align:center">
+    <a href="#" class="btn-hero-ghost" style="display:inline-block">Показать все 3200+ игр</a>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="section-wrap bonus" id="bonus">
+  <div class="bonus-bg-text">EVA</div>
+  <div class="sec-label">Акции и бонусы</div>
+  <h2 class="sec-title">Щедрые <em>предложения</em></h2>
+  <div class="bonus-grid">
+    <div class="bonus-card">
+      <div class="bc-deco">500</div>
+      <div class="bc-tag">Приветственный</div>
+      <div class="bc-num">500%</div>
+      <div class="bc-title">Бонус на первый депозит</div>
+      <div class="bc-desc">До ₽200 000 + 200 бесплатных вращений в топовых слотах. Без хитрых условий.</div>
+      <button class="btn-hero-main" onclick="openModal('reg')" style="font-size:.72rem;padding:14px 36px">Получить →</button>
+    </div>
+    <div class="bonus-card">
+      <div class="bc-deco">25%</div>
+      <div class="bc-tag">Еженедельно</div>
+      <div class="bc-num">25%</div>
+      <div class="bc-title">Кэшбэк без ограничений</div>
+      <div class="bc-desc">Возврат потерь каждую неделю. Без вейджера для VIP-игроков уровня Platinum+.</div>
+      <button class="btn-hero-ghost" style="font-size:.72rem;padding:14px 36px;display:inline-block;cursor:none">Подробнее</button>
+    </div>
+    <div class="bonus-card">
+      <div class="bc-deco">FS</div>
+      <div class="bc-tag">Каждый день</div>
+      <div class="bc-num">200</div>
+      <div class="bc-title">Фриспинов в сутки</div>
+      <div class="bc-desc">Ежедневное пополнение бесплатных вращений в Gates of Olympus и Sweet Bonanza.</div>
+      <button class="btn-hero-ghost" style="font-size:.72rem;padding:14px 36px;display:inline-block;cursor:none">Подробнее</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE CASINO -->
+<section class="section-wrap live" id="live">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+    <div>
+      <div class="sec-label">Живые дилеры</div>
+      <h2 class="sec-title" style="margin-bottom:0">Live <em>Casino</em></h2>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:8px;height:8px;background:#e74c3c;border-radius:50%;animation:blink 1.5s infinite"></div>
+      <span style="font-size:.72rem;letter-spacing:.15em;color:var(--gray2);text-transform:uppercase">Прямой эфир</span>
+    </div>
+  </div>
+  <div class="live-grid">
+    <div class="live-card">
+      <div class="live-bg"><span>🎲</span></div>
+      <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      <div class="live-players">👥 247</div>
+      <div class="live-info">
+        <div class="live-name">Lightning Roulette</div>
+        <div class="live-limit">Мин. ставка: ₽100</div>
+      </div>
+    </div>
+    <div class="live-card">
+      <div class="live-bg"><span>🃏</span></div>
+      <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      <div class="live-players">👥 189</div>
+      <div class="live-info">
+        <div class="live-name">Infinite Blackjack</div>
+        <div class="live-limit">Мин. ставка: ₽500</div>
+      </div>
+    </div>
+    <div class="live-card">
+      <div class="live-bg"><span>♠️</span></div>
+      <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      <div class="live-players">👥 412</div>
+      <div class="live-info">
+        <div class="live-name">Speed Baccarat A</div>
+        <div class="live-limit">Мин. ставка: ₽200</div>
+      </div>
+    </div>
+    <div class="live-card">
+      <div class="live-bg"><span>🎡</span></div>
+      <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+      <div class="live-players">👥 631</div>
+      <div class="live-info">
+        <div class="live-name">Crazy Time</div>
+        <div class="live-limit">Мин. ставка: ₽100</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIP -->
+<section class="vip" id="vip">
+  <div class="vip-content">
+    <span class="vip-crown">👑</span>
+    <div class="sec-label" style="text-align:center">Программа лояльности</div>
+    <h2 class="sec-title" style="text-align:center;margin-bottom:20px">EVA <em>VIP Club</em></h2>
+    <p style="font-size:.88rem;color:var(--gray);line-height:1.8">Каждая ставка приближает тебя к следующему уровню. Персональный менеджер, эксклюзивные бонусы и привилегии, которые меняют игру.</p>
+    <div class="vip-levels">
+      <div class="vip-level"><span class="vl-icon">🥉</span><div class="vl-name">Bronze</div><div class="vl-perk">Кэшбэк 5%</div></div>
+      <div class="vip-level"><span class="vl-icon">🥈</span><div class="vl-name">Silver</div><div class="vl-perk">Кэшбэк 10%</div></div>
+      <div class="vip-level"><span class="vl-icon">🥇</span><div class="vl-name">Gold</div><div class="vl-perk">Кэшбэк 15%</div></div>
+      <div class="vip-level"><span class="vl-icon">💎</span><div class="vl-name">Platinum</div><div class="vl-perk">Кэшбэк 20%</div></div>
+      <div class="vip-level"><span class="vl-icon">👑</span><div class="vl-name">Diamond</div><div class="vl-perk">Кэшбэк 25%</div></div>
+    </div>
+    <div style="margin-top:48px">
+      <button class="btn-hero-main" onclick="openModal('reg')" style="font-size:.78rem;padding:16px 48px;cursor:none">Начать путь к Diamond →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">EVA CASINO</span>
+      <p class="footer-desc">Лицензированная онлайн-платформа. Лицензия MGA/B2C/394/2017. Шифрование 256-bit SSL. Играйте ответственно.</p>
+      <div class="pay-icons" style="margin-top:28px">
+        <div class="pay-icon">VISA</div>
+        <div class="pay-icon">MC</div>
+        <div class="pay-icon">USDT</div>
+        <div class="pay-icon">BTC</div>
+        <div class="pay-icon">SBP</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Казино</h5>
+      <ul>
+        <li><a href="#">Слоты</a></li>
+        <li><a href="#">Рулетка</a></li>
+        <li><a href="#">Блэкджек</a></li>
+        <li><a href="#">Live Casino</a></li>
+        <li><a href="#">Poker</a></li>
+        <li><a href="#">Crash Games</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Бонусы</h5>
+      <ul>
+        <li><a href="#">Приветственный</a></li>
+        <li><a href="#">Кэшбэк</a></li>
+        <li><a href="#">Фриспины</a></li>
+        <li><a href="#">Реферальная</a></li>
+        <li><a href="#">Турниры</a></li>
+        <li><a href="#">VIP Club</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Помощь</h5>
+      <ul>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Поддержка 24/7</a></li>
+        <li><a href="#">Условия</a></li>
+        <li><a href="#">Конфиденциальность</a></li>
+        <li><a href="#">Ответственная игра</a></li>
+        <li><a href="#">Партнёрам</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 EVA CASINO. Все права защищены.</p>
+    <div class="age">
+      <div class="age-badge">18+</div>
+      <span class="age-txt">Только для лиц старше 18 лет</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const cur = document.getElementById('cur');
+const cur2 = document.getElementById('cur2');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function loop(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; cur2.style.left=rx+'px'; cur2.style.top=ry+'px'; requestAnimationFrame(loop); })();
+document.querySelectorAll('a,button,.slot-card,.live-card,.vip-level,.bonus-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cur.style.transform='translate(-50%,-50%) scale(2.5)'; cur2.style.transform='translate(-50%,-50%) scale(1.4)'; cur2.style.borderColor='rgba(212,175,55,.7)'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.transform='translate(-50%,-50%) scale(1)'; cur2.style.transform='translate(-50%,-50%) scale(1)'; cur2.style.borderColor='rgba(212,175,55,.4)'; });
+});
+
+// PARTICLES
+const pc = document.getElementById('particles');
+for(let i=0;i<25;i++){
+  const p = document.createElement('div');
+  p.className='particle';
+  const sz = Math.random()*4+2;
+  p.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;bottom:0;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*8}s;opacity:0`;
+  pc.appendChild(p);
+}
+
+// MODAL
+function openModal(type){ document.getElementById('modal').classList.add('open'); switchTab(type,null); }
+function closeModal(){ document.getElementById('modal').classList.remove('open'); }
+document.getElementById('modal').addEventListener('click',function(e){ if(e.target===this)closeModal(); });
+
+function switchTab(type, btn){
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else { document.querySelectorAll('.mtab').forEach(t=>{ if((type==='reg'&&t.textContent.includes('Рег'))||(type==='login'&&t.textContent.includes('Войти')))t.classList.add('active'); }); }
+  const isReg = type==='reg';
+  document.getElementById('reg-form').style.display = isReg?'block':'none';
+  document.getElementById('login-form').style.display = isReg?'none':'block';
+  document.getElementById('modal-title').textContent = isReg?'Создать аккаунт':'Добро пожаловать';
+  document.getElementById('modal-sub').textContent = isReg?'Получи бонус 500% на первый депозит':'Войдите в свой аккаунт EVA Casino';
+}
+
+function handleReg(){
+  const btn = document.querySelector('#reg-form .btn-submit');
+  btn.textContent = '✓ Аккаунт создан!';
+  btn.style.background = 'linear-gradient(135deg,#1a7a3a,#27ae60)';
+  setTimeout(()=>{ closeModal(); btn.textContent='Зарегистрироваться →'; btn.style.background=''; },2000);
+}
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.hstat-num[data-target]');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el=e.target, target=+el.dataset.target, suffix=el.dataset.suffix||'';
+    let start=null;
+    const isMil = target>=1000000;
+    (function step(ts){
+      if(!start)start=ts;
+      const p=Math.min((ts-start)/1800,1), eased=1-Math.pow(1-p,3);
+      const val = Math.round(eased*target);
+      el.textContent = isMil?(val/1000000).toFixed(1)+'M'+suffix : val+suffix;
+      if(p<1)requestAnimationFrame(step);
+    })(performance.now());
+    obs.unobserve(el);
+  });
+},{ threshold:.5 });
+counters.forEach(c=>obs.observe(c));
+
+// SLOTS TABS
+document.querySelectorAll('.stab').forEach(tab=>{
+  tab.addEventListener('click',function(){ document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active')); this.classList.add('active'); });
+});
+</script>
+</body>
+</html>
