@@ -3,324 +3,806 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Рейтинг онлайн казино 2026 — Casino Expert</title>
-<meta name="description" content="⭐ Топ-41 онлайн казино 2026 года. Рейтинг, бонусы, зеркала. Vavada, 1Win, Stake, Duel, Куш и ещё 36 казино. Бонусы до 500%. Промокод RUBLIK.">
+<meta name="theme-color" content="#1a1a2e">
+<title>Рейтинг казино 2026 — Casino Expert</title>
+<meta name="description" content="⭐ Топ-41 онлайн казино 2026. Vavada, Duel, Куш, Cat, Joy, Stake. Бонусы до 500%, фриспины. Промокод RUBLIK.">
 <style>
-  :root {
-    --font-heading: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    --font-body: Georgia, 'Times New Roman', serif;
+/* ═══════════════════════════════════════════
+   ПЕРЕМЕННЫЕ И СБРОС
+═══════════════════════════════════════════ */
+:root {
+  --red:     #e02020;
+  --red2:    #c01818;
+  --dark:    #1a1a2e;
+  --darker:  #111122;
+  --nav-bg:  #1e1e30;
+  --white:   #ffffff;
+  --bg:      #f0f2f5;
+  --card:    #ffffff;
+  --border:  #e0e0e0;
+  --text:    #1a1a2e;
+  --muted:   #666;
+  --gold:    #f5a623;
+  --green:   #27ae60;
+  --fh:      'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+  --fb:      'Segoe UI',Arial,sans-serif;
+  --radius:  10px;
+  --shadow:  0 2px 12px rgba(0,0,0,.08);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: var(--fb); font-size: 15px; color: var(--text); background: var(--bg); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: var(--fb); }
+
+/* ═══════════════════════════════════════════
+   УТИЛИТЫ
+═══════════════════════════════════════════ */
+.container { max-width: 1220px; margin: 0 auto; padding: 0 16px; }
+.btn-red {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 20px; background: var(--red); color: #fff;
+  border-radius: 7px; font-weight: 700; font-size: 14px;
+  transition: background .2s, transform .1s; white-space: nowrap; min-height: 44px;
+}
+.btn-red:hover  { background: var(--red2); color: #fff; }
+.btn-red:active { transform: scale(.97); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 18px; border: 1.5px solid var(--border);
+  border-radius: 7px; font-size: 13px; color: var(--muted);
+  transition: border-color .2s, color .2s; min-height: 44px;
+}
+.btn-outline:hover { border-color: var(--red); color: var(--red); }
+.btn-green {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 20px; background: var(--green); color: #fff;
+  border-radius: 7px; font-weight: 700; font-size: 14px;
+  transition: background .2s; white-space: nowrap; min-height: 44px;
+}
+.btn-green:hover { background: #219a52; color: #fff; }
+
+/* ═══════════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════════ */
+.topbar { background: var(--darker); font-size: 12px; padding: 5px 0; display: none; }
+@media (min-width: 768px) { .topbar { display: block; } }
+.topbar .container { display: flex; justify-content: flex-end; gap: 20px; }
+.topbar a { color: #999; transition: color .2s; }
+.topbar a:hover { color: #fff; }
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+header {
+  background: var(--dark);
+  position: sticky; top: 0; z-index: 200;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+.header-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
+  padding: 12px 16px; max-width: 1220px; margin: 0 auto;
+}
+.logo-text {
+  font-family: var(--fh); font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700; color: #fff; letter-spacing: 1px; white-space: nowrap;
+}
+.logo-text span { color: var(--red); }
+.logo-sub { font-size: 10px; color: #888; display: block; letter-spacing: .5px; }
+
+/* Десктоп — правая часть шапки */
+.header-right { display: none; align-items: center; gap: 14px; }
+@media (min-width: 768px) { .header-right { display: flex; } }
+.social-links { display: flex; gap: 8px; }
+.social-links a {
+  width: 34px; height: 34px; background: #2a2a44;
+  border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  color: #ccc; font-size: 13px; font-weight: 700; transition: background .2s;
+}
+.social-links a:hover { background: var(--red); color: #fff; }
+.auth-btns { display: flex; gap: 8px; }
+.btn-login {
+  padding: 8px 16px; border: 1.5px solid #444; border-radius: 6px;
+  color: #ccc; font-size: 13px; min-height: 36px;
+  display: flex; align-items: center; transition: all .2s;
+}
+.btn-login:hover { border-color: var(--red); color: var(--red); }
+.btn-reg {
+  padding: 8px 18px; background: var(--red); border-radius: 6px;
+  color: #fff; font-size: 13px; font-weight: 700; min-height: 36px;
+  display: flex; align-items: center; transition: background .2s;
+}
+.btn-reg:hover { background: var(--red2); color: #fff; }
+
+/* Бургер */
+.burger {
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 5px; width: 44px; height: 44px;
+  padding: 8px; border-radius: 8px; background: #2a2a44;
+}
+@media (min-width: 1024px) { .burger { display: none; } }
+.burger span {
+  display: block; height: 2px; background: #ccc; border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  background: var(--nav-bg);
+  border-bottom: 2px solid var(--red);
+  overflow: hidden;
+  max-height: 0; transition: max-height .3s ease;
+}
+nav.open { max-height: 400px; }
+@media (min-width: 1024px) { nav { max-height: none !important; } }
+.nav-inner {
+  max-width: 1220px; margin: 0 auto; padding: 0 16px;
+  display: flex; flex-direction: column;
+}
+@media (min-width: 1024px) { .nav-inner { flex-direction: row; } }
+.nav-item { position: relative; border-bottom: 1px solid #2a2a40; }
+@media (min-width: 1024px) { .nav-item { border: none; } }
+.nav-item > a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 4px; color: #bbb; font-size: 14px; font-weight: 600;
+  font-family: var(--fh); letter-spacing: .4px; transition: color .2s;
+  min-height: 48px;
+}
+@media (min-width: 1024px) {
+  .nav-item > a { padding: 14px 16px; justify-content: flex-start; gap: 4px; }
+}
+.nav-item:first-child > a { color: var(--red); }
+.nav-item > a:hover, .nav-item.active > a { color: #fff; }
+.nav-arrow { font-size: 10px; color: #555; transition: transform .2s; }
+.nav-item.open-sub .nav-arrow { transform: rotate(180deg); }
+
+/* Дропдаун */
+.dropdown {
+  background: #151525; overflow: hidden;
+  max-height: 0; transition: max-height .25s;
+}
+.nav-item.open-sub .dropdown { max-height: 300px; }
+@media (min-width: 1024px) {
+  .dropdown {
+    position: absolute; top: 100%; left: 0;
+    background: var(--dark); min-width: 220px;
+    border: 1px solid #333; border-top: 2px solid var(--red);
+    z-index: 999; border-radius: 0 0 8px 8px;
+    max-height: 0; transition: max-height .2s;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --red: #e02020;
-    --dark: #1a1a2e;
-    --darker: #111122;
-    --nav-bg: #1e1e30;
-    --border: #e0e0e0;
-    --text: #333;
-    --muted: #666;
-    --gold: #f5a623;
-    --green: #27ae60;
+  .nav-item:hover .dropdown { max-height: 300px; }
+}
+.dropdown a {
+  display: block; padding: 12px 20px; color: #aaa;
+  font-size: 13px; border-bottom: 1px solid #2a2a40;
+  transition: background .15s, color .15s; min-height: 44px;
+  display: flex; align-items: center;
+}
+.dropdown a:hover { background: #2a2a44; color: #fff; }
+
+/* ═══════════════════════════════════════════
+   ПРОМО-БАР (мобиль)
+═══════════════════════════════════════════ */
+.promo-bar {
+  background: linear-gradient(90deg, var(--dark), #0f3460);
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-size: 13px; color: #aaa;
+}
+@media (min-width: 768px) { .promo-bar { display: none; } }
+.promo-bar strong { color: var(--gold); font-size: 16px; letter-spacing: 2px; }
+.promo-copy-btn {
+  background: var(--gold); color: var(--dark); border: none;
+  border-radius: 5px; padding: 5px 12px; font-size: 11px;
+  font-weight: 900; letter-spacing: .5px;
+}
+
+/* ═══════════════════════════════════════════
+   ОСНОВНОЙ МАКЕТ
+═══════════════════════════════════════════ */
+.page-body {
+  max-width: 1220px; margin: 0 auto;
+  padding: 16px 16px 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .page-body {
+    grid-template-columns: 1fr 280px;
+    padding: 22px 16px 40px;
   }
-  body { font-family: var(--font-body); font-size: 15px; color: var(--text); background: #f0f0f0; }
-  a { color: inherit; text-decoration: none; }
-  a:hover { color: var(--red); }
+}
+.main-col { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.sidebar-col { display: flex; flex-direction: column; gap: 16px; }
 
-  /* TOP BAR */
-  .topbar { background: var(--darker); color: #aaa; font-size: 12px; padding: 6px 0; }
-  .topbar .inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: flex-end; gap: 20px; }
-  .topbar a { color: #ccc; }
-  .topbar a:hover { color: #fff; }
+/* ═══════════════════════════════════════════
+   HERO БАННЕР
+═══════════════════════════════════════════ */
+.banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  border-radius: var(--radius); padding: 28px 22px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 16px;
+  min-height: 160px;
+}
+@media (min-width: 600px) {
+  .banner { flex-direction: row; align-items: center; justify-content: space-between; padding: 36px 40px; }
+}
+.banner::after {
+  content: '🎰'; position: absolute; right: -10px; bottom: -10px;
+  font-size: 90px; opacity: .08; line-height: 1;
+}
+@media (min-width: 600px) { .banner::after { font-size: 130px; right: 20px; bottom: -14px; } }
+.banner-title {
+  font-family: var(--fh); font-size: clamp(20px, 4vw, 30px);
+  color: #fff; line-height: 1.2; margin-bottom: 6px;
+}
+.banner-title span { color: var(--gold); }
+.banner-sub { font-size: 13px; color: #aaa; }
+.banner-cta {
+  background: var(--red); color: #fff; padding: 14px 28px;
+  border-radius: 8px; font-family: var(--fh); font-size: 15px;
+  font-weight: 600; white-space: nowrap; text-align: center;
+  transition: background .2s; flex-shrink: 0;
+}
+.banner-cta:hover { background: var(--red2); color: #fff; }
 
-  /* HEADER */
-  header { background: var(--dark); padding: 14px 0; }
-  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-  .logo-text { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 1px; }
-  .logo-text span { color: var(--red); }
-  .social-links { display: flex; gap: 10px; }
-  .social-links a { width: 32px; height: 32px; background: #333; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; transition: background .2s; }
-  .social-links a:hover { background: var(--red); }
-  .auth-btns { display: flex; gap: 10px; }
-  .btn-login { padding: 8px 18px; border: 1px solid #555; border-radius: 4px; color: #ddd; font-size: 13px; transition: all .2s; }
-  .btn-login:hover { border-color: var(--red); color: var(--red); }
-  .btn-register { padding: 8px 18px; background: var(--red); border-radius: 4px; color: #fff; font-size: 13px; transition: background .2s; }
-  .btn-register:hover { background: #c01818; color: #fff; }
+/* ═══════════════════════════════════════════
+   БЛОК (секция)
+═══════════════════════════════════════════ */
+.block {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.block-head {
+  padding: 14px 18px; border-bottom: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.block-title {
+  font-family: var(--fh); font-size: clamp(15px, 2.5vw, 19px);
+  font-weight: 700; color: var(--dark);
+  display: flex; align-items: center; gap: 8px;
+}
+.block-title::before {
+  content: ''; display: block; width: 4px; height: 20px;
+  background: var(--red); border-radius: 2px; flex-shrink: 0;
+}
+.block-sub { font-size: 12px; color: var(--muted); }
 
-  /* NAV */
-  nav { background: var(--nav-bg); border-bottom: 2px solid var(--red); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; }
-  .nav-item { position: relative; }
-  .nav-item > a { display: block; padding: 13px 18px; color: #ccc; font-size: 14px; font-weight: 600; font-family: var(--font-heading); letter-spacing: .5px; transition: color .2s, background .2s; }
-  .nav-item > a:hover, .nav-item.active > a { color: #fff; background: rgba(255,255,255,.07); }
-  .nav-item:first-child > a { color: var(--red); }
-  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--dark); min-width: 220px; border: 1px solid #333; border-top: 2px solid var(--red); z-index: 999; }
-  .dropdown a { display: block; padding: 10px 18px; color: #bbb; font-size: 13px; border-bottom: 1px solid #2a2a40; }
-  .dropdown a:hover { background: #2a2a40; color: #fff; }
-  .nav-item:hover .dropdown { display: block; }
+/* ═══════════════════════════════════════════
+   ТАБЛИЦА КАЗИНО — ДЕСКТОП / МОБИЛЬ
+═══════════════════════════════════════════ */
+.intro-text {
+  padding: 14px 18px; font-size: 14px; color: #555;
+  line-height: 1.7; border-bottom: 1px solid var(--border);
+}
+.intro-text strong { color: var(--dark); }
 
-  /* LAYOUT */
-  .container { max-width: 1200px; margin: 0 auto; padding: 24px 20px; display: flex; gap: 24px; align-items: flex-start; }
-  .main-content { flex: 1; min-width: 0; }
-  .sidebar { width: 280px; flex-shrink: 0; }
+/* Горизонтальная прокрутка на мобиле */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll::-webkit-scrollbar { height: 4px; }
+.table-scroll::-webkit-scrollbar-track { background: #f5f5f5; }
+.table-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-  /* BANNER */
-  .banner { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 8px; padding: 40px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; position: relative; min-height: 160px; }
-  .banner::before { content: '🎰'; position: absolute; right: 30px; font-size: 100px; opacity: .15; }
-  .banner h2 { font-family: var(--font-heading); font-size: 30px; color: #fff; line-height: 1.2; max-width: 60%; }
-  .banner h2 span { color: var(--gold); }
-  .banner-cta { background: var(--red); color: #fff; padding: 12px 28px; border-radius: 4px; font-family: var(--font-heading); font-size: 16px; font-weight: 600; white-space: nowrap; }
-  .banner-cta:hover { background: #c01818; color: #fff; }
+.casino-table { width: 100%; min-width: 640px; }
+.ct-head {
+  display: grid;
+  grid-template-columns: 38px 2.2fr 100px 1.5fr 68px 110px 100px;
+  gap: 6px; padding: 9px 16px;
+  background: #f7f7f9; border-bottom: 1px solid var(--border);
+  font-size: 11px; font-weight: 800; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.ct-row {
+  display: grid;
+  grid-template-columns: 38px 2.2fr 100px 1.5fr 68px 110px 100px;
+  gap: 6px; padding: 11px 16px;
+  border-bottom: 1px solid var(--border); align-items: center;
+  transition: background .15s;
+}
+.ct-row:last-child { border-bottom: none; }
+.ct-row:hover { background: #fafafa; }
 
-  /* SECTION BOX */
-  .section-box { background: #fff; border-radius: 8px; margin-bottom: 24px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
-  .section-title { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--dark); padding: 16px 20px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
-  .section-title::before { content: ''; display: inline-block; width: 4px; height: 22px; background: var(--red); border-radius: 2px; }
-  .section-title small { font-family: var(--font-body); font-size: 12px; font-weight: 400; color: var(--muted); margin-left: auto; }
-  .intro-text { padding: 16px 20px; line-height: 1.7; color: #555; border-bottom: 1px solid var(--border); font-size: 14px; }
-  .intro-text strong { color: var(--dark); }
+.ct-num {
+  font-family: var(--fh); font-size: 17px; font-weight: 700;
+  color: #ddd; text-align: center;
+}
+.ct-row:nth-child(1) .ct-num { color: var(--gold); }
+.ct-row:nth-child(2) .ct-num { color: #b0b0b0; }
+.ct-row:nth-child(3) .ct-num { color: #cd7f32; }
 
-  /* CASINO TABLE */
-  .casino-table { width: 100%; }
-  .casino-table-header { display: grid; grid-template-columns: 40px 2fr 100px 1.5fr 80px 120px 100px; gap: 8px; padding: 10px 16px; background: #f5f5f5; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); }
-  .casino-row { display: grid; grid-template-columns: 40px 2fr 100px 1.5fr 80px 120px 100px; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); align-items: center; transition: background .15s; }
-  .casino-row:hover { background: #fafafa; }
-  .casino-row:last-child { border-bottom: none; }
-  .casino-num { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: #ccc; text-align: center; }
-  .casino-row:nth-child(1) .casino-num { color: #f5a623; }
-  .casino-row:nth-child(2) .casino-num { color: #aaa; }
-  .casino-row:nth-child(3) .casino-num { color: #cd7f32; }
-  .casino-brand { display: flex; align-items: center; gap: 12px; }
-  .casino-logo-ph { width: 80px; height: 44px; background: var(--dark); border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
-  .casino-logo-ph img { width: 80px; height: 44px; object-fit: contain; }
-  .casino-name-block a { font-weight: 700; font-size: 14px; color: var(--dark); display: block; }
-  .casino-compare { font-size: 11px; color: var(--muted); cursor: pointer; }
-  .casino-compare:hover { color: var(--red); }
-  .stars { color: var(--gold); font-size: 13px; }
-  .rating-val { font-weight: 700; font-size: 13px; }
-  .bonus-amount { font-weight: 700; font-size: 13px; color: var(--dark); display: block; }
-  .bonus-rules { font-size: 11px; color: var(--muted); }
-  .bezdep-yes { color: var(--green); font-size: 18px; text-align: center; }
-  .bezdep-no  { color: #e74c3c;    font-size: 16px; text-align: center; }
-  .devices { display: flex; gap: 6px; font-size: 14px; color: #888; }
-  .btn-play { display: inline-block; padding: 8px 16px; background: var(--red); color: #fff; border-radius: 4px; font-weight: 700; font-size: 13px; text-align: center; transition: background .2s; white-space: nowrap; }
-  .btn-play:hover { background: #c01818; color: #fff; }
+.ct-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.ct-logo {
+  width: 72px; height: 42px; background: var(--dark);
+  border-radius: 6px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.ct-logo img { width: 72px; height: 42px; object-fit: contain; }
+.ct-name { font-weight: 700; font-size: 13px; color: var(--dark); display: block; }
+.ct-compare { font-size: 11px; color: var(--muted); cursor: pointer; }
+.ct-compare:hover { color: var(--red); }
 
-  /* CASINO GRID (cards) */
-  .casino-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 20px; }
-  .casino-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: box-shadow .2s; }
-  .casino-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
-  .casino-card-top { background: var(--dark); height: 90px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .casino-card-top img { width: 140px; height: 80px; object-fit: contain; }
-  .casino-card-body { padding: 14px; }
-  .casino-card-body h3 { font-size: 16px; margin-bottom: 10px; }
-  .casino-card-body h3 a { color: var(--dark); }
-  .casino-card-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
-  .casino-card-row span:last-child { font-weight: 700; color: var(--dark); }
-  .casino-card-flag { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
-  .casino-card-btns { display: flex; gap: 8px; }
-  .btn-play-sm { flex: 1; padding: 8px; background: var(--red); color: #fff; border-radius: 4px; font-size: 13px; font-weight: 700; text-align: center; }
-  .btn-play-sm:hover { background: #c01818; color: #fff; }
-  .btn-review-sm { flex: 1; padding: 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; text-align: center; color: var(--muted); }
-  .btn-review-sm:hover { border-color: var(--red); color: var(--red); }
+.stars { color: var(--gold); font-size: 12px; letter-spacing: -1px; }
+.rating-val { font-size: 12px; font-weight: 700; }
 
-  /* REVIEWS */
-  .casino-review-list { padding: 0 20px 16px; }
-  .casino-review-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
-  .casino-review-item:last-child { border-bottom: none; }
-  .casino-review-img { width: 100px; height: 60px; border-radius: 6px; overflow: hidden; flex-shrink: 0; background: var(--dark); display: flex; align-items: center; justify-content: center; }
-  .casino-review-img img { width: 100px; height: 60px; object-fit: contain; }
-  .casino-review-body { flex: 1; }
-  .casino-review-body h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-  .casino-review-body h4 a { color: var(--dark); }
-  .casino-review-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-  .feature-list { list-style: none; font-size: 13px; color: #555; }
-  .feature-list li::before { content: '✓ '; color: var(--green); }
-  .casino-review-btns { display: flex; gap: 8px; margin-top: 10px; }
+.bonus-amount { font-weight: 700; font-size: 13px; color: var(--dark); display: block; }
+.bonus-rules  { font-size: 11px; color: var(--muted); }
 
-  /* BONUS SECTION */
-  .bonus-list { padding: 0 20px 16px; }
-  .bonus-item { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 14px; display: flex; gap: 16px; align-items: flex-start; transition: border-color .2s; }
-  .bonus-item:hover { border-color: var(--gold); }
-  .bonus-badge { background: var(--gold); color: #fff; font-family: var(--font-heading); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; text-transform: uppercase; }
-  .bonus-body { flex: 1; }
-  .bonus-body h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-  .bonus-meta { display: flex; gap: 16px; font-size: 12px; margin-bottom: 8px; }
-  .bonus-meta-item label { color: var(--muted); }
-  .bonus-meta-item span { font-weight: 700; color: var(--dark); }
-  .promo-code { display: inline-block; border: 1px dashed var(--gold); border-radius: 4px; padding: 2px 10px; font-family: monospace; font-size: 13px; color: var(--gold); background: #fffdf0; margin-bottom: 6px; }
-  .bonus-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .bonus-btns { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-  .btn-get-bonus { padding: 9px 20px; background: var(--green); color: #fff; border-radius: 4px; font-weight: 700; font-size: 13px; text-align: center; white-space: nowrap; }
-  .btn-get-bonus:hover { background: #219a52; color: #fff; }
-  .btn-review-bonus { padding: 9px 20px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; color: var(--muted); text-align: center; white-space: nowrap; }
+.bezdep-yes { color: var(--green); font-size: 17px; text-align: center; }
+.bezdep-no  { color: #ccc; font-size: 14px; text-align: center; }
+.devices { display: flex; gap: 4px; font-size: 13px; }
 
-  /* DEPOSIT METHODS */
-  .deposit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; }
-  .deposit-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; text-align: center; transition: all .2s; }
-  .deposit-card:hover { border-color: var(--red); box-shadow: 0 2px 8px rgba(224,32,32,.15); }
-  .deposit-img { height: 60px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-  .deposit-name { padding: 7px 6px; font-size: 12px; font-weight: 700; color: var(--dark); }
-  .deposit-count { font-size: 11px; color: var(--muted); padding-bottom: 7px; }
+/* ─── Мобильные карточки казино (вместо таблицы) ─── */
+.casino-cards-mobile { display: none; flex-direction: column; }
+@media (max-width: 639px) {
+  .table-scroll { display: none; }
+  .casino-cards-mobile { display: flex; }
+}
+.cm-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px; border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.cm-card:last-child { border-bottom: none; }
+.cm-card:active { background: #fafafa; }
+.cm-pos {
+  font-family: var(--fh); font-size: 16px; font-weight: 700;
+  color: #ddd; width: 22px; text-align: center; flex-shrink: 0;
+}
+.cm-card:nth-child(1) .cm-pos { color: var(--gold); }
+.cm-card:nth-child(2) .cm-pos { color: #b0b0b0; }
+.cm-card:nth-child(3) .cm-pos { color: #cd7f32; }
+.cm-logo {
+  width: 54px; height: 34px; background: var(--dark);
+  border-radius: 6px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.cm-logo img { width: 54px; height: 34px; object-fit: contain; }
+.cm-info { flex: 1; min-width: 0; }
+.cm-name { font-weight: 700; font-size: 14px; color: var(--dark); }
+.cm-bonus { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.cm-stars { font-size: 11px; color: var(--gold); }
+.cm-btn {
+  background: var(--red); color: #fff; border-radius: 7px;
+  padding: 9px 16px; font-size: 13px; font-weight: 700;
+  flex-shrink: 0; min-height: 40px; display: flex; align-items: center;
+  transition: background .2s;
+}
+.cm-btn:active { background: var(--red2); }
 
-  /* ARTICLES */
-  .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 20px; }
-  .article-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: box-shadow .2s; }
-  .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
-  .article-img { height: 120px; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; font-size: 38px; }
-  .article-body { padding: 14px; }
-  .article-cat { display: inline-block; background: #fff0f0; color: var(--red); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-bottom: 7px; }
-  .article-date { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
-  .article-title { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 7px; }
-  .article-excerpt { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 9px; }
-  .btn-read-more { font-size: 12px; color: var(--red); font-weight: 700; }
+/* ═══════════════════════════════════════════
+   СЕТКА КАРТОЧЕК
+═══════════════════════════════════════════ */
+.casino-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px; padding: 16px;
+}
+@media (min-width: 480px) { .casino-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) and (max-width: 1023px) { .casino-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .casino-grid { grid-template-columns: repeat(4, 1fr); } }
 
-  /* FAQ */
-  .faq-list { padding: 16px 20px; }
-  .faq-item { border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
-  .faq-question { padding: 14px 16px; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--dark); user-select: none; }
-  .faq-question:hover { background: #fafafa; }
-  .faq-question::after { content: '+'; font-size: 20px; color: var(--red); }
-  .faq-item.open .faq-question::after { content: '−'; }
-  .faq-answer { padding: 0 16px; max-height: 0; overflow: hidden; transition: max-height .3s ease; font-size: 13px; color: #555; line-height: 1.7; }
-  .faq-item.open .faq-answer { max-height: 200px; padding: 0 16px 14px; }
-  blockquote { border-left: 4px solid var(--red); margin: 0 20px 20px; padding: 14px 18px; background: #fafafa; border-radius: 0 6px 6px 0; font-style: italic; color: #555; line-height: 1.7; font-size: 14px; }
+.casino-card {
+  border: 1.5px solid var(--border); border-radius: 10px;
+  overflow: hidden; transition: box-shadow .2s, transform .2s;
+  display: flex; flex-direction: column;
+}
+.casino-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
+.card-top {
+  background: var(--dark); height: 80px;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-top img { width: 130px; height: 68px; object-fit: contain; }
+.card-body { padding: 13px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.card-name { font-size: 15px; font-weight: 800; color: var(--dark); }
+.card-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.card-row span:last-child { font-weight: 700; color: var(--dark); }
+.card-flag { font-size: 11px; color: var(--muted); }
+.card-flag strong { color: var(--red); }
+.card-btns { display: flex; gap: 8px; margin-top: auto; padding-top: 4px; }
+.card-btn-play {
+  flex: 1; padding: 10px 8px; background: var(--red); color: #fff;
+  border-radius: 7px; font-size: 13px; font-weight: 700; text-align: center;
+  min-height: 42px; display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.card-btn-play:hover { background: var(--red2); color: #fff; }
+.card-btn-review {
+  flex: 1; padding: 10px 8px; border: 1.5px solid var(--border);
+  border-radius: 7px; font-size: 12px; text-align: center; color: var(--muted);
+  min-height: 42px; display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s, color .2s;
+}
+.card-btn-review:hover { border-color: var(--red); color: var(--red); }
 
-  /* MISC */
-  .content-text { padding: 16px 20px; line-height: 1.7; color: #555; font-size: 14px; }
-  .content-text ul, .content-text ol { padding-left: 22px; margin: 10px 0; }
-  .content-text li { margin-bottom: 6px; }
-  .load-more-wrap { text-align: center; padding: 16px 20px; border-top: 1px solid var(--border); }
-  .btn-load-more { display: inline-block; padding: 10px 30px; border: 2px solid var(--red); border-radius: 4px; color: var(--red); font-family: var(--font-heading); font-size: 14px; font-weight: 600; transition: all .2s; }
-  .btn-load-more:hover { background: var(--red); color: #fff; }
-  .btn-compare-all { display: block; padding: 10px; background: #f5f5f5; border: 1px solid var(--border); border-radius: 4px; text-align: center; color: var(--muted); font-size: 13px; margin: 12px 16px; width: calc(100% - 32px); cursor: pointer; transition: all .2s; }
-  .btn-compare-all:hover { border-color: var(--red); color: var(--red); }
+/* ═══════════════════════════════════════════
+   ОБЗОРЫ
+═══════════════════════════════════════════ */
+.review-list { padding: 0 16px 14px; }
+.review-item {
+  display: flex; gap: 14px; padding: 16px 0;
+  border-bottom: 1px solid var(--border); align-items: flex-start;
+}
+.review-item:last-child { border-bottom: none; }
+.review-logo {
+  width: 90px; height: 56px; background: var(--dark);
+  border-radius: 8px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+@media (min-width: 480px) { .review-logo { width: 110px; height: 66px; } }
+.review-logo img { width: 100%; height: 100%; object-fit: contain; }
+.review-body { flex: 1; min-width: 0; }
+.review-name { font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+.review-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.feature-list { list-style: none; font-size: 13px; color: #555; display: flex; flex-direction: column; gap: 3px; }
+.feature-list li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+.review-btns { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 
-  /* SIDEBAR WIDGETS */
-  .widget { background: #fff; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
-  .widget-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: #fff; background: var(--dark); padding: 12px 16px; display: flex; align-items: center; gap: 8px; }
-  .widget-title::before { content: ''; display: inline-block; width: 3px; height: 16px; background: var(--red); border-radius: 2px; }
+/* ═══════════════════════════════════════════
+   БОНУСЫ
+═══════════════════════════════════════════ */
+.bonus-list { padding: 0 16px 14px; }
+.bonus-item {
+  border: 1.5px solid var(--border); border-radius: 9px;
+  padding: 14px; margin-top: 12px;
+  transition: border-color .2s;
+}
+.bonus-item:hover { border-color: var(--gold); }
+.bonus-item-top { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+.bonus-badge {
+  background: var(--gold); color: var(--dark);
+  font-size: 10px; font-weight: 900; padding: 4px 9px;
+  border-radius: 4px; white-space: nowrap; flex-shrink: 0; text-transform: uppercase;
+}
+.bonus-title { font-size: 14px; font-weight: 800; color: var(--dark); }
+.bonus-meta { display: flex; gap: 16px; font-size: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+.bonus-meta label { color: var(--muted); }
+.bonus-meta span { font-weight: 700; }
+.promo-tag {
+  display: inline-block; border: 1px dashed var(--gold);
+  border-radius: 4px; padding: 2px 10px; font-family: monospace;
+  font-size: 13px; color: var(--gold); background: #fffdf0; margin-bottom: 6px;
+}
+.bonus-desc { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 12px; }
+.bonus-item-btns { display: flex; gap: 8px; }
+.bonus-item-btns .btn-green,
+.bonus-item-btns .btn-outline { flex: 1; font-size: 13px; }
 
-  /* TOP 10 */
-  .top10-item { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--border); transition: background .15s; }
-  .top10-item:hover { background: #fafafa; }
-  .top10-item:last-child { border-bottom: none; }
-  .top10-pos { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: #ccc; width: 24px; text-align: center; flex-shrink: 0; }
-  .top10-item:nth-child(1) .top10-pos { color: #f5a623; }
-  .top10-item:nth-child(2) .top10-pos { color: #aaa; }
-  .top10-item:nth-child(3) .top10-pos { color: #cd7f32; }
-  .top10-logo { width: 50px; height: 30px; background: var(--dark); border-radius: 4px; overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .top10-logo img { width: 50px; height: 30px; object-fit: contain; }
-  .top10-info { flex: 1; }
-  .top10-name { font-size: 12px; font-weight: 700; color: var(--dark); }
-  .top10-stars { font-size: 10px; color: var(--gold); }
-  .top10-btn { padding: 4px 12px; background: var(--red); color: #fff; border-radius: 3px; font-size: 11px; font-weight: 700; }
-  .top10-btn:hover { background: #c01818; color: #fff; }
+/* ═══════════════════════════════════════════
+   МЕТОДЫ ДЕПОЗИТА
+═══════════════════════════════════════════ */
+.deposit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; padding: 14px 16px;
+}
+@media (min-width: 480px) { .deposit-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 768px) { .deposit-grid { grid-template-columns: repeat(5, 1fr); } }
+.deposit-card {
+  border: 1.5px solid var(--border); border-radius: 9px;
+  text-align: center; padding: 10px 6px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.deposit-card:hover { border-color: var(--red); box-shadow: 0 2px 8px rgba(224,32,32,.12); }
+.deposit-icon { font-size: 22px; margin-bottom: 5px; }
+.deposit-name { font-size: 11px; font-weight: 700; color: var(--dark); }
+.deposit-count { font-size: 10px; color: var(--muted); margin-top: 2px; }
 
-  /* NEWS */
-  .news-item { display: flex; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); transition: background .15s; }
-  .news-item:hover { background: #fafafa; }
-  .news-item:last-child { border-bottom: none; }
-  .news-thumb { width: 54px; height: 36px; background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-  .news-info { flex: 1; }
-  .news-title { font-size: 12px; font-weight: 700; color: var(--dark); line-height: 1.3; margin-bottom: 3px; }
-  .news-date { font-size: 11px; color: var(--muted); }
+/* ═══════════════════════════════════════════
+   СТАТЬИ
+═══════════════════════════════════════════ */
+.articles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px; padding: 16px;
+}
+@media (min-width: 480px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .articles-grid { grid-template-columns: repeat(3, 1fr); } }
+.article-card {
+  border: 1.5px solid var(--border); border-radius: 10px;
+  overflow: hidden; transition: transform .2s, box-shadow .2s;
+}
+.article-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+.article-thumb {
+  height: 100px; background: linear-gradient(135deg, #1a1a2e, #0f3460);
+  display: flex; align-items: center; justify-content: center; font-size: 36px;
+}
+.article-body { padding: 13px; }
+.article-cat {
+  display: inline-block; background: #fff0f0; color: var(--red);
+  font-size: 10px; font-weight: 800; padding: 3px 8px;
+  border-radius: 20px; margin-bottom: 7px; text-transform: uppercase;
+}
+.article-date { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+.article-title { font-size: 14px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 7px; }
+.article-excerpt { font-size: 12px; color: var(--muted); line-height: 1.55; margin-bottom: 9px; }
+.article-more { font-size: 12px; color: var(--red); font-weight: 700; }
 
-  /* SIDEBAR BONUSES */
-  .sidebar-bonus-item { display: flex; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); align-items: center; }
-  .sidebar-bonus-item:last-child { border-bottom: none; }
-  .sidebar-bonus-logo { width: 50px; height: 30px; background: var(--dark); border-radius: 4px; overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-  .sidebar-bonus-logo img { width: 50px; height: 30px; object-fit: contain; }
-  .sidebar-bonus-info { flex: 1; }
-  .sidebar-bonus-name { font-size: 12px; font-weight: 700; color: var(--dark); }
-  .sidebar-bonus-amount { font-size: 12px; color: var(--green); font-weight: 700; }
-  .sidebar-bonus-stars { font-size: 10px; color: var(--gold); }
-  .sidebar-bonus-btn { padding: 4px 10px; background: var(--green); color: #fff; border-radius: 3px; font-size: 11px; font-weight: 700; white-space: nowrap; }
-  .sidebar-bonus-btn:hover { background: #219a52; color: #fff; }
+/* ═══════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════ */
+.faq-list { padding: 12px 16px; }
+.faq-item { border: 1.5px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+.faq-q {
+  padding: 14px 16px; font-weight: 700; font-size: 14px;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  color: var(--dark); user-select: none; min-height: 52px; gap: 12px;
+}
+.faq-q:hover { background: #fafafa; }
+.faq-icon { font-size: 20px; color: var(--red); flex-shrink: 0; transition: transform .25s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height .3s ease;
+  font-size: 13px; color: #555; line-height: 1.7;
+}
+.faq-item.open .faq-a { max-height: 250px; }
+.faq-a-inner { padding: 0 16px 14px; }
+.faq-a a { color: var(--red); }
 
-  /* SIDEBAR DEPOSIT */
-  .sidebar-deposit-list { padding: 12px 14px; }
-  .sidebar-deposit-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
-  .sidebar-deposit-item:last-child { border-bottom: none; }
-  .sidebar-deposit-icon { width: 28px; height: 28px; background: #f5f5f5; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.block-quote {
+  margin: 0 16px 16px; padding: 14px 18px;
+  border-left: 4px solid var(--red); background: #fafafa;
+  border-radius: 0 8px 8px 0; font-size: 13px; color: #555;
+  line-height: 1.7; font-style: italic;
+}
 
-  /* SUBSCRIBE */
-  .subscribe-form { padding: 14px; }
-  .subscribe-form input { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 4px; font-size: 14px; margin-bottom: 10px; outline: none; }
-  .subscribe-form input:focus { border-color: var(--red); }
-  .subscribe-form button { width: 100%; padding: 10px; background: var(--red); color: #fff; border: none; border-radius: 4px; font-family: var(--font-heading); font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s; }
-  .subscribe-form button:hover { background: #c01818; }
+/* ═══════════════════════════════════════════
+   ЗАГРУЗИТЬ ЕЩЁ
+═══════════════════════════════════════════ */
+.load-more {
+  padding: 14px 16px; text-align: center;
+  border-top: 1px solid var(--border);
+}
+.btn-load {
+  display: inline-block; padding: 11px 32px;
+  border: 2px solid var(--red); border-radius: 7px;
+  color: var(--red); font-family: var(--fh); font-size: 14px; font-weight: 600;
+  transition: all .2s; min-height: 44px;
+}
+.btn-load:hover { background: var(--red); color: #fff; }
 
-  /* FOOTER */
-  footer { background: var(--darker); color: #888; font-size: 13px; margin-top: 10px; }
-  .footer-top { max-width: 1200px; margin: 0 auto; padding: 40px 20px 30px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-  .footer-logo-text { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 14px; }
-  .footer-logo-text span { color: var(--red); }
-  .footer-desc { line-height: 1.7; color: #777; font-size: 13px; }
-  .footer-col h4 { font-family: var(--font-heading); font-size: 14px; color: #ccc; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; border-bottom: 1px solid #2a2a40; padding-bottom: 8px; }
-  .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 8px; }
-  .footer-links a { color: #777; transition: color .2s; }
-  .footer-links a:hover { color: var(--red); }
-  .footer-payment { max-width: 1200px; margin: 0 auto; padding: 20px; border-top: 1px solid #2a2a40; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-  .payment-badge { background: #2a2a40; border-radius: 4px; padding: 5px 14px; font-size: 12px; color: #aaa; }
-  .footer-bottom { text-align: center; padding: 16px; border-top: 1px solid #222; font-size: 12px; color: #555; }
+/* ═══════════════════════════════════════════
+   САЙДБАР
+═══════════════════════════════════════════ */
+.widget {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.widget-title {
+  font-family: var(--fh); font-size: 14px; font-weight: 700;
+  color: #fff; background: var(--dark); padding: 12px 14px;
+  display: flex; align-items: center; gap: 7px; letter-spacing: .5px;
+}
+.widget-title::before {
+  content: ''; display: block; width: 3px; height: 15px;
+  background: var(--red); border-radius: 2px;
+}
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; }
-    .casino-table-header, .casino-row { grid-template-columns: 30px 2fr 80px 1.2fr 60px 90px; }
-    .casino-table-header > *:nth-child(7), .casino-row > *:nth-child(7) { display: none; }
-    .deposit-grid { grid-template-columns: repeat(3, 1fr); }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .article-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .casino-grid { grid-template-columns: 1fr; }
-    .article-grid { grid-template-columns: 1fr; }
-    .casino-table-header, .casino-row { grid-template-columns: 26px 1.8fr 70px 1fr; }
-    .casino-table-header > *:nth-child(5), .casino-row > *:nth-child(5),
-    .casino-table-header > *:nth-child(6), .casino-row > *:nth-child(6) { display: none; }
-    .footer-top { grid-template-columns: 1fr; }
-  }
+/* Топ-10 */
+.t10-item {
+  display: flex; align-items: center; gap: 9px;
+  padding: 9px 13px; border-bottom: 1px solid var(--border);
+  transition: background .15s; min-height: 50px;
+}
+.t10-item:hover { background: #fafafa; }
+.t10-item:last-child { border-bottom: none; }
+.t10-pos {
+  font-family: var(--fh); font-size: 15px; font-weight: 700;
+  color: #ddd; width: 22px; text-align: center; flex-shrink: 0;
+}
+.t10-item:nth-child(1) .t10-pos { color: var(--gold); }
+.t10-item:nth-child(2) .t10-pos { color: #b0b0b0; }
+.t10-item:nth-child(3) .t10-pos { color: #cd7f32; }
+.t10-logo {
+  width: 46px; height: 28px; background: var(--dark);
+  border-radius: 5px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.t10-logo img { width: 46px; height: 28px; object-fit: contain; }
+.t10-info { flex: 1; min-width: 0; }
+.t10-name { font-size: 12px; font-weight: 700; color: var(--dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t10-stars { font-size: 10px; color: var(--gold); }
+.t10-btn {
+  background: var(--red); color: #fff; border-radius: 5px;
+  padding: 5px 12px; font-size: 11px; font-weight: 700;
+  flex-shrink: 0; min-height: 32px; display: flex; align-items: center;
+  transition: background .2s;
+}
+.t10-btn:hover { background: var(--red2); color: #fff; }
+
+/* Новости */
+.news-item {
+  display: flex; gap: 10px; padding: 10px 13px;
+  border-bottom: 1px solid var(--border); transition: background .15s; min-height: 48px;
+}
+.news-item:hover { background: #fafafa; }
+.news-item:last-child { border-bottom: none; }
+.news-thumb {
+  width: 50px; height: 34px; background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 5px; flex-shrink: 0; display: flex; align-items: center;
+  justify-content: center; font-size: 16px;
+}
+.news-body { flex: 1; min-width: 0; }
+.news-title { font-size: 12px; font-weight: 700; color: var(--dark); line-height: 1.35; margin-bottom: 2px; }
+.news-date { font-size: 10px; color: var(--muted); }
+
+/* Бонусы в сайдбаре */
+.sb-bonus-item {
+  display: flex; gap: 9px; padding: 10px 13px;
+  border-bottom: 1px solid var(--border); align-items: center; min-height: 54px;
+}
+.sb-bonus-item:last-child { border-bottom: none; }
+.sb-bonus-logo {
+  width: 46px; height: 28px; background: var(--dark);
+  border-radius: 5px; overflow: hidden; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.sb-bonus-logo img { width: 46px; height: 28px; object-fit: contain; }
+.sb-bonus-info { flex: 1; min-width: 0; }
+.sb-bonus-name { font-size: 12px; font-weight: 700; color: var(--dark); }
+.sb-bonus-amount { font-size: 12px; color: var(--green); font-weight: 700; }
+.sb-bonus-stars { font-size: 10px; color: var(--gold); }
+.sb-bonus-btn {
+  background: var(--green); color: #fff; border-radius: 5px;
+  padding: 5px 10px; font-size: 11px; font-weight: 700;
+  flex-shrink: 0; min-height: 32px; display: flex; align-items: center;
+  transition: background .2s; white-space: nowrap;
+}
+.sb-bonus-btn:hover { background: #1f8a48; color: #fff; }
+
+/* Методы в сайдбаре */
+.sb-deposit-list { padding: 10px 13px; }
+.sb-deposit-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 12px; min-height: 38px;
+}
+.sb-deposit-item:last-child { border-bottom: none; }
+.sb-deposit-icon {
+  width: 28px; height: 28px; background: #f5f5f5;
+  border-radius: 5px; display: flex; align-items: center;
+  justify-content: center; font-size: 14px; flex-shrink: 0;
+}
+
+/* Подписка */
+.subscribe { padding: 13px; }
+.subscribe input {
+  width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+  border-radius: 7px; font-size: 14px; color: var(--text); outline: none;
+  margin-bottom: 9px; transition: border-color .2s; min-height: 46px;
+}
+.subscribe input:focus { border-color: var(--red); }
+.subscribe input::placeholder { color: #bbb; }
+.subscribe button {
+  width: 100%; padding: 12px; background: var(--red); color: #fff;
+  border-radius: 7px; font-size: 14px; font-weight: 700; min-height: 46px;
+  transition: background .2s;
+}
+.subscribe button:hover { background: var(--red2); }
+
+/* ═══════════════════════════════════════════
+   ФУТЕР
+═══════════════════════════════════════════ */
+footer { background: var(--darker); color: #888; margin-top: 16px; }
+.footer-grid {
+  max-width: 1220px; margin: 0 auto;
+  padding: 36px 16px 28px;
+  display: grid; grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 480px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.footer-brand .footer-logo {
+  font-family: var(--fh); font-size: 22px; font-weight: 700;
+  color: #fff; margin-bottom: 10px;
+}
+.footer-brand .footer-logo span { color: var(--red); }
+.footer-desc { font-size: 13px; color: #666; line-height: 1.7; }
+.footer-col h4 {
+  font-family: var(--fh); font-size: 12px; color: #aaa;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  margin-bottom: 12px; padding-bottom: 7px;
+  border-bottom: 1px solid #2a2a40;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: #666; transition: color .2s; }
+.footer-links a:hover { color: var(--red); }
+.footer-payments {
+  max-width: 1220px; margin: 0 auto;
+  padding: 16px; border-top: 1px solid #2a2a40;
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+}
+.pay-badge {
+  background: #1e1e30; border-radius: 5px;
+  padding: 5px 12px; font-size: 11px; color: #888;
+}
+.footer-bottom {
+  text-align: center; padding: 14px 16px;
+  border-top: 1px solid #1a1a28; font-size: 11px; color: #444; line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   КНОПКА НАВЕРХ
+═══════════════════════════════════════════ */
+#back-top {
+  position: fixed; bottom: 20px; right: 16px;
+  width: 46px; height: 46px; background: var(--red); color: #fff;
+  border-radius: 50%; font-size: 20px; z-index: 300;
+  box-shadow: 0 4px 16px rgba(224,32,32,.4);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none; display: flex; align-items: center; justify-content: center;
+}
+#back-top.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+#back-top:hover { background: var(--red2); }
+
+/* ТОСТ */
+.toast {
+  position: fixed; bottom: 80px; left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  background: var(--green); color: #fff;
+  padding: 10px 22px; border-radius: 8px;
+  font-weight: 700; font-size: 13px; z-index: 400;
+  opacity: 0; transition: opacity .3s, transform .3s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP BAR (скрыт на мобиле) -->
 <div class="topbar">
-  <div class="inner">
+  <div class="container" style="max-width:1220px">
     <a href="#">Войти</a>
     <a href="#">Регистрация</a>
+    <a href="#">Промокод: <strong style="color:var(--gold)">RUBLIK</strong></a>
   </div>
 </div>
 
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">
+    <a href="#" style="text-decoration:none;">
       <div class="logo-text">CASINO<span> EXPERT</span></div>
+      <span class="logo-sub">Рейтинг · Бонусы · Зеркала 2026</span>
     </a>
-    <div class="social-links">
-      <a href="#" title="VK">vk</a>
-      <a href="#" title="Telegram">tg</a>
-      <a href="#" title="YouTube">yt</a>
+
+    <div class="header-right">
+      <div class="social-links">
+        <a href="#" title="VK">vk</a>
+        <a href="#" title="Telegram">tg</a>
+      </div>
+      <div class="auth-btns">
+        <a href="#" class="btn-login">Войти</a>
+        <a href="#" class="btn-reg">Регистрация</a>
+      </div>
     </div>
-    <div class="auth-btns">
-      <a href="#" class="btn-login">Войти</a>
-      <a href="#" class="btn-register">Регистрация</a>
-    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <!-- NAV -->
-<nav>
+<nav id="nav-menu">
   <div class="nav-inner">
     <div class="nav-item active"><a href="#">Главная</a></div>
     <div class="nav-item"><a href="#">Рейтинг казино</a></div>
     <div class="nav-item"><a href="#">Зеркала казино</a></div>
-    <div class="nav-item">
-      <a href="#">Бонусы ▾</a>
+    <div class="nav-item" id="nav-bonuses">
+      <a href="#" onclick="toggleSub('nav-bonuses',event)">Бонусы <span class="nav-arrow">▾</span></a>
       <div class="dropdown">
         <a href="#">Бездепозитный бонус</a>
         <a href="#">Бесплатные вращения</a>
@@ -329,8 +811,8 @@
         <a href="#">Релоад бонус</a>
       </div>
     </div>
-    <div class="nav-item">
-      <a href="#">Депозит ▾</a>
+    <div class="nav-item" id="nav-deposit">
+      <a href="#" onclick="toggleSub('nav-deposit',event)">Депозит <span class="nav-arrow">▾</span></a>
       <div class="dropdown">
         <a href="#">Bitcoin / Крипто</a>
         <a href="#">Visa / Mastercard</a>
@@ -342,1162 +824,657 @@
   </div>
 </nav>
 
-<!-- MAIN LAYOUT -->
-<div class="container">
-  <div class="main-content">
+<!-- ПРОМО-БАР (только мобиль) -->
+<div class="promo-bar">
+  <span>🎁 Промокод:</span>
+  <strong>RUBLIK</strong>
+  <button class="promo-copy-btn" onclick="copyPromo()">КОПИРОВАТЬ</button>
+</div>
 
-    <!-- BANNER -->
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<div class="page-body">
+
+  <!-- ГЛАВНАЯ КОЛОНКА -->
+  <main class="main-col">
+
+    <!-- БАННЕР -->
     <div class="banner">
       <div>
-        <h2>Рейтинг онлайн казино <span>2026 года</span></h2>
-        <p style="color:#aaa;font-size:14px;margin-top:10px;">41 проверенное казино · Бонусы до 500% · Промокод RUBLIK</p>
+        <div class="banner-title">Рейтинг казино <span>2026</span></div>
+        <div class="banner-sub">41 проверенное казино · бонусы до 500% · промокод RUBLIK</div>
       </div>
       <a href="#rating" class="banner-cta">🏆 Смотреть рейтинг</a>
     </div>
 
-    <!-- ═══ ТАБЛИЦА РЕЙТИНГА ═══ -->
-    <div class="section-box" id="rating">
-      <div class="section-title">
-        🏆 Рейтинг казино 2026
-        <small>41 проверенное казино</small>
+    <!-- ─── ТАБЛИЦА РЕЙТИНГА ─── -->
+    <div class="block" id="rating">
+      <div class="block-head">
+        <div class="block-title">🏆 Рейтинг казино 2026</div>
+        <div class="block-sub">41 казино</div>
       </div>
       <div class="intro-text">
-        Наш рейтинг составлен на основе независимых тестов: скорость выплат, честность бонусных условий, качество поддержки и наличие лицензии. <strong>Все партнёрские ссылки актуальны</strong> — при блокировке обновляются автоматически. Промокод <strong>RUBLIK</strong> даёт дополнительные бонусы при регистрации.
+        Рейтинг составлен на основе тестов: скорость выплат, лицензия, бонусные условия. <strong>Промокод RUBLIK</strong> — дополнительные бонусы при регистрации в любом казино.
       </div>
 
-      <div class="casino-table">
-        <div class="casino-table-header">
-          <div>#</div>
-          <div>Казино</div>
-          <div>Рейтинг</div>
-          <div>Бонус</div>
-          <div>Бездеп</div>
-          <div>Устройства</div>
-          <div>Играть</div>
-        </div>
+      <!-- ДЕСКТОП: горизонтальная таблица -->
+      <div class="table-scroll">
+        <table class="casino-table" style="border-collapse:collapse;width:100%;">
+          <thead>
+            <tr class="ct-head">
+              <th style="text-align:left">#</th>
+              <th style="text-align:left">Казино</th>
+              <th style="text-align:left">Рейтинг</th>
+              <th style="text-align:left">Бонус</th>
+              <th style="text-align:center">Бездеп</th>
+              <th style="text-align:left">Устройства</th>
+              <th style="text-align:left">Играть</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Macro: row(pos, img, name, key, stars, rating, bonus, subbons, bezdep, devices, link) -->
+            <tr class="ct-row">
+              <td class="ct-num">1</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div><div><span class="ct-name">Vavada</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">5.0/5</span></td>
+              <td><span class="bonus-amount">100% до 50 000 ₽</span><span class="bonus-rules">+ 100 ФС</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">2</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/duel.webp" alt="Duel" loading="lazy"></div><div><span class="ct-name">Duel Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></td>
+              <td><span class="bonus-amount">120% + 250 ФС</span><span class="bonus-rules">PvP дуэли</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">3</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/kush.webp" alt="Куш" loading="lazy"></div><div><span class="ct-name">Куш Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></td>
+              <td><span class="bonus-amount">200% + 300 ФС</span><span class="bonus-rules">Джекпоты</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">4</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/cat.webp" alt="Cat" loading="lazy"></div><div><span class="ct-name">Cat Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
+              <td><span class="bonus-amount">200% до 100 000 ₽</span><span class="bonus-rules">+ кэшбэк 15%</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">5</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/joy.webp" alt="Joy" loading="lazy"></div><div><span class="ct-name">Joy Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
+              <td><span class="bonus-amount">200% + 200 ФС</span><span class="bonus-rules">Лайв казино</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">6</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div><div><span class="ct-name">Stake Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
+              <td><span class="bonus-amount">Крипто-бонус</span><span class="bonus-rules">Без KYC</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">7</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div><div><span class="ct-name">Rox Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
+              <td><span class="bonus-amount">100% + кэшбэк 10%</span><span class="bonus-rules">Без условий</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">8</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div><div><span class="ct-name">Flagman</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
+              <td><span class="bonus-amount">150% + 250 ФС</span><span class="bonus-rules">Топ рунета</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">9</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/gama.webp" alt="Gama" loading="lazy"></div><div><span class="ct-name">Gama Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
+              <td><span class="bonus-amount">150% + ФС</span><span class="bonus-rules">Live дилеры</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="GAMA CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">10</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy"></div><div><span class="ct-name">Ramenbet</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></td>
+              <td><span class="bonus-amount">150% + 300 ФС</span><span class="bonus-rules">Азиатский</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="RAMENBET">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">11</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/beef.webp" alt="Beef" loading="lazy"></div><div><span class="ct-name">Beef Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></td>
+              <td><span class="bonus-amount">100% + рейкбэк</span><span class="bonus-rules">Ежедневно</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">12</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/vodka.webp" alt="Vodka" loading="lazy"></div><div><span class="ct-name">Vodka Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></td>
+              <td><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Русский стиль</span></td>
+              <td class="bezdep-yes">✓</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="VODKA CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">13</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/fugu.webp" alt="Fugu" loading="lazy"></div><div><span class="ct-name">Fugu Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></td>
+              <td><span class="bonus-amount">100% + 50 ФС</span><span class="bonus-rules">Японский</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="FUGU CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">14</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/cactus.webp" alt="Cactus" loading="lazy"></div><div><span class="ct-name">Cactus Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></td>
+              <td><span class="bonus-amount">100% + кэшбэк 10%</span><span class="bonus-rules">Еженед.</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CACTUS CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">15</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/banda.webp" alt="Banda" loading="lazy"></div><div><span class="ct-name">Banda Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></td>
+              <td><span class="bonus-amount">125% + 150 ФС</span><span class="bonus-rules">Турниры</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="BANDA CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">16</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/champion.webp" alt="Champion" loading="lazy"></div><div><span class="ct-name">Champion Slots</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></td>
+              <td><span class="bonus-amount">100% + 200 ФС</span><span class="bonus-rules">Чемпионы</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CHAMPION SLOTS">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">17</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/casinox.webp" alt="CasinoX" loading="lazy"></div><div><span class="ct-name">Casino X</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></td>
+              <td><span class="bonus-amount">100% + кэшбэк</span><span class="bonus-rules">3000+ игр</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CASINO X">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">18</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/cryptoboss.webp" alt="Cryptoboss" loading="lazy"></div><div><span class="ct-name">Cryptoboss</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></td>
+              <td><span class="bonus-amount">Крипто-бонус</span><span class="bonus-rules">Без KYC</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">19</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/kent.webp" alt="Kent" loading="lazy"></div><div><span class="ct-name">Kent Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></td>
+              <td><span class="bonus-amount">100% на депозит</span><span class="bonus-rules">Рус. поддержка</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="KENT CASINO">Играть</a></td>
+            </tr>
+            <tr class="ct-row">
+              <td class="ct-num">20</td>
+              <td><div class="ct-brand"><div class="ct-logo"><img src="images/leebet.webp" alt="Leebet" loading="lazy"></div><div><span class="ct-name">Leebet Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
+              <td><div class="stars">★★★★☆</div><span class="rating-val">4.1/5</span></td>
+              <td><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Nova Partners</span></td>
+              <td class="bezdep-no">—</td>
+              <td class="devices">🖥 📱</td>
+              <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="LEEBET CASINO">Играть</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <!-- 1 -->
-        <div class="casino-row">
-          <div class="casino-num">1</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/vavada.webp" alt="Vavada Casino"></div>
-            <div class="casino-name-block"><a href="#">Vavada Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">5.0/5</span></div>
-          <div><span class="bonus-amount">100% до 50 000 ₽</span><span class="bonus-rules">+ 100 фриспинов</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a></div>
-        </div>
-        <!-- 2 -->
-        <div class="casino-row">
-          <div class="casino-num">2</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/duel.webp" alt="Duel Casino"></div>
-            <div class="casino-name-block"><a href="#">Duel Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></div>
-          <div><span class="bonus-amount">120% + 250 ФС</span><span class="bonus-rules">PvP дуэли</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a></div>
-        </div>
-        <!-- 3 -->
-        <div class="casino-row">
-          <div class="casino-num">3</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/kush.webp" alt="Куш Casino"></div>
-            <div class="casino-name-block"><a href="#">Куш Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></div>
-          <div><span class="bonus-amount">200% + 300 ФС</span><span class="bonus-rules">Джекпоты</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a></div>
-        </div>
-        <!-- 4 -->
-        <div class="casino-row">
-          <div class="casino-num">4</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/cat.webp" alt="Cat Casino"></div>
-            <div class="casino-name-block"><a href="#">Cat Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></div>
-          <div><span class="bonus-amount">200% до 100 000 ₽</span><span class="bonus-rules">+ кэшбэк 15%</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a></div>
-        </div>
-        <!-- 5 -->
-        <div class="casino-row">
-          <div class="casino-num">5</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/joy.webp" alt="Joy Casino"></div>
-            <div class="casino-name-block"><a href="#">Joy Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></div>
-          <div><span class="bonus-amount">200% + 200 ФС</span><span class="bonus-rules">Лайв казино</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a></div>
-        </div>
-        <!-- 6 -->
-        <div class="casino-row">
-          <div class="casino-num">6</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/stake.webp" alt="Stake Casino"></div>
-            <div class="casino-name-block"><a href="#">Stake Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></div>
-          <div><span class="bonus-amount">Крипто-бонус</span><span class="bonus-rules">Без KYC</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a></div>
-        </div>
-        <!-- 7 -->
-        <div class="casino-row">
-          <div class="casino-num">7</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/rox.webp" alt="Rox Casino"></div>
-            <div class="casino-name-block"><a href="#">Rox Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></div>
-          <div><span class="bonus-amount">100% + кэшбэк 10%</span><span class="bonus-rules">Без условий</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a></div>
-        </div>
-        <!-- 8 -->
-        <div class="casino-row">
-          <div class="casino-num">8</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/flagman.webp" alt="Flagman Casino"></div>
-            <div class="casino-name-block"><a href="#">Flagman Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></div>
-          <div><span class="bonus-amount">150% + 250 ФС</span><span class="bonus-rules">Топ рунета</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a></div>
-        </div>
-        <!-- 9 -->
-        <div class="casino-row">
-          <div class="casino-num">9</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/gama.webp" alt="Gama Casino"></div>
-            <div class="casino-name-block"><a href="#">Gama Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></div>
-          <div><span class="bonus-amount">150% + ФС</span><span class="bonus-rules">Лайв дилеры</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="GAMA CASINO">Играть</a></div>
-        </div>
-        <!-- 10 -->
-        <div class="casino-row">
-          <div class="casino-num">10</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/ramenbet.webp" alt="Ramenbet"></div>
-            <div class="casino-name-block"><a href="#">Ramenbet</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></div>
-          <div><span class="bonus-amount">150% + 300 ФС</span><span class="bonus-rules">Азиатский стиль</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="RAMENBET">Играть</a></div>
-        </div>
-        <!-- 11 -->
-        <div class="casino-row">
-          <div class="casino-num">11</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/beef.webp" alt="Beef Casino"></div>
-            <div class="casino-name-block"><a href="#">Beef Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></div>
-          <div><span class="bonus-amount">100% + рейкбэк</span><span class="bonus-rules">Каждый день</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Играть</a></div>
-        </div>
-        <!-- 12 -->
-        <div class="casino-row">
-          <div class="casino-num">12</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/vodka.webp" alt="Vodka Casino"></div>
-            <div class="casino-name-block"><a href="#">Vodka Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Русский стиль</span></div>
-          <div class="bezdep-yes">✓</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="VODKA CASINO">Играть</a></div>
-        </div>
-        <!-- 13 -->
-        <div class="casino-row">
-          <div class="casino-num">13</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/fugu.webp" alt="Fugu Casino"></div>
-            <div class="casino-name-block"><a href="#">Fugu Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></div>
-          <div><span class="bonus-amount">100% + 50 ФС</span><span class="bonus-rules">Японский стиль</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="FUGU CASINO">Играть</a></div>
-        </div>
-        <!-- 14 -->
-        <div class="casino-row">
-          <div class="casino-num">14</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/cactus.webp" alt="Cactus Casino"></div>
-            <div class="casino-name-block"><a href="#">Cactus Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></div>
-          <div><span class="bonus-amount">100% + кэшбэк 10%</span><span class="bonus-rules">Еженедельно</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="CACTUS CASINO">Играть</a></div>
-        </div>
-        <!-- 15 -->
-        <div class="casino-row">
-          <div class="casino-num">15</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/banda.webp" alt="Banda Casino"></div>
-            <div class="casino-name-block"><a href="#">Banda Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></div>
-          <div><span class="bonus-amount">125% + 150 ФС</span><span class="bonus-rules">Турниры</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="BANDA CASINO">Играть</a></div>
-        </div>
-        <!-- 16 -->
-        <div class="casino-row">
-          <div class="casino-num">16</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/champion.webp" alt="Champion Slots"></div>
-            <div class="casino-name-block"><a href="#">Champion Slots</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></div>
-          <div><span class="bonus-amount">100% + 200 ФС</span><span class="bonus-rules">Чемпионы</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="CHAMPION SLOTS">Играть</a></div>
-        </div>
-        <!-- 17 -->
-        <div class="casino-row">
-          <div class="casino-num">17</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/casinox.webp" alt="Casino X"></div>
-            <div class="casino-name-block"><a href="#">Casino X</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></div>
-          <div><span class="bonus-amount">100% + кэшбэк</span><span class="bonus-rules">3000+ игр</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="CASINO X">Играть</a></div>
-        </div>
-        <!-- 18 -->
-        <div class="casino-row">
-          <div class="casino-num">18</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/cryptoboss.webp" alt="Cryptoboss"></div>
-            <div class="casino-name-block"><a href="#">Cryptoboss</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></div>
-          <div><span class="bonus-amount">Крипто-бонус</span><span class="bonus-rules">Анонимно</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱 💻</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Играть</a></div>
-        </div>
-        <!-- 19 -->
-        <div class="casino-row">
-          <div class="casino-num">19</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/kent.webp" alt="Kent Casino"></div>
-            <div class="casino-name-block"><a href="#">Kent Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></div>
-          <div><span class="bonus-amount">100% на депозит</span><span class="bonus-rules">Рус. поддержка</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="KENT CASINO">Играть</a></div>
-        </div>
-        <!-- 20 -->
-        <div class="casino-row">
-          <div class="casino-num">20</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/leebet.webp" alt="Leebet Casino"></div>
-            <div class="casino-name-block"><a href="#">Leebet Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.1/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Nova Partners</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="LEEBET CASINO">Играть</a></div>
-        </div>
-        <!-- 21 -->
-        <div class="casino-row">
-          <div class="casino-num">21</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/gizbo.webp" alt="Gizbo Casino"></div>
-            <div class="casino-name-block"><a href="#">Gizbo Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.1/5</span></div>
-          <div><span class="bonus-amount">150% + достижения</span><span class="bonus-rules">Геймификация</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="GIZBO CASINO">Играть</a></div>
-        </div>
-        <!-- 22 -->
-        <div class="casino-row">
-          <div class="casino-num">22</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/auf.webp" alt="Auf Casino"></div>
-            <div class="casino-name-block"><a href="#">Auf Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.0/5</span></div>
-          <div><span class="bonus-amount">100% + колесо удачи</span><span class="bonus-rules">Ежедневно</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="AUF CASINO">Играть</a></div>
-        </div>
-        <!-- 23 -->
-        <div class="casino-row">
-          <div class="casino-num">23</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/starda.webp" alt="Starda Casino"></div>
-            <div class="casino-name-block"><a href="#">Starda Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">4.0/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Лицензия</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="STARDA CASINO">Играть</a></div>
-        </div>
-        <!-- 24 -->
-        <div class="casino-row">
-          <div class="casino-num">24</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/sol.webp" alt="Sol Casino"></div>
-            <div class="casino-name-block"><a href="#">Sol Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">3.9/5</span></div>
-          <div><span class="bonus-amount">150% + турниры</span><span class="bonus-rules">Высокий RTP</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="SOL CASINO">Играть</a></div>
-        </div>
-        <!-- 25 -->
-        <div class="casino-row">
-          <div class="casino-num">25</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/arkada.webp" alt="Arkada Casino"></div>
-            <div class="casino-name-block"><a href="#">Arkada Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★★☆</div><span class="rating-val">3.9/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Быстрый вывод</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="ARKADA CASINO">Играть</a></div>
-        </div>
-        <!-- 26 -->
-        <div class="casino-row">
-          <div class="casino-num">26</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/izzi.webp" alt="Izzi Casino"></div>
-            <div class="casino-name-block"><a href="#">Izzi Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.8/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Новички</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="IZZI CASINO">Играть</a></div>
-        </div>
-        <!-- 27 -->
-        <div class="casino-row">
-          <div class="casino-num">27</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/drip.webp" alt="Drip Casino"></div>
-            <div class="casino-name-block"><a href="#">Drip Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.8/5</span></div>
-          <div><span class="bonus-amount">100% + кэшбэк</span><span class="bonus-rules">Быстро</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="DRIP CASINO">Играть</a></div>
-        </div>
-        <!-- 28 -->
-        <div class="casino-row">
-          <div class="casino-num">28</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/1go.webp" alt="1Go Casino"></div>
-            <div class="casino-name-block"><a href="#">1Go Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.7/5</span></div>
-          <div><span class="bonus-amount">100% + ежедневные</span><span class="bonus-rules">Каждый день</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="1GO CASINO">Играть</a></div>
-        </div>
-        <!-- 29 -->
-        <div class="casino-row">
-          <div class="casino-num">29</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/irvin.webp" alt="Irvin Casino"></div>
-            <div class="casino-name-block"><a href="#">Irvin Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.7/5</span></div>
-          <div><span class="bonus-amount">100% + авто-вывод</span><span class="bonus-rules">до 30 мин</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="IRVIN CASINO">Играть</a></div>
-        </div>
-        <!-- 30 -->
-        <div class="casino-row">
-          <div class="casino-num">30</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/jet.webp" alt="Jet Casino"></div>
-            <div class="casino-name-block"><a href="#">Jet Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.6/5</span></div>
-          <div><span class="bonus-amount">100% на депозит</span><span class="bonus-rules">Для новичков</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="JET CASINO">Играть</a></div>
-        </div>
-        <!-- 31 -->
-        <div class="casino-row">
-          <div class="casino-num">31</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/daddy.webp" alt="Daddy Casino"></div>
-            <div class="casino-name-block"><a href="#">Daddy Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.6/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">VIP программа</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="DADDY CASINO">Играть</a></div>
-        </div>
-        <!-- 32 -->
-        <div class="casino-row">
-          <div class="casino-num">32</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/fresh.webp" alt="Fresh Casino"></div>
-            <div class="casino-name-block"><a href="#">Fresh Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.5/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Большой каталог</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="FRESH CASINO">Играть</a></div>
-        </div>
-        <!-- 33 -->
-        <div class="casino-row">
-          <div class="casino-num">33</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/martin.webp" alt="Martin Casino"></div>
-            <div class="casino-name-block"><a href="#">Martin Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.5/5</span></div>
-          <div><span class="bonus-amount">125% + Премиум</span><span class="bonus-rules">Элегантный</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="MARTIN CASINO">Играть</a></div>
-        </div>
-        <!-- 34 -->
-        <div class="casino-row">
-          <div class="casino-num">34</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/monro.webp" alt="Monro Casino"></div>
-            <div class="casino-name-block"><a href="#">Monro Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.4/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Надёжно</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="MONRO CASINO">Играть</a></div>
-        </div>
-        <!-- 35 -->
-        <div class="casino-row">
-          <div class="casino-num">35</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/lexx.webp" alt="Lexx Casino"></div>
-            <div class="casino-name-block"><a href="#">Lexx Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.4/5</span></div>
-          <div><span class="bonus-amount">100% + вейджер x25</span><span class="bonus-rules">Для новичков</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="LEXX CASINO">Играть</a></div>
-        </div>
-        <!-- 36 -->
-        <div class="casino-row">
-          <div class="casino-num">36</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/r7.webp" alt="R7 Casino"></div>
-            <div class="casino-name-block"><a href="#">R7 Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.3/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Ретро стиль</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="R7 CASINO">Играть</a></div>
-        </div>
-        <!-- 37 -->
-        <div class="casino-row">
-          <div class="casino-num">37</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/volna.webp" alt="Volna Casino"></div>
-            <div class="casino-name-block"><a href="#">Volna Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.3/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Морская тема</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="VOLNA CASINO">Играть</a></div>
-        </div>
-        <!-- 38 -->
-        <div class="casino-row">
-          <div class="casino-num">38</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/kometa.webp" alt="Комета Casino"></div>
-            <div class="casino-name-block"><a href="#">Комета Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.2/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Космос</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="КОМЕТА CASINO">Играть</a></div>
-        </div>
-        <!-- 39 -->
-        <div class="casino-row">
-          <div class="casino-num">39</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/legzo.webp" alt="Legzo Casino"></div>
-            <div class="casino-name-block"><a href="#">Legzo Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.2/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Стиль улиц</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="LEGZO CASINO">Играть</a></div>
-        </div>
-        <!-- 40 -->
-        <div class="casino-row">
-          <div class="casino-num">40</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/unlim.webp" alt="Unlim Casino"></div>
-            <div class="casino-name-block"><a href="#">Unlim Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.1/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Без лимитов</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="UNLIM CASINO">Играть</a></div>
-        </div>
-        <!-- 41 -->
-        <div class="casino-row">
-          <div class="casino-num">41</div>
-          <div class="casino-brand">
-            <div class="casino-logo-ph"><img src="images/hipe.webp" alt="Hype Casino"></div>
-            <div class="casino-name-block"><a href="#">Hype Casino</a><span class="casino-compare">+ Сравнить</span></div>
-          </div>
-          <div><div class="stars">★★★☆☆</div><span class="rating-val">3.0/5</span></div>
-          <div><span class="bonus-amount">100% + ФС</span><span class="bonus-rules">Молодёжный</span></div>
-          <div class="bezdep-no">—</div>
-          <div class="devices">🖥 📱</div>
-          <div><a href="#" class="btn-play" target="_blank" rel="noopener sponsored">Играть</a></div>
-        </div>
+      <!-- МОБИЛЬ: карточки казино -->
+      <div class="casino-cards-mobile">
+        <div class="cm-card"><div class="cm-pos">1</div><div class="cm-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div><div class="cm-info"><div class="cm-name">Vavada Casino</div><div class="cm-bonus">100% до 50 000 ₽ + 100 ФС</div><div class="cm-stars">★★★★★ 5.0</div></div><a href="#" class="cm-btn" target="_blank" data-casino="VAVADA CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">2</div><div class="cm-logo"><img src="images/duel.webp" alt="Duel" loading="lazy"></div><div class="cm-info"><div class="cm-name">Duel Casino</div><div class="cm-bonus">120% + 250 фриспинов</div><div class="cm-stars">★★★★★ 4.9</div></div><a href="#" class="cm-btn" target="_blank" data-casino="DUEL CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">3</div><div class="cm-logo"><img src="images/kush.webp" alt="Куш" loading="lazy"></div><div class="cm-info"><div class="cm-name">Куш Casino</div><div class="cm-bonus">200% + 300 фриспинов</div><div class="cm-stars">★★★★★ 4.9</div></div><a href="#" class="cm-btn" target="_blank" data-casino="КУШ CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">4</div><div class="cm-logo"><img src="images/cat.webp" alt="Cat" loading="lazy"></div><div class="cm-info"><div class="cm-name">Cat Casino</div><div class="cm-bonus">200% до 100 000 ₽</div><div class="cm-stars">★★★★★ 4.8</div></div><a href="#" class="cm-btn" target="_blank" data-casino="CAT CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">5</div><div class="cm-logo"><img src="images/joy.webp" alt="Joy" loading="lazy"></div><div class="cm-info"><div class="cm-name">Joy Casino</div><div class="cm-bonus">200% + 200 фриспинов</div><div class="cm-stars">★★★★★ 4.8</div></div><a href="#" class="cm-btn" target="_blank" data-casino="JOY CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">6</div><div class="cm-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div><div class="cm-info"><div class="cm-name">Stake Casino</div><div class="cm-bonus">Крипто-бонус · Без KYC</div><div class="cm-stars">★★★★★ 4.8</div></div><a href="#" class="cm-btn" target="_blank" data-casino="STAKE CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">7</div><div class="cm-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div><div class="cm-info"><div class="cm-name">Rox Casino</div><div class="cm-bonus">100% + кэшбэк 10%</div><div class="cm-stars">★★★★★ 4.7</div></div><a href="#" class="cm-btn" target="_blank" data-casino="ROX CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">8</div><div class="cm-logo"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div><div class="cm-info"><div class="cm-name">Flagman Casino</div><div class="cm-bonus">150% + 250 фриспинов</div><div class="cm-stars">★★★★★ 4.7</div></div><a href="#" class="cm-btn" target="_blank" data-casino="FLAGMAN CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">9</div><div class="cm-logo"><img src="images/gama.webp" alt="Gama" loading="lazy"></div><div class="cm-info"><div class="cm-name">Gama Casino</div><div class="cm-bonus">150% + ФС · Live дилеры</div><div class="cm-stars">★★★★★ 4.7</div></div><a href="#" class="cm-btn" target="_blank" data-casino="GAMA CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">10</div><div class="cm-logo"><img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy"></div><div class="cm-info"><div class="cm-name">Ramenbet</div><div class="cm-bonus">150% + 300 фриспинов</div><div class="cm-stars">★★★★☆ 4.6</div></div><a href="#" class="cm-btn" target="_blank" data-casino="RAMENBET">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">11</div><div class="cm-logo"><img src="images/beef.webp" alt="Beef" loading="lazy"></div><div class="cm-info"><div class="cm-name">Beef Casino</div><div class="cm-bonus">100% + рейкбэк ежедневно</div><div class="cm-stars">★★★★☆ 4.6</div></div><a href="#" class="cm-btn" target="_blank" data-casino="BEEF CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">12</div><div class="cm-logo"><img src="images/vodka.webp" alt="Vodka" loading="lazy"></div><div class="cm-info"><div class="cm-name">Vodka Casino</div><div class="cm-bonus">100% + фриспины</div><div class="cm-stars">★★★★☆ 4.5</div></div><a href="#" class="cm-btn" target="_blank" data-casino="VODKA CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">13</div><div class="cm-logo"><img src="images/fugu.webp" alt="Fugu" loading="lazy"></div><div class="cm-info"><div class="cm-name">Fugu Casino</div><div class="cm-bonus">100% + 50 фриспинов</div><div class="cm-stars">★★★★☆ 4.5</div></div><a href="#" class="cm-btn" target="_blank" data-casino="FUGU CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">14</div><div class="cm-logo"><img src="images/cactus.webp" alt="Cactus" loading="lazy"></div><div class="cm-info"><div class="cm-name">Cactus Casino</div><div class="cm-bonus">100% + кэшбэк 10%</div><div class="cm-stars">★★★★☆ 4.4</div></div><a href="#" class="cm-btn" target="_blank" data-casino="CACTUS CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">15</div><div class="cm-logo"><img src="images/banda.webp" alt="Banda" loading="lazy"></div><div class="cm-info"><div class="cm-name">Banda Casino</div><div class="cm-bonus">125% + 150 фриспинов</div><div class="cm-stars">★★★★☆ 4.4</div></div><a href="#" class="cm-btn" target="_blank" data-casino="BANDA CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">16</div><div class="cm-logo"><img src="images/champion.webp" alt="Champion" loading="lazy"></div><div class="cm-info"><div class="cm-name">Champion Slots</div><div class="cm-bonus">100% + 200 фриспинов</div><div class="cm-stars">★★★★☆ 4.3</div></div><a href="#" class="cm-btn" target="_blank" data-casino="CHAMPION SLOTS">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">17</div><div class="cm-logo"><img src="images/casinox.webp" alt="CasinoX" loading="lazy"></div><div class="cm-info"><div class="cm-name">Casino X</div><div class="cm-bonus">100% + кэшбэк · 3000+ игр</div><div class="cm-stars">★★★★☆ 4.3</div></div><a href="#" class="cm-btn" target="_blank" data-casino="CASINO X">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">18</div><div class="cm-logo"><img src="images/cryptoboss.webp" alt="Cryptoboss" loading="lazy"></div><div class="cm-info"><div class="cm-name">Cryptoboss</div><div class="cm-bonus">Крипто-бонус · Без KYC</div><div class="cm-stars">★★★★☆ 4.2</div></div><a href="#" class="cm-btn" target="_blank" data-casino="CRYPTOBOSS">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">19</div><div class="cm-logo"><img src="images/kent.webp" alt="Kent" loading="lazy"></div><div class="cm-info"><div class="cm-name">Kent Casino</div><div class="cm-bonus">100% · Рус. поддержка 24/7</div><div class="cm-stars">★★★★☆ 4.2</div></div><a href="#" class="cm-btn" target="_blank" data-casino="KENT CASINO">Играть</a></div>
+        <div class="cm-card"><div class="cm-pos">20</div><div class="cm-logo"><img src="images/leebet.webp" alt="Leebet" loading="lazy"></div><div class="cm-info"><div class="cm-name">Leebet Casino</div><div class="cm-bonus">100% + фриспины</div><div class="cm-stars">★★★★☆ 4.1</div></div><a href="#" class="cm-btn" target="_blank" data-casino="LEEBET CASINO">Играть</a></div>
+      </div>
 
-      </div><!-- /casino-table -->
-      <button class="btn-compare-all">Сравнить выбранные казино</button>
-    </div><!-- /section-box -->
+      <div class="load-more">
+        <a href="#" class="btn-load">Показать все 41 казино</a>
+      </div>
+    </div><!-- /block rating -->
 
-    <!-- ═══ СЕТКА КАРТОЧЕК ═══ -->
-    <div class="section-box">
-      <div class="section-title">
-        ⭐ Топ казино — карточки
-        <small>Лучшие бонусы 2026</small>
+    <!-- ─── КАРТОЧКИ ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">⭐ Топ казино</div>
+        <div class="block-sub">Лучшие бонусы прямо сейчас</div>
       </div>
       <div class="casino-grid">
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/vavada.webp" alt="Vavada Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Vavada Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>100% до 50 000 ₽</span></div>
-            <div class="casino-card-row"><span>Фриспины</span><span>100 ФС</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/vavada.webp" alt="Vavada Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Vavada Casino</div>
+            <div class="card-row"><span>Бонус</span><span>100% до 50 000 ₽</span></div>
+            <div class="card-row"><span>Фриспины</span><span>100 ФС</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/duel.webp" alt="Duel Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Duel Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>120% + 250 ФС</span></div>
-            <div class="casino-card-row"><span>Особенность</span><span>PvP дуэли</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/duel.webp" alt="Duel Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Duel Casino</div>
+            <div class="card-row"><span>Бонус</span><span>120% + 250 ФС</span></div>
+            <div class="card-row"><span>Особенность</span><span>PvP дуэли</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/kush.webp" alt="Куш Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Куш Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>200% + 300 ФС</span></div>
-            <div class="casino-card-row"><span>Джекпоты</span><span>Ежедневно</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/kush.webp" alt="Куш Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Куш Casino</div>
+            <div class="card-row"><span>Бонус</span><span>200% + 300 ФС</span></div>
+            <div class="card-row"><span>Джекпоты</span><span>Ежедневно</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/cat.webp" alt="Cat Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Cat Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>200% до 100 000 ₽</span></div>
-            <div class="casino-card-row"><span>Кэшбэк</span><span>до 15%</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/cat.webp" alt="Cat Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Cat Casino</div>
+            <div class="card-row"><span>Бонус</span><span>200% до 100 000 ₽</span></div>
+            <div class="card-row"><span>Кэшбэк</span><span>до 15%</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/joy.webp" alt="Joy Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Joy Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>200% + 200 ФС</span></div>
-            <div class="casino-card-row"><span>Лайв казино</span><span>Да</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/rox.webp" alt="Rox Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Rox Casino</div>
+            <div class="card-row"><span>Бонус</span><span>100% на депозит</span></div>
+            <div class="card-row"><span>Кэшбэк</span><span>10% без условий</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/stake.webp" alt="Stake Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Stake Casino</a></h3>
-            <div class="casino-card-row"><span>Бонус</span><span>Крипто-бонус</span></div>
-            <div class="casino-card-row"><span>KYC</span><span>Не нужен</span></div>
-            <div class="casino-card-flag">🌍 BTC · ETH · USDT · 20+ монет</div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/stake.webp" alt="Stake Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Stake Casino</div>
+            <div class="card-row"><span>Бонус</span><span>Крипто-бонус</span></div>
+            <div class="card-row"><span>KYC</span><span>Не нужен</span></div>
+            <div class="card-flag">🌍 BTC · ETH · USDT</div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/rox.webp" alt="Rox Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Rox Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>100% на депозит</span></div>
-            <div class="casino-card-row"><span>Кэшбэк</span><span>10% без условий</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Flagman Casino</div>
+            <div class="card-row"><span>Бонус</span><span>150% + 250 ФС</span></div>
+            <div class="card-row"><span>Позиция</span><span>Топ рунета</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
         <div class="casino-card">
-          <div class="casino-card-top"><img src="images/flagman.webp" alt="Flagman Casino"></div>
-          <div class="casino-card-body">
-            <h3><a href="#">Flagman Casino</a></h3>
-            <div class="casino-card-row"><span>Приветственный бонус</span><span>150% + 250 ФС</span></div>
-            <div class="casino-card-row"><span>Позиция</span><span>Топ-10 рунета</span></div>
-            <div class="casino-card-flag">🇷🇺 Игроки из России · Промокод: <strong>RUBLIK</strong></div>
-            <div class="casino-card-btns">
-              <a href="#" class="btn-play-sm" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a>
-              <a href="#" class="btn-review-sm">Обзор</a>
+          <div class="card-top"><img src="images/joy.webp" alt="Joy Casino" loading="lazy"></div>
+          <div class="card-body">
+            <div class="card-name">Joy Casino</div>
+            <div class="card-row"><span>Бонус</span><span>200% + 200 ФС</span></div>
+            <div class="card-row"><span>Лайв</span><span>Да</span></div>
+            <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
+            <div class="card-btns">
+              <a href="#" class="card-btn-play" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a>
+              <a href="#" class="card-btn-review">Обзор</a>
             </div>
           </div>
         </div>
-
-      </div><!-- /casino-grid -->
-      <div class="load-more-wrap">
-        <a href="#" class="btn-load-more">Показать все 41 казино</a>
       </div>
     </div>
 
-    <!-- ═══ ОБЗОРЫ С ОПИСАНИЕМ ═══ -->
-    <div class="section-box">
-      <div class="section-title">📋 Обзоры казино</div>
-      <div class="casino-review-list">
-
-        <div class="casino-review-item">
-          <div class="casino-review-img"><img src="images/vavada.webp" alt="Vavada Casino"></div>
-          <div class="casino-review-body">
-            <h4><a href="#">Vavada Casino</a></h4>
-            <div class="casino-review-meta">★★★★★ 5.0 · Лицензия Curacao · С 2017 года</div>
+    <!-- ─── ОБЗОРЫ ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">📋 Обзоры казино</div>
+      </div>
+      <div class="review-list">
+        <div class="review-item">
+          <div class="review-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div>
+          <div class="review-body">
+            <div class="review-name">Vavada Casino</div>
+            <div class="review-meta">★★★★★ 5.0 · Лицензия Curacao · С 2017 года</div>
             <ul class="feature-list">
-              <li>4000+ игровых автоматов от топ-провайдеров</li>
-              <li>Мгновенные выплаты · Выводы без задержек</li>
+              <li>4000+ слотов от топ-провайдеров</li>
+              <li>Мгновенные выплаты без задержек</li>
               <li>Русскоязычная поддержка 24/7</li>
             </ul>
-            <div class="casino-review-btns">
-              <a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
-              <a href="#" class="btn-review-sm" style="padding:8px 16px;">Обзор</a>
+            <div class="review-btns">
+              <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
+              <a href="#" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
           </div>
         </div>
-
-        <div class="casino-review-item">
-          <div class="casino-review-img"><img src="images/rox.webp" alt="Rox Casino"></div>
-          <div class="casino-review-body">
-            <h4><a href="#">Rox Casino</a></h4>
-            <div class="casino-review-meta">★★★★★ 4.7 · Лицензия Curacao · Кэшбэк без вейджера</div>
+        <div class="review-item">
+          <div class="review-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div>
+          <div class="review-body">
+            <div class="review-name">Rox Casino</div>
+            <div class="review-meta">★★★★★ 4.7 · Кэшбэк без вейджера · Быстрые выплаты</div>
             <ul class="feature-list">
-              <li>Кэшбэк 10% каждую неделю без условий отыгрыша</li>
+              <li>Кэшбэк 10% каждую неделю — без условий отыгрыша</li>
               <li>2500+ слотов · Live-дилеры · Aviator</li>
-              <li>Быстрые выплаты через СБП и крипту</li>
+              <li>Выплаты через СБП и крипту</li>
             </ul>
-            <div class="casino-review-btns">
-              <a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
-              <a href="#" class="btn-review-sm" style="padding:8px 16px;">Обзор</a>
+            <div class="review-btns">
+              <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
+              <a href="#" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
           </div>
         </div>
-
-        <div class="casino-review-item">
-          <div class="casino-review-img"><img src="images/stake.webp" alt="Stake Casino"></div>
-          <div class="casino-review-body">
-            <h4><a href="#">Stake Casino</a></h4>
-            <div class="casino-review-meta">★★★★★ 4.8 · Мировой лидер крипто-гемблинга</div>
+        <div class="review-item">
+          <div class="review-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div>
+          <div class="review-body">
+            <div class="review-name">Stake Casino</div>
+            <div class="review-meta">★★★★★ 4.8 · Мировой лидер крипто-гемблинга</div>
             <ul class="feature-list">
               <li>Bitcoin, Ethereum, USDT и 20+ криптовалют</li>
-              <li>Провабли-фэйр игры — проверяемая честность</li>
+              <li>Провабли-фэйр — проверяемая честность каждого раунда</li>
               <li>Без KYC · Вывод за 5 минут</li>
             </ul>
-            <div class="casino-review-btns">
-              <a href="#" class="btn-play" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
-              <a href="#" class="btn-review-sm" style="padding:8px 16px;">Обзор</a>
+            <div class="review-btns">
+              <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
+              <a href="#" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- ═══ ПОПУЛЯРНЫЕ БОНУСЫ ═══ -->
-    <div class="section-box">
-      <div class="section-title">🎁 Популярные бонусы казино</div>
+    <!-- ─── БОНУСЫ ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">🎁 Популярные бонусы</div>
+        <div class="block-sub">С промокодом RUBLIK</div>
+      </div>
       <div class="bonus-list">
 
         <div class="bonus-item">
-          <span class="bonus-badge">Топ бонус</span>
-          <div class="bonus-body">
-            <h4>200% + 300 Фриспинов — Куш Casino</h4>
-            <div class="bonus-meta">
-              <div class="bonus-meta-item"><label>Сумма: </label><span>200% на депозит</span></div>
-              <div class="bonus-meta-item"><label>ФС: </label><span>300 фриспинов</span></div>
-            </div>
-            <div class="promo-code">RUBLIK</div>
-            <div class="bonus-desc">Двойной бонус + 300 бесплатных вращений при первом депозите. Ежедневные джекпоты для всех игроков.</div>
+          <div class="bonus-item-top">
+            <span class="bonus-badge">300 ФС</span>
+            <div class="bonus-title">200% + 300 Фриспинов — Куш Casino</div>
           </div>
-          <div class="bonus-btns">
-            <a href="#" class="btn-get-bonus" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Получить</a>
-            <a href="#" class="btn-review-bonus">Обзор</a>
+          <div class="bonus-meta">
+            <div><label>Сумма: </label><span>200% на депозит</span></div>
+            <div><label>ФС: </label><span>300 фриспинов</span></div>
           </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-badge">500% бонус</span>
-          <div class="bonus-body">
-            <h4>500% на 4 депозита — 1Win Casino</h4>
-            <div class="bonus-meta">
-              <div class="bonus-meta-item"><label>Сумма: </label><span>до 75 000 ₽</span></div>
-              <div class="bonus-meta-item"><label>На: </label><span>4 депозита</span></div>
-            </div>
-            <div class="promo-code">RUBLIK</div>
-            <div class="bonus-desc">Крупнейший бонус на рынке СНГ — 500% суммарно на первые 4 депозита. Казино + ставки на спорт.</div>
-          </div>
-          <div class="bonus-btns">
-            <a href="#" class="btn-get-bonus" target="_blank" rel="noopener sponsored" data-casino="1WIN CASINO">Получить</a>
-            <a href="#" class="btn-review-bonus">Обзор</a>
+          <div class="promo-tag">RUBLIK</div>
+          <div class="bonus-desc">Двойной бонус + 300 бесплатных вращений. Ежедневные джекпоты для всех игроков.</div>
+          <div class="bonus-item-btns">
+            <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Получить</a>
+            <a href="#" class="btn-outline">Обзор</a>
           </div>
         </div>
 
         <div class="bonus-item">
-          <span class="bonus-badge">Кэшбэк</span>
-          <div class="bonus-body">
-            <h4>Ежедневный рейкбэк — Beef Casino</h4>
-            <div class="bonus-meta">
-              <div class="bonus-meta-item"><label>Тип: </label><span>Рейкбэк ежедневно</span></div>
-              <div class="bonus-meta-item"><label>Вейджер: </label><span>Отсутствует</span></div>
-            </div>
-            <div class="bonus-desc">Уникальный ежедневный рейкбэк — возврат процента со всех ставок, даже при выигрыше. Без условий отыгрыша.</div>
+          <div class="bonus-item-top">
+            <span class="bonus-badge">250 ФС</span>
+            <div class="bonus-title">120% + 250 Фриспинов — Duel Casino</div>
           </div>
-          <div class="bonus-btns">
-            <a href="#" class="btn-get-bonus" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Получить</a>
-            <a href="#" class="btn-review-bonus">Обзор</a>
+          <div class="bonus-meta">
+            <div><label>Сумма: </label><span>120%</span></div>
+            <div><label>ФС: </label><span>250 фриспинов</span></div>
           </div>
-        </div>
-
-        <div class="bonus-item">
-          <span class="bonus-badge">250 ФС</span>
-          <div class="bonus-body">
-            <h4>120% + 250 Фриспинов — Duel Casino</h4>
-            <div class="bonus-meta">
-              <div class="bonus-meta-item"><label>Сумма: </label><span>120%</span></div>
-              <div class="bonus-meta-item"><label>ФС: </label><span>250 фриспинов</span></div>
-            </div>
-            <div class="promo-code">RUBLIK</div>
-            <div class="bonus-desc">Уникальный PvP-формат дуэлей. 250 фриспинов при старте — один из лучших welcome-пакетов рынка.</div>
-          </div>
-          <div class="bonus-btns">
-            <a href="#" class="btn-get-bonus" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Получить</a>
-            <a href="#" class="btn-review-bonus">Обзор</a>
+          <div class="promo-tag">RUBLIK</div>
+          <div class="bonus-desc">Уникальный PvP-формат дуэлей. 250 фриспинов при старте — один из лучших welcome-пакетов рынка.</div>
+          <div class="bonus-item-btns">
+            <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Получить</a>
+            <a href="#" class="btn-outline">Обзор</a>
           </div>
         </div>
 
         <div class="bonus-item">
-          <span class="bonus-badge">Крипто</span>
-          <div class="bonus-body">
-            <h4>Крипто-бонус без KYC — Cryptoboss</h4>
-            <div class="bonus-meta">
-              <div class="bonus-meta-item"><label>Тип: </label><span>Крипто-депозит</span></div>
-              <div class="bonus-meta-item"><label>Вывод: </label><span>5 минут</span></div>
-            </div>
-            <div class="bonus-desc">Анонимное казино без верификации. BTC, ETH, USDT, TRX. Вывод за 5 минут, без KYC, без ограничений.</div>
+          <div class="bonus-item-top">
+            <span class="bonus-badge">Кэшбэк</span>
+            <div class="bonus-title">Ежедневный рейкбэк — Beef Casino</div>
           </div>
-          <div class="bonus-btns">
-            <a href="#" class="btn-get-bonus" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Получить</a>
-            <a href="#" class="btn-review-bonus">Обзор</a>
+          <div class="bonus-meta">
+            <div><label>Тип: </label><span>Рейкбэк</span></div>
+            <div><label>Вейджер: </label><span>Нет</span></div>
+          </div>
+          <div class="bonus-desc">Возврат процента со всех ставок, даже при выигрыше. Без условий отыгрыша — самое честное предложение.</div>
+          <div class="bonus-item-btns">
+            <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Получить</a>
+            <a href="#" class="btn-outline">Обзор</a>
           </div>
         </div>
 
-      </div><!-- /bonus-list -->
+        <div class="bonus-item">
+          <div class="bonus-item-top">
+            <span class="bonus-badge">Крипто</span>
+            <div class="bonus-title">Крипто-бонус без KYC — Cryptoboss</div>
+          </div>
+          <div class="bonus-meta">
+            <div><label>Монеты: </label><span>BTC · ETH · USDT</span></div>
+            <div><label>Вывод: </label><span>5 минут</span></div>
+          </div>
+          <div class="bonus-desc">Анонимное казино без верификации. Мгновенные выводы, никаких документов.</div>
+          <div class="bonus-item-btns">
+            <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Получить</a>
+            <a href="#" class="btn-outline">Обзор</a>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- ═══ МЕТОДЫ ДЕПОЗИТА ═══ -->
-    <div class="section-box">
-      <div class="section-title">💳 Методы депозита в казино</div>
+    <!-- ─── МЕТОДЫ ДЕПОЗИТА ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">💳 Методы депозита</div>
+      </div>
       <div class="deposit-grid">
-        <a href="#" class="deposit-card"><div class="deposit-img">₿</div><div class="deposit-name">Bitcoin</div><div class="deposit-count">12 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">💎</div><div class="deposit-name">USDT/TRC20</div><div class="deposit-count">10 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">💳</div><div class="deposit-name">Visa/Mastercard</div><div class="deposit-count">35 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">🏦</div><div class="deposit-name">СБП</div><div class="deposit-count">28 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">🅺</div><div class="deposit-name">Qiwi</div><div class="deposit-count">15 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">💰</div><div class="deposit-name">Skrill</div><div class="deposit-count">18 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">🌐</div><div class="deposit-name">Webmoney</div><div class="deposit-count">20 казино</div></a>
-        <a href="#" class="deposit-card"><div class="deposit-img">🇾</div><div class="deposit-name">ЮМани</div><div class="deposit-count">22 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">₿</div><div class="deposit-name">Bitcoin</div><div class="deposit-count">12 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">💎</div><div class="deposit-name">USDT</div><div class="deposit-count">10 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">💳</div><div class="deposit-name">Visa/MC</div><div class="deposit-count">35 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">🏦</div><div class="deposit-name">СБП</div><div class="deposit-count">28 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">🅺</div><div class="deposit-name">Qiwi</div><div class="deposit-count">15 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">💰</div><div class="deposit-name">Skrill</div><div class="deposit-count">18 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">🌐</div><div class="deposit-name">Webmoney</div><div class="deposit-count">20 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">🇾</div><div class="deposit-name">ЮМани</div><div class="deposit-count">22 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">📱</div><div class="deposit-name">Мобильный</div><div class="deposit-count">14 казино</div></a>
+        <a href="#" class="deposit-card"><div class="deposit-icon">🏧</div><div class="deposit-name">Nalichnie</div><div class="deposit-count">8 казино</div></a>
       </div>
     </div>
 
-    <!-- ═══ СТАТЬИ ═══ -->
-    <div class="section-box">
-      <div class="section-title">📖 Полезные статьи</div>
-      <div class="content-text">
-        Наши эксперты подготовили подробные гайды по выбору казино, разбору бонусных условий и стратегиям игры. <strong>Все материалы актуальны на 2026 год.</strong>
+    <!-- ─── СТАТЬИ ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">📖 Полезные статьи</div>
+        <div class="block-sub">Обновлено в 2026</div>
       </div>
-      <div class="article-grid">
-        <div class="article-card">
-          <div class="article-img">🔍</div>
-          <div class="article-body">
-            <span class="article-cat">Руководство</span>
-            <div class="article-date">Март 2026</div>
-            <div class="article-title">Как найти рабочее зеркало казино в 2026?</div>
-            <div class="article-excerpt">Что такое зеркало, зачем нужно и как не попасть на мошенников. Пошаговый гид с примерами.</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img">🎁</div>
-          <div class="article-body">
-            <span class="article-cat">Бонусы</span>
-            <div class="article-date">Март 2026</div>
-            <div class="article-title">Бонусы казино 2026: полный гид</div>
-            <div class="article-excerpt">Приветственные, бездепозитные, фриспины, кэшбэк — как выбрать лучший и правильно отыграть.</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img">📊</div>
-          <div class="article-body">
-            <span class="article-cat">Сравнение</span>
-            <div class="article-date">Февраль 2026</div>
-            <div class="article-title">Vavada vs Duel vs Куш: сравнение топ-3</div>
-            <div class="article-excerpt">Детальное сравнение лидеров рейтинга по 15 критериям: бонусы, вейджер, скорость выплат.</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img">₿</div>
-          <div class="article-body">
-            <span class="article-cat">Крипто</span>
-            <div class="article-date">Февраль 2026</div>
-            <div class="article-title">Лучшие крипто-казино 2026 без KYC</div>
-            <div class="article-excerpt">Stake, Cryptoboss — анонимная игра без верификации. Bitcoin, Ethereum, USDT: где лучше?</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img">💵</div>
-          <div class="article-body">
-            <span class="article-cat">Кэшбэк</span>
-            <div class="article-date">Январь 2026</div>
-            <div class="article-title">Кэшбэк без вейджера — топ казино</div>
-            <div class="article-excerpt">Beef Casino, Rox Casino — реальный возврат без условий отыгрыша. Как получить максимум.</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img">🎡</div>
-          <div class="article-body">
-            <span class="article-cat">Фриспины</span>
-            <div class="article-date">Март 2026</div>
-            <div class="article-title">Где больше всего фриспинов в 2026?</div>
-            <div class="article-excerpt">Куш — 300 ФС, Duel — 250 ФС, Flagman — 250 ФС. Полный список казино с большими пакетами.</div>
-            <a href="#" class="btn-read-more">Читать →</a>
-          </div>
-        </div>
+      <div class="articles-grid">
+        <a href="#" class="article-card"><div class="article-thumb">🔍</div><div class="article-body"><span class="article-cat">Руководство</span><div class="article-date">Март 2026</div><div class="article-title">Как найти рабочее зеркало казино?</div><div class="article-excerpt">Что такое зеркало, как не попасть на мошенников. Пошаговый гид.</div><span class="article-more">Читать →</span></div></a>
+        <a href="#" class="article-card"><div class="article-thumb">🎁</div><div class="article-body"><span class="article-cat">Бонусы</span><div class="article-date">Март 2026</div><div class="article-title">Бонусы казино 2026: полный гид</div><div class="article-excerpt">Приветственные, бездепозитные, фриспины, кэшбэк — как выбрать лучший.</div><span class="article-more">Читать →</span></div></a>
+        <a href="#" class="article-card"><div class="article-thumb">📊</div><div class="article-body"><span class="article-cat">Сравнение</span><div class="article-date">Февраль 2026</div><div class="article-title">Vavada vs Duel vs Куш: кто лучше?</div><div class="article-excerpt">Детальное сравнение по 15 критериям: бонусы, вейджер, выплаты.</div><span class="article-more">Читать →</span></div></a>
+        <a href="#" class="article-card"><div class="article-thumb">₿</div><div class="article-body"><span class="article-cat">Крипто</span><div class="article-date">Февраль 2026</div><div class="article-title">Топ крипто-казино без KYC 2026</div><div class="article-excerpt">Stake, Cryptoboss — анонимная игра на Bitcoin и Ethereum.</div><span class="article-more">Читать →</span></div></a>
+        <a href="#" class="article-card"><div class="article-thumb">💵</div><div class="article-body"><span class="article-cat">Кэшбэк</span><div class="article-date">Январь 2026</div><div class="article-title">Кэшбэк без вейджера — где?</div><div class="article-excerpt">Beef Casino, Rox Casino — реальный возврат без условий отыгрыша.</div><span class="article-more">Читать →</span></div></a>
+        <a href="#" class="article-card"><div class="article-thumb">🎡</div><div class="article-body"><span class="article-cat">Фриспины</span><div class="article-date">Март 2026</div><div class="article-title">Где больше всего фриспинов?</div><div class="article-excerpt">Куш — 300 ФС, Duel — 250 ФС, Flagman — 250 ФС. Полный список.</div><span class="article-more">Читать →</span></div></a>
       </div>
-      <div class="load-more-wrap"><a href="#" class="btn-load-more">Все статьи</a></div>
+      <div class="load-more"><a href="#" class="btn-load">Все статьи</a></div>
     </div>
 
-    <!-- ═══ FAQ ═══ -->
-    <div class="section-box">
-      <div class="section-title">❓ Частые вопросы</div>
+    <!-- ─── FAQ ─── -->
+    <div class="block">
+      <div class="block-head">
+        <div class="block-title">❓ Частые вопросы</div>
+      </div>
       <div class="faq-list">
-
         <div class="faq-item">
-          <div class="faq-question">Как использовать промокод RUBLIK?</div>
-          <div class="faq-answer">Введите промокод RUBLIK при регистрации в поле «Промокод» или «Бонусный код». После создания аккаунта изменить условия первого депозита уже невозможно. Промокод активен во всех казино нашего рейтинга.</div>
+          <div class="faq-q">Как использовать промокод RUBLIK?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Введите промокод RUBLIK при регистрации в поле «Промокод» или «Бонусный код». Промокод активирует увеличенную версию приветственного бонуса. После создания аккаунта изменить условия уже невозможно — вводить нужно сразу.</div></div>
         </div>
-
         <div class="faq-item">
-          <div class="faq-question">Что такое вейджер и как его отыграть?</div>
-          <div class="faq-answer">Вейджер — условие отыгрыша бонуса. Вейджер x30 означает: получили 5000 ₽ бонуса → нужно поставить 150 000 ₽, потом можно выводить. Лучший вейджер у Lexx Casino — x25. Кэшбэк в Beef и Rox Casino вейджера не имеет совсем.</div>
+          <div class="faq-q">Что такое вейджер и как его отыграть?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Вейджер — условие отыгрыша бонуса. Вейджер x30: получили 5000 ₽ → нужно поставить 150 000 ₽. Лучший вейджер у Lexx Casino — x25. Кэшбэк в Beef и Rox Casino не имеет вейджера совсем — это самые честные условия.</div></div>
         </div>
-
         <div class="faq-item">
-          <div class="faq-question">Какое казино выбрать новичку?</div>
-          <div class="faq-answer">Для новичка рекомендуем Vavada (простой интерфейс, 4000+ слотов) или Lexx Casino (низкий вейджер x25, минимальный депозит от 300 ₽). Начинайте с кэшбэк-казино — Rox или Beef защитят от потерь на старте.</div>
+          <div class="faq-q">Какое казино выбрать новичку?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Для новичка — Vavada (простой интерфейс, 4000+ слотов) или Lexx Casino (вейджер x25, депозит от 300 ₽). Начинайте с кэшбэк-казино: Rox или Beef защитят от потерь на старте.</div></div>
         </div>
-
         <div class="faq-item">
-          <div class="faq-question">Где больше всего фриспинов в 2026?</div>
-          <div class="faq-answer">Лидер по фриспинам — Куш Casino: 300 ФС при первом депозите. Далее: Ramenbet — 300 ФС, Flagman — 250 ФС, Duel Casino — 250 ФС, Champion Slots — 200 ФС. С промокодом RUBLIK пакет увеличивается.</div>
+          <div class="faq-q">Где больше всего фриспинов в 2026?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Куш Casino — 300 ФС, Ramenbet — 300 ФС, Flagman — 250 ФС, Duel Casino — 250 ФС, Champion Slots — 200 ФС. С промокодом RUBLIK пакет в большинстве казино увеличивается.</div></div>
         </div>
-
         <div class="faq-item">
-          <div class="faq-question">Как играть в крипто-казино анонимно?</div>
-          <div class="faq-answer">Для анонимной игры без KYC выбирайте Stake Casino или Cryptoboss. Они принимают Bitcoin, Ethereum, USDT и не требуют загрузки документов. Вывод от 5 минут. Stake — мировой лидер с провабли-фэйр играми.</div>
+          <div class="faq-q">Как играть анонимно без KYC?<span class="faq-icon">+</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Для анонимной игры выбирайте Stake Casino или Cryptoboss. Они принимают Bitcoin, Ethereum, USDT и не требуют документов. Вывод от 5 минут. Stake — мировой лидер с провабли-фэйр играми.</div></div>
         </div>
-
       </div>
-
-      <blockquote>
-        <strong>Casino Expert</strong> — независимый информационный ресурс. Все ссылки реферальные. Мы тестируем каждое казино лично: регистрация, депозит, вывод средств, качество поддержки. Только реальный опыт, никаких платных размещений в рейтинге.
-      </blockquote>
+      <div class="block-quote">
+        <strong>Casino Expert</strong> — независимый рейтинг. Все ссылки реферальные. Мы лично тестируем каждое казино: регистрация, депозит, вывод, поддержка. Только реальный опыт.
+      </div>
     </div>
 
-  </div><!-- /main-content -->
+  </main><!-- /main-col -->
 
-  <!-- ═══════════ САЙДБАР ═══════════ -->
-  <aside class="sidebar">
+  <!-- ═══ САЙДБАР ═══ -->
+  <aside class="sidebar-col">
 
     <!-- ТОП 10 -->
     <div class="widget">
       <div class="widget-title">🏆 Топ 10 казино</div>
-      <div class="top10-list">
-        <div class="top10-item">
-          <div class="top10-pos">1</div>
-          <div class="top10-logo"><img src="images/vavada.webp" alt="Vavada"></div>
-          <div class="top10-info"><div class="top10-name">Vavada Casino</div><div class="top10-stars">★★★★★ 5.0</div></div>
-          <a href="#" class="top10-btn" data-casino="VAVADA CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">2</div>
-          <div class="top10-logo"><img src="images/duel.webp" alt="Duel"></div>
-          <div class="top10-info"><div class="top10-name">Duel Casino</div><div class="top10-stars">★★★★★ 4.9</div></div>
-          <a href="#" class="top10-btn" data-casino="DUEL CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">3</div>
-          <div class="top10-logo"><img src="images/kush.webp" alt="Куш"></div>
-          <div class="top10-info"><div class="top10-name">Куш Casino</div><div class="top10-stars">★★★★★ 4.9</div></div>
-          <a href="#" class="top10-btn" data-casino="КУШ CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">4</div>
-          <div class="top10-logo"><img src="images/cat.webp" alt="Cat"></div>
-          <div class="top10-info"><div class="top10-name">Cat Casino</div><div class="top10-stars">★★★★★ 4.8</div></div>
-          <a href="#" class="top10-btn" data-casino="CAT CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">5</div>
-          <div class="top10-logo"><img src="images/joy.webp" alt="Joy"></div>
-          <div class="top10-info"><div class="top10-name">Joy Casino</div><div class="top10-stars">★★★★★ 4.8</div></div>
-          <a href="#" class="top10-btn" data-casino="JOY CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">6</div>
-          <div class="top10-logo"><img src="images/stake.webp" alt="Stake"></div>
-          <div class="top10-info"><div class="top10-name">Stake Casino</div><div class="top10-stars">★★★★★ 4.8</div></div>
-          <a href="#" class="top10-btn" data-casino="STAKE CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">7</div>
-          <div class="top10-logo"><img src="images/rox.webp" alt="Rox"></div>
-          <div class="top10-info"><div class="top10-name">Rox Casino</div><div class="top10-stars">★★★★★ 4.7</div></div>
-          <a href="#" class="top10-btn" data-casino="ROX CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">8</div>
-          <div class="top10-logo"><img src="images/flagman.webp" alt="Flagman"></div>
-          <div class="top10-info"><div class="top10-name">Flagman</div><div class="top10-stars">★★★★★ 4.7</div></div>
-          <a href="#" class="top10-btn" data-casino="FLAGMAN CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">9</div>
-          <div class="top10-logo"><img src="images/gama.webp" alt="Gama"></div>
-          <div class="top10-info"><div class="top10-name">Gama Casino</div><div class="top10-stars">★★★★★ 4.7</div></div>
-          <a href="#" class="top10-btn" data-casino="GAMA CASINO">Играть</a>
-        </div>
-        <div class="top10-item">
-          <div class="top10-pos">10</div>
-          <div class="top10-logo"><img src="images/ramenbet.webp" alt="Ramenbet"></div>
-          <div class="top10-info"><div class="top10-name">Ramenbet</div><div class="top10-stars">★★★★☆ 4.6</div></div>
-          <a href="#" class="top10-btn" data-casino="RAMENBET">Играть</a>
-        </div>
-      </div>
+      <div class="t10-item"><div class="t10-pos">1</div><div class="t10-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div><div class="t10-info"><div class="t10-name">Vavada Casino</div><div class="t10-stars">★★★★★ 5.0</div></div><a href="#" class="t10-btn" data-casino="VAVADA CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">2</div><div class="t10-logo"><img src="images/duel.webp" alt="Duel" loading="lazy"></div><div class="t10-info"><div class="t10-name">Duel Casino</div><div class="t10-stars">★★★★★ 4.9</div></div><a href="#" class="t10-btn" data-casino="DUEL CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">3</div><div class="t10-logo"><img src="images/kush.webp" alt="Куш" loading="lazy"></div><div class="t10-info"><div class="t10-name">Куш Casino</div><div class="t10-stars">★★★★★ 4.9</div></div><a href="#" class="t10-btn" data-casino="КУШ CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">4</div><div class="t10-logo"><img src="images/cat.webp" alt="Cat" loading="lazy"></div><div class="t10-info"><div class="t10-name">Cat Casino</div><div class="t10-stars">★★★★★ 4.8</div></div><a href="#" class="t10-btn" data-casino="CAT CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">5</div><div class="t10-logo"><img src="images/joy.webp" alt="Joy" loading="lazy"></div><div class="t10-info"><div class="t10-name">Joy Casino</div><div class="t10-stars">★★★★★ 4.8</div></div><a href="#" class="t10-btn" data-casino="JOY CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">6</div><div class="t10-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div><div class="t10-info"><div class="t10-name">Stake Casino</div><div class="t10-stars">★★★★★ 4.8</div></div><a href="#" class="t10-btn" data-casino="STAKE CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">7</div><div class="t10-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div><div class="t10-info"><div class="t10-name">Rox Casino</div><div class="t10-stars">★★★★★ 4.7</div></div><a href="#" class="t10-btn" data-casino="ROX CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">8</div><div class="t10-logo"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div><div class="t10-info"><div class="t10-name">Flagman</div><div class="t10-stars">★★★★★ 4.7</div></div><a href="#" class="t10-btn" data-casino="FLAGMAN CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">9</div><div class="t10-logo"><img src="images/gama.webp" alt="Gama" loading="lazy"></div><div class="t10-info"><div class="t10-name">Gama Casino</div><div class="t10-stars">★★★★★ 4.7</div></div><a href="#" class="t10-btn" data-casino="GAMA CASINO">Играть</a></div>
+      <div class="t10-item"><div class="t10-pos">10</div><div class="t10-logo"><img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy"></div><div class="t10-info"><div class="t10-name">Ramenbet</div><div class="t10-stars">★★★★☆ 4.6</div></div><a href="#" class="t10-btn" data-casino="RAMENBET">Играть</a></div>
     </div>
 
     <!-- НОВОСТИ -->
     <div class="widget">
       <div class="widget-title">📰 Новости</div>
-      <div class="news-list">
-        <a href="#" class="news-item" style="display:flex;text-decoration:none;">
-          <div class="news-thumb">🏆</div>
-          <div class="news-info"><div class="news-title">Куш Casino — 200% + 300 ФС для новых</div><div class="news-date">Март 2026</div></div>
-        </a>
-        <a href="#" class="news-item" style="display:flex;text-decoration:none;">
-          <div class="news-thumb">⚔️</div>
-          <div class="news-info"><div class="news-title">Duel Casino — PvP турнир с призами</div><div class="news-date">Март 2026</div></div>
-        </a>
-        <a href="#" class="news-item" style="display:flex;text-decoration:none;">
-          <div class="news-thumb">💵</div>
-          <div class="news-info"><div class="news-title">Rox Casino — кэшбэк 10% без условий</div><div class="news-date">Февраль 2026</div></div>
-        </a>
-        <a href="#" class="news-item" style="display:flex;text-decoration:none;">
-          <div class="news-thumb">₿</div>
-          <div class="news-info"><div class="news-title">Stake — новые крипто-игры в марте</div><div class="news-date">Март 2026</div></div>
-        </a>
-        <a href="#" class="news-item" style="display:flex;text-decoration:none;">
-          <div class="news-thumb">🎡</div>
-          <div class="news-info"><div class="news-title">Flagman — 250 ФС при регистрации</div><div class="news-date">Март 2026</div></div>
-        </a>
-      </div>
+      <a href="#" class="news-item" style="display:flex;text-decoration:none;"><div class="news-thumb">🏆</div><div class="news-body"><div class="news-title">Куш Casino — 200% + 300 ФС для новых</div><div class="news-date">Март 2026</div></div></a>
+      <a href="#" class="news-item" style="display:flex;text-decoration:none;"><div class="news-thumb">⚔️</div><div class="news-body"><div class="news-title">Duel Casino — PvP турнир с призами</div><div class="news-date">Март 2026</div></div></a>
+      <a href="#" class="news-item" style="display:flex;text-decoration:none;"><div class="news-thumb">💵</div><div class="news-body"><div class="news-title">Rox Casino — кэшбэк 10% без условий</div><div class="news-date">Март 2026</div></div></a>
+      <a href="#" class="news-item" style="display:flex;text-decoration:none;"><div class="news-thumb">₿</div><div class="news-body"><div class="news-title">Stake — новые крипто-игры в марте</div><div class="news-date">Март 2026</div></div></a>
+      <a href="#" class="news-item" style="display:flex;text-decoration:none;"><div class="news-thumb">🎡</div><div class="news-body"><div class="news-title">Flagman — 250 ФС при регистрации</div><div class="news-date">Март 2026</div></div></a>
     </div>
 
-    <!-- БОНУСЫ В САЙДБАРЕ -->
+    <!-- БОНУСЫ -->
     <div class="widget">
       <div class="widget-title">🎁 Бонусы</div>
-      <div class="sidebar-bonus-list">
-        <div class="sidebar-bonus-item">
-          <div class="sidebar-bonus-logo"><img src="images/kush.webp" alt="Куш"></div>
-          <div class="sidebar-bonus-info">
-            <div class="sidebar-bonus-name">Куш Casino</div>
-            <div class="sidebar-bonus-amount">200% + 300 ФС</div>
-            <div class="sidebar-bonus-stars">★★★★★ 4.9</div>
-          </div>
-          <a href="#" class="sidebar-bonus-btn" data-casino="КУШ CASINO">Получить</a>
-        </div>
-        <div class="sidebar-bonus-item">
-          <div class="sidebar-bonus-logo"><img src="images/duel.webp" alt="Duel"></div>
-          <div class="sidebar-bonus-info">
-            <div class="sidebar-bonus-name">Duel Casino</div>
-            <div class="sidebar-bonus-amount">120% + 250 ФС</div>
-            <div class="sidebar-bonus-stars">★★★★★ 4.9</div>
-          </div>
-          <a href="#" class="sidebar-bonus-btn" data-casino="DUEL CASINO">Получить</a>
-        </div>
-        <div class="sidebar-bonus-item">
-          <div class="sidebar-bonus-logo"><img src="images/vavada.webp" alt="Vavada"></div>
-          <div class="sidebar-bonus-info">
-            <div class="sidebar-bonus-name">Vavada Casino</div>
-            <div class="sidebar-bonus-amount">100% до 50 000 ₽</div>
-            <div class="sidebar-bonus-stars">★★★★★ 5.0</div>
-          </div>
-          <a href="#" class="sidebar-bonus-btn" data-casino="VAVADA CASINO">Получить</a>
-        </div>
-        <div class="sidebar-bonus-item">
-          <div class="sidebar-bonus-logo"><img src="images/rox.webp" alt="Rox"></div>
-          <div class="sidebar-bonus-info">
-            <div class="sidebar-bonus-name">Rox Casino</div>
-            <div class="sidebar-bonus-amount">Кэшбэк 10%</div>
-            <div class="sidebar-bonus-stars">★★★★★ 4.7</div>
-          </div>
-          <a href="#" class="sidebar-bonus-btn" data-casino="ROX CASINO">Получить</a>
-        </div>
-        <div class="sidebar-bonus-item">
-          <div class="sidebar-bonus-logo"><img src="images/flagman.webp" alt="Flagman"></div>
-          <div class="sidebar-bonus-info">
-            <div class="sidebar-bonus-name">Flagman Casino</div>
-            <div class="sidebar-bonus-amount">150% + 250 ФС</div>
-            <div class="sidebar-bonus-stars">★★★★★ 4.7</div>
-          </div>
-          <a href="#" class="sidebar-bonus-btn" data-casino="FLAGMAN CASINO">Получить</a>
-        </div>
-      </div>
+      <div class="sb-bonus-item"><div class="sb-bonus-logo"><img src="images/kush.webp" alt="Куш" loading="lazy"></div><div class="sb-bonus-info"><div class="sb-bonus-name">Куш Casino</div><div class="sb-bonus-amount">200% + 300 ФС</div><div class="sb-bonus-stars">★★★★★ 4.9</div></div><a href="#" class="sb-bonus-btn" data-casino="КУШ CASINO">Получить</a></div>
+      <div class="sb-bonus-item"><div class="sb-bonus-logo"><img src="images/duel.webp" alt="Duel" loading="lazy"></div><div class="sb-bonus-info"><div class="sb-bonus-name">Duel Casino</div><div class="sb-bonus-amount">120% + 250 ФС</div><div class="sb-bonus-stars">★★★★★ 4.9</div></div><a href="#" class="sb-bonus-btn" data-casino="DUEL CASINO">Получить</a></div>
+      <div class="sb-bonus-item"><div class="sb-bonus-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div><div class="sb-bonus-info"><div class="sb-bonus-name">Vavada Casino</div><div class="sb-bonus-amount">100% до 50 000 ₽</div><div class="sb-bonus-stars">★★★★★ 5.0</div></div><a href="#" class="sb-bonus-btn" data-casino="VAVADA CASINO">Получить</a></div>
+      <div class="sb-bonus-item"><div class="sb-bonus-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div><div class="sb-bonus-info"><div class="sb-bonus-name">Rox Casino</div><div class="sb-bonus-amount">Кэшбэк 10%</div><div class="sb-bonus-stars">★★★★★ 4.7</div></div><a href="#" class="sb-bonus-btn" data-casino="ROX CASINO">Получить</a></div>
+      <div class="sb-bonus-item"><div class="sb-bonus-logo"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div><div class="sb-bonus-info"><div class="sb-bonus-name">Flagman Casino</div><div class="sb-bonus-amount">150% + 250 ФС</div><div class="sb-bonus-stars">★★★★★ 4.7</div></div><a href="#" class="sb-bonus-btn" data-casino="FLAGMAN CASINO">Получить</a></div>
     </div>
 
-    <!-- МЕТОДЫ В САЙДБАРЕ -->
+    <!-- МЕТОДЫ -->
     <div class="widget">
       <div class="widget-title">💳 Методы депозита</div>
-      <div class="sidebar-deposit-list">
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">₿</div><a href="#">Bitcoin</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">💎</div><a href="#">USDT/TRC20</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">💳</div><a href="#">Visa/Mastercard</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">🏦</div><a href="#">СБП</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">🅺</div><a href="#">Qiwi</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">💰</div><a href="#">Skrill</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">🌐</div><a href="#">Webmoney</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">🇾</div><a href="#">ЮМани</a></div>
-        <div class="sidebar-deposit-item"><div class="sidebar-deposit-icon">💵</div><a href="#">Neteller</a></div>
+      <div class="sb-deposit-list">
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">₿</div><a href="#">Bitcoin</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">💎</div><a href="#">USDT / Крипто</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">💳</div><a href="#">Visa / Mastercard</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">🏦</div><a href="#">СБП</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">🅺</div><a href="#">Qiwi</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">💰</div><a href="#">Skrill</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">🌐</div><a href="#">Webmoney</a></div>
+        <div class="sb-deposit-item"><div class="sb-deposit-icon">🇾</div><a href="#">ЮМани</a></div>
       </div>
     </div>
 
     <!-- ПОДПИСКА -->
     <div class="widget">
-      <div class="widget-title">📬 Подписаться на обновления</div>
-      <div class="subscribe-form">
+      <div class="widget-title">📬 Подписаться</div>
+      <div class="subscribe">
         <input type="email" placeholder="Ваш email...">
         <button type="button">Подписаться</button>
       </div>
     </div>
 
   </aside>
-</div><!-- /container -->
 
-<!-- ═══ ФУТЕР ═══ -->
+</div><!-- /page-body -->
+
+<!-- ФУТЕР -->
 <footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo-text">CASINO<span> EXPERT</span></div>
-      <div class="footer-desc">Независимый рейтинг 41 онлайн-казино 2026. Рабочие зеркала без VPN, актуальные бонусы и промокоды. Промокод <strong style="color:var(--gold)">RUBLIK</strong> для дополнительных бонусов.</div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">CASINO<span> EXPERT</span></div>
+      <div class="footer-desc">Независимый рейтинг 41 онлайн-казино 2026. Актуальные бонусы, промокоды и зеркала. Промокод <strong style="color:var(--gold)">RUBLIK</strong> — дополнительные бонусы при регистрации.</div>
     </div>
     <div class="footer-col">
       <h4>Казино</h4>
@@ -1508,7 +1485,7 @@
         <li><a href="#">Cat Casino</a></li>
         <li><a href="#">Joy Casino</a></li>
         <li><a href="#">Stake Casino</a></li>
-        <li><a href="#">Rox Casino</a></li>
+        <li><a href="#">Все казино →</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1534,35 +1511,90 @@
       </ul>
     </div>
   </div>
-  <div class="footer-payment">
-    <span class="payment-badge">Visa/Mastercard</span>
-    <span class="payment-badge">Bitcoin</span>
-    <span class="payment-badge">USDT</span>
-    <span class="payment-badge">Ethereum</span>
-    <span class="payment-badge">Qiwi</span>
-    <span class="payment-badge">Skrill</span>
-    <span class="payment-badge">Webmoney</span>
-    <span class="payment-badge">СБП</span>
-    <span class="payment-badge">ЮМани</span>
-    <span class="payment-badge">Neteller</span>
+
+  <div class="footer-payments">
+    <span class="pay-badge">Visa/Mastercard</span>
+    <span class="pay-badge">Bitcoin</span>
+    <span class="pay-badge">USDT</span>
+    <span class="pay-badge">Ethereum</span>
+    <span class="pay-badge">Qiwi</span>
+    <span class="pay-badge">Skrill</span>
+    <span class="pay-badge">Webmoney</span>
+    <span class="pay-badge">СБП</span>
+    <span class="pay-badge">ЮМани</span>
+    <span class="pay-badge">Neteller</span>
   </div>
+
   <div class="footer-bottom">
-    © 2026 Casino Expert — Независимый рейтинг онлайн казино. Все права защищены.
-    Сайт носит информационный характер. Все ссылки реферальные. Азартные игры — только для лиц 18+.
+    © 2026 Casino Expert — Независимый рейтинг онлайн казино.<br>
+    Сайт носит информационный характер. Все ссылки реферальные. Азартные игры — только для лиц 18+.<br>
+    <small style="color:#333">При проблемах с зависимостью: 8-800-200-01-76 (бесплатно, 24/7)</small>
   </div>
 </footer>
 
-<!-- Центральный файл партнёрских ссылок — links.js автоматически подставляет href -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">↑</button>
+<div class="toast" id="toast">✓ Промокод RUBLIK скопирован!</div>
+
+<!-- ПАРТНЁРСКИЕ ССЫЛКИ -->
 <script src="links.js" defer></script>
 
 <script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-question').addEventListener('click', () => {
-      item.classList.toggle('open');
-    });
-  });
-</script>
+/* ── БУРГЕР ── */
+const burger = document.getElementById('burger');
+const navMenu = document.getElementById('nav-menu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navMenu.classList.toggle('open');
+});
+/* Закрыть при клике вне */
+document.addEventListener('click', e => {
+  if (!burger.contains(e.target) && !navMenu.contains(e.target)) {
+    burger.classList.remove('open');
+    navMenu.classList.remove('open');
+  }
+});
 
+/* ── ПОДМЕНЮ (мобиль) ── */
+function toggleSub(id, e) {
+  if (window.innerWidth >= 1024) return;
+  e.preventDefault();
+  const item = document.getElementById(id);
+  item.classList.toggle('open-sub');
+}
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+
+/* ── КНОПКА НАВЕРХ ── */
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 600);
+}, { passive: true });
+
+/* ── ПРОМОКОД ── */
+function copyPromo() {
+  const code = 'RUBLIK';
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code).then(showToast);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = code; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); showToast();
+  }
+}
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
 </body>
 </html>
