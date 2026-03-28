@@ -1,0 +1,22 @@
+# Cache-Control для всех файлов сайта
+# Картинки — кэш 1 год
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS и JS — кэш 1 месяц (с возможностью инвалидации)
+/style.css
+  Cache-Control: public, max-age=2592000
+
+/casino-style.css
+  Cache-Control: public, max-age=2592000
+
+/links.js
+  Cache-Control: public, max-age=86400
+
+# HTML страницы — кэш 1 час
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Главная страница — кэш 30 минут
+/
+  Cache-Control: public, max-age=1800
