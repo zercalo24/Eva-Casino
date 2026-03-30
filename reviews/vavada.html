@@ -309,7 +309,7 @@ footer{background:#111122;color:#555;padding:26px 16px;margin-top:20px;}
         <a href="#" class="btn-play-big" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">🎰 Играть в Vavada</a>
         <div class="hero-promo">
           <div class="hero-promo-label">Промокод для бонуса</div>
-          <div class="hero-promo-code" onclick="copyPromo()">RUBLIK</div>
+          <div class="hero-promo-code copy-promo" onclick="copyPromo()">RUBLIK</div>
         </div>
       </div>
     </div>
@@ -372,7 +372,7 @@ footer{background:#111122;color:#555;padding:26px 16px;margin-top:20px;}
         <div class="bcon">Максимальный вывод с бонуса — <strong>5-кратная сумма бонуса</strong></div>
       </div>
       <a href="#" class="bonus-get-btn" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">💰 Получить бонус в Vavada</a>
-      <div class="bonus-promo-row">Промокод: <span class="bpromo-code" onclick="copyPromo()">RUBLIK</span></div>
+      <div class="bonus-promo-row">Промокод: <span class="bpromo-code copy-promo" onclick="copyPromo()">RUBLIK</span></div>
     </div>
 
     <h3>Плюсы и минусы бонусной политики</h3>
@@ -795,5 +795,6 @@ function copyPromo(){
 }
 function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 </script>
+<script src="../script.js" defer></script>
 </body>
 </html>
