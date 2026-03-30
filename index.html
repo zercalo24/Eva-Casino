@@ -858,7 +858,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
 
       <!-- ДЕСКТОП: горизонтальная таблица -->
       <div class="table-scroll">
-        <table class="casino-table" style="border-collapse:collapse;width:100%;">
+        <table id="casino-table" class="casino-table" style="border-collapse:collapse;width:100%;">
           <thead>
             <tr class="ct-head">
               <th style="text-align:left">#</th>
@@ -872,7 +872,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
           </thead>
           <tbody>
             <!-- Macro: row(pos, img, name, key, stars, rating, bonus, subbons, bezdep, devices, link) -->
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="vavada" data-casino-name="Vavada" data-name="vavada" data-bonus-type="all" data-rating="5">
               <td class="ct-num">1</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div><div><span class="ct-name">Vavada</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">5.0/5</span></td>
@@ -881,7 +881,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="duel" data-casino-name="Duel Casino" data-name="duel casino" data-bonus-type="freespins" data-rating="5">
               <td class="ct-num">2</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/duel.webp" alt="Duel" loading="lazy"></div><div><span class="ct-name">Duel Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></td>
@@ -890,7 +890,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="kush" data-casino-name="Куш Casino" data-name="куш casino" data-bonus-type="freespins" data-rating="5">
               <td class="ct-num">3</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/kush.webp" alt="Куш" loading="lazy"></div><div><span class="ct-name">Куш Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.9/5</span></td>
@@ -899,7 +899,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="cat" data-casino-name="Cat Casino" data-name="cat casino" data-bonus-type="all" data-rating="5">
               <td class="ct-num">4</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/cat.webp" alt="Cat" loading="lazy"></div><div><span class="ct-name">Cat Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
@@ -908,7 +908,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="joy" data-casino-name="Joy Casino" data-name="joy casino" data-bonus-type="freespins" data-rating="5">
               <td class="ct-num">5</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/joy.webp" alt="Joy" loading="lazy"></div><div><span class="ct-name">Joy Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
@@ -917,7 +917,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="stake" data-casino-name="Stake Casino" data-name="stake casino" data-bonus-type="crypto" data-rating="5">
               <td class="ct-num">6</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div><div><span class="ct-name">Stake Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.8/5</span></td>
@@ -926,7 +926,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="rox" data-casino-name="Rox Casino" data-name="rox casino" data-bonus-type="cashback" data-rating="5">
               <td class="ct-num">7</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div><div><span class="ct-name">Rox Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
@@ -935,7 +935,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="flagman" data-casino-name="Flagman" data-name="flagman" data-bonus-type="freespins" data-rating="5">
               <td class="ct-num">8</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div><div><span class="ct-name">Flagman</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
@@ -944,7 +944,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="gama" data-casino-name="Gama Casino" data-name="gama casino" data-bonus-type="freespins" data-rating="5">
               <td class="ct-num">9</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/gama.webp" alt="Gama" loading="lazy"></div><div><span class="ct-name">Gama Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★★</div><span class="rating-val">4.7/5</span></td>
@@ -953,7 +953,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="GAMA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="ramenbet" data-casino-name="Ramenbet" data-name="ramenbet" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">10</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy"></div><div><span class="ct-name">Ramenbet</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></td>
@@ -962,7 +962,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="RAMENBET">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="beef" data-casino-name="Beef Casino" data-name="beef casino" data-bonus-type="cashback" data-rating="4">
               <td class="ct-num">11</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/beef.webp" alt="Beef" loading="lazy"></div><div><span class="ct-name">Beef Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.6/5</span></td>
@@ -971,7 +971,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="vodka" data-casino-name="Vodka Casino" data-name="vodka casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">12</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/vodka.webp" alt="Vodka" loading="lazy"></div><div><span class="ct-name">Vodka Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></td>
@@ -980,7 +980,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="VODKA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="fugu" data-casino-name="Fugu Casino" data-name="fugu casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">13</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/fugu.webp" alt="Fugu" loading="lazy"></div><div><span class="ct-name">Fugu Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.5/5</span></td>
@@ -989,7 +989,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="FUGU CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="cactus" data-casino-name="Cactus Casino" data-name="cactus casino" data-bonus-type="cashback" data-rating="4">
               <td class="ct-num">14</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/cactus.webp" alt="Cactus" loading="lazy"></div><div><span class="ct-name">Cactus Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></td>
@@ -998,7 +998,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CACTUS CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="banda" data-casino-name="Banda Casino" data-name="banda casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">15</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/banda.webp" alt="Banda" loading="lazy"></div><div><span class="ct-name">Banda Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.4/5</span></td>
@@ -1007,7 +1007,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="BANDA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="champion" data-casino-name="Champion Slots" data-name="champion slots" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">16</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/champion.webp" alt="Champion" loading="lazy"></div><div><span class="ct-name">Champion Slots</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></td>
@@ -1016,7 +1016,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CHAMPION SLOTS">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="casinox" data-casino-name="Casino X" data-name="casino x" data-bonus-type="cashback" data-rating="4">
               <td class="ct-num">17</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/casinox.webp" alt="CasinoX" loading="lazy"></div><div><span class="ct-name">Casino X</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.3/5</span></td>
@@ -1025,7 +1025,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CASINO X">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="cryptoboss" data-casino-name="Cryptoboss" data-name="cryptoboss" data-bonus-type="crypto" data-rating="4">
               <td class="ct-num">18</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/cryptoboss.webp" alt="Cryptoboss" loading="lazy"></div><div><span class="ct-name">Cryptoboss</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></td>
@@ -1034,7 +1034,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="kent" data-casino-name="Kent Casino" data-name="kent casino" data-bonus-type="all" data-rating="4">
               <td class="ct-num">19</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/kent.webp" alt="Kent" loading="lazy"></div><div><span class="ct-name">Kent Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.2/5</span></td>
@@ -1043,7 +1043,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="KENT CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="leebet" data-casino-name="Leebet Casino" data-name="leebet casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">20</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/leebet.webp" alt="Leebet" loading="lazy"></div><div><span class="ct-name">Leebet Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.1/5</span></td>
@@ -1052,7 +1052,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="LEEBET CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="gizbo" data-casino-name="Gizbo Casino" data-name="gizbo casino" data-bonus-type="all" data-rating="4">
               <td class="ct-num">21</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/gizbo.webp" alt="Gizbo" loading="lazy"></div><div><span class="ct-name">Gizbo Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.1/5</span></td>
@@ -1061,7 +1061,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="GIZBO CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="auf" data-casino-name="Auf Casino" data-name="auf casino" data-bonus-type="all" data-rating="4">
               <td class="ct-num">22</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/auf.webp" alt="Auf" loading="lazy"></div><div><span class="ct-name">Auf Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.0/5</span></td>
@@ -1070,7 +1070,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="AUF CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="starda" data-casino-name="Starda Casino" data-name="starda casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">23</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/starda.webp" alt="Starda" loading="lazy"></div><div><span class="ct-name">Starda Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">4.0/5</span></td>
@@ -1079,7 +1079,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="STARDA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="sol" data-casino-name="Sol Casino" data-name="sol casino" data-bonus-type="all" data-rating="4">
               <td class="ct-num">24</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/sol.webp" alt="Sol" loading="lazy"></div><div><span class="ct-name">Sol Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">3.9/5</span></td>
@@ -1088,7 +1088,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="SOL CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="arkada" data-casino-name="Arkada Casino" data-name="arkada casino" data-bonus-type="freespins" data-rating="4">
               <td class="ct-num">25</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/arkada.webp" alt="Arkada" loading="lazy"></div><div><span class="ct-name">Arkada Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★★☆</div><span class="rating-val">3.9/5</span></td>
@@ -1097,7 +1097,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="ARKADA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="izzi" data-casino-name="Izzi Casino" data-name="izzi casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">26</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/izzi.webp" alt="Izzi" loading="lazy"></div><div><span class="ct-name">Izzi Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.8/5</span></td>
@@ -1106,7 +1106,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="IZZI CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="drip" data-casino-name="Drip Casino" data-name="drip casino" data-bonus-type="cashback" data-rating="3">
               <td class="ct-num">27</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/drip.webp" alt="Drip" loading="lazy"></div><div><span class="ct-name">Drip Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.8/5</span></td>
@@ -1115,7 +1115,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="DRIP CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="1go" data-casino-name="1Go Casino" data-name="1go casino" data-bonus-type="all" data-rating="3">
               <td class="ct-num">28</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/1go.webp" alt="1Go" loading="lazy"></div><div><span class="ct-name">1Go Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.7/5</span></td>
@@ -1124,7 +1124,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="1GO CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="irvin" data-casino-name="Irvin Casino" data-name="irvin casino" data-bonus-type="all" data-rating="3">
               <td class="ct-num">29</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/irvin.webp" alt="Irvin" loading="lazy"></div><div><span class="ct-name">Irvin Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.7/5</span></td>
@@ -1133,7 +1133,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="IRVIN CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="jet" data-casino-name="Jet Casino" data-name="jet casino" data-bonus-type="all" data-rating="3">
               <td class="ct-num">30</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/jet.webp" alt="Jet" loading="lazy"></div><div><span class="ct-name">Jet Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.6/5</span></td>
@@ -1142,7 +1142,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="JET CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="daddy" data-casino-name="Daddy Casino" data-name="daddy casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">31</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/daddy.webp" alt="Daddy" loading="lazy"></div><div><span class="ct-name">Daddy Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.6/5</span></td>
@@ -1151,7 +1151,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="DADDY CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="fresh" data-casino-name="Fresh Casino" data-name="fresh casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">32</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/fresh.webp" alt="Fresh" loading="lazy"></div><div><span class="ct-name">Fresh Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.5/5</span></td>
@@ -1160,7 +1160,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="FRESH CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="martin" data-casino-name="Martin Casino" data-name="martin casino" data-bonus-type="all" data-rating="3">
               <td class="ct-num">33</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/martin.webp" alt="Martin" loading="lazy"></div><div><span class="ct-name">Martin Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.5/5</span></td>
@@ -1169,7 +1169,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="MARTIN CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="monro" data-casino-name="Monro Casino" data-name="monro casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">34</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/monro.webp" alt="Monro" loading="lazy"></div><div><span class="ct-name">Monro Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.4/5</span></td>
@@ -1178,7 +1178,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="MONRO CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="lexx" data-casino-name="Lexx Casino" data-name="lexx casino" data-bonus-type="all" data-rating="3">
               <td class="ct-num">35</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/lexx.webp" alt="Lexx" loading="lazy"></div><div><span class="ct-name">Lexx Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.4/5</span></td>
@@ -1187,7 +1187,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="LEXX CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="r7" data-casino-name="R7 Casino" data-name="r7 casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">36</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/r7.webp" alt="R7" loading="lazy"></div><div><span class="ct-name">R7 Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.3/5</span></td>
@@ -1196,7 +1196,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="R7 CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="volna" data-casino-name="Volna Casino" data-name="volna casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">37</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/volna.webp" alt="Volna" loading="lazy"></div><div><span class="ct-name">Volna Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.3/5</span></td>
@@ -1205,7 +1205,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="VOLNA CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="kometa" data-casino-name="Комета Casino" data-name="комета casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">38</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/kometa.webp" alt="Комета" loading="lazy"></div><div><span class="ct-name">Комета Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.2/5</span></td>
@@ -1214,7 +1214,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="КОМЕТА CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="legzo" data-casino-name="Legzo Casino" data-name="legzo casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">39</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/legzo.webp" alt="Legzo" loading="lazy"></div><div><span class="ct-name">Legzo Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.2/5</span></td>
@@ -1223,7 +1223,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="LEGZO CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="unlim" data-casino-name="Unlim Casino" data-name="unlim casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">40</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/unlim.webp" alt="Unlim" loading="lazy"></div><div><span class="ct-name">Unlim Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.1/5</span></td>
@@ -1232,7 +1232,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <td class="devices">🖥 📱</td>
               <td><a href="#" class="btn-red" style="padding:8px 14px;font-size:12px;" target="_blank" rel="noopener sponsored" data-casino="UNLIM CASINO">Играть</a></td>
             </tr>
-            <tr class="ct-row">
+            <tr class="ct-row" data-casino-id="hype" data-casino-name="Hype Casino" data-name="hype casino" data-bonus-type="freespins" data-rating="3">
               <td class="ct-num">41</td>
               <td><div class="ct-brand"><div class="ct-logo"><img src="images/hipe.webp" alt="Hype" loading="lazy"></div><div><span class="ct-name">Hype Casino</span><span class="ct-compare">+ Сравнить</span></div></div></td>
               <td><div class="stars">★★★☆☆</div><span class="rating-val">3.0/5</span></td>
@@ -1806,5 +1806,6 @@ function showToast() {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 </script>
+<script src="script.js" defer></script>
 </body>
 </html>
