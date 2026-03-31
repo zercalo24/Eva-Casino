@@ -1,409 +1,222 @@
 /* ================================================================
-   mobile-table.css
-   GamblerExpert.com — Адаптивная таблица казино
-   
-   Десктоп  (≥ 768px): обычная таблица-грид
-   Мобиль   (< 768px): каждая строка = отдельная карточка
-   
-   Не конфликтует с:
-   • .btn-compare  (script.js — сравнение)
-   • data-casino-id / data-casino-name / data-rating (фильтрация)
-   • .ct-row.hidden (фильтр script.js — display:none перекрывает card)
+   mobile-table.css  |  GamblerExpert.com
+   Десктоп >= 768px : таблица-грид
+   Мобиль  <  768px : каждый <tr> = карточка
    ================================================================ */
 
-
-/* ────────────────────────────────────────────────────────────────
-   1. ДЕСКТОП — горизонтальный скролл-обёртка
-   ──────────────────────────────────────────────────────────────── */
-
+/* ── Горизонтальная прокрутка-обёртка ── */
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  /* Красивый scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: var(--border, #e0e0e0) transparent;
+  scrollbar-color: #ddd transparent;
 }
-.table-scroll::-webkit-scrollbar { height: 4px; }
-.table-scroll::-webkit-scrollbar-track { background: transparent; }
-.table-scroll::-webkit-scrollbar-thumb {
-  background: var(--border, #e0e0e0);
-  border-radius: 2px;
-}
+.table-scroll::-webkit-scrollbar       { height: 4px; }
+.table-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
 
-/* Таблица на десктопе — минимальная ширина чтобы не сжималась */
-.casino-table {
-  width: 100%;
-  min-width: 700px;
-  border-collapse: collapse;
-}
+/* ── ДЕСКТОП: шапка и строки — GRID ── */
+.casino-table          { width: 100%; border-collapse: collapse; }
 
-/* Шапка — грид 7 колонок */
 .ct-head {
   display: grid;
-  grid-template-columns: 42px 2.4fr 110px 1.6fr 72px 110px 110px;
-  gap: 8px;
-  padding: 10px 16px;
+  grid-template-columns: 42px 2.2fr 100px 1.5fr 68px 100px 100px;
+  gap: 6px; padding: 10px 16px;
   background: #f7f7f9;
-  border-bottom: 2px solid var(--border, #e0e0e0);
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--muted, #666);
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  /* Липкая шапка на десктопе */
-  position: sticky;
-  top: 0;
-  z-index: 2;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 11px; font-weight: 800; color: #666;
+  text-transform: uppercase; letter-spacing: .5px;
+  position: sticky; top: 0; z-index: 2;
 }
 
-/* Строка-грид на десктопе */
 .ct-row {
   display: grid;
-  grid-template-columns: 42px 2.4fr 110px 1.6fr 72px 110px 110px;
-  gap: 8px;
-  padding: 13px 16px;
-  border-bottom: 1px solid var(--border, #e0e0e0);
+  grid-template-columns: 42px 2.2fr 100px 1.5fr 68px 100px 100px;
+  gap: 6px; padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
   align-items: center;
-  transition: background .15s, box-shadow .15s;
+  background: #fff;
+  transition: background .15s;
 }
+.ct-row:hover      { background: #fafafa; box-shadow: inset 3px 0 0 #e02020; }
 .ct-row:last-child { border-bottom: none; }
-.ct-row:hover {
-  background: #fafafa;
-  box-shadow: inset 3px 0 0 var(--red, #e02020);
+.ct-row.hidden     { display: none !important; }
+
+/* Мобильные td — скрыты на десктопе */
+.ct-row .mob-header,
+.ct-row .mob-body,
+.ct-row .mob-footer { display: none; }
+
+/* Стили ячеек десктопа */
+.ct-num        { font-size: 17px; font-weight: 700; color: #ccc; text-align: center; }
+.ct-row:nth-child(1) .ct-num { color: #f5a623; }
+.ct-row:nth-child(2) .ct-num { color: #b0b0b0; }
+.ct-row:nth-child(3) .ct-num { color: #cd7f32; }
+
+.ct-brand      { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.ct-logo       { width: 72px; height: 42px; background: #1a1a2e;
+                 border-radius: 6px; overflow: hidden; flex-shrink: 0;
+                 display: flex; align-items: center; justify-content: center; }
+.ct-logo img   { width: 72px; height: 42px; object-fit: contain; }
+.ct-name       { font-weight: 700; font-size: 13px; color: #1a1a2e; display: block; }
+
+.ct-compare.btn-compare {
+  font-size: 11px; color: #999; cursor: pointer;
+  background: none; border: none; padding: 0;
+  font-family: inherit; display: block; margin-top: 2px;
 }
+.ct-compare.btn-compare:hover { color: #e02020; }
+.ct-compare.btn-compare.added { color: #27ae60; font-weight: 700; }
 
-/* Скрытые строки (фильтр) — CSS важнее display:grid */
-.ct-row.hidden { display: none !important; }
+.stars         { color: #f5a623; font-size: 12px; letter-spacing: -1px; }
+.rating-val    { font-size: 12px; font-weight: 700; }
+.bonus-amount  { font-weight: 700; font-size: 13px; color: #1a1a2e; display: block; }
+.bonus-rules   { font-size: 11px; color: #666; }
+.bezdep-yes    { color: #27ae60; font-size: 17px; text-align: center; }
+.bezdep-no     { color: #ccc;    font-size: 14px; text-align: center; }
+.devices       { font-size: 13px; display: flex; gap: 4px; }
 
 
-/* ────────────────────────────────────────────────────────────────
-   2. МОБИЛЬ (< 768px) — трансформация строк в карточки
-   ──────────────────────────────────────────────────────────────── */
-
+/* ================================================================
+   МОБИЛЬ < 768px — tr → КАРТОЧКА
+   ================================================================ */
 @media (max-width: 767px) {
 
-  /* Убираем горизонтальный скролл — больше не нужен */
-  .table-scroll {
-    overflow-x: visible;
-  }
+  /* Убираем горизонтальный скролл */
+  .table-scroll { overflow: visible; }
 
-  /* Таблица — сброс min-width */
-  .casino-table {
-    min-width: 0;
-    width: 100%;
-  }
+  .casino-table      { min-width: 0; display: block; }
+  .casino-table thead,
+  .ct-head           { display: none !important; }
 
-  /* Прячем thead полностью */
-  .ct-head { display: none; }
-
-  /* tbody — флекс-контейнер для карточек */
   .casino-table tbody {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     padding: 12px;
   }
 
-  /* ── Каждая tr → карточка ── */
+  /* ── tr становится карточкой ── */
   .ct-row {
-    /* Сбрасываем grid, переходим на block */
-    display: block;
-    /* Внутри используем grid для раскладки */
+    display: block !important;
     grid-template-columns: none;
-    gap: 0;
     padding: 0;
-    border: 1.5px solid var(--border, #e0e0e0);
+    border: 1.5px solid #e0e0e0;
     border-radius: 14px;
+    overflow: hidden;
     background: #fff;
     box-shadow: 0 2px 12px rgba(0,0,0,.07);
     transition: transform .2s, box-shadow .2s;
-    overflow: hidden;
   }
   .ct-row:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0,0,0,.1);
-    box-shadow: inset 0 0 0 0, 0 6px 24px rgba(0,0,0,.1);
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
   }
-  .ct-row:last-child { border-bottom: 1.5px solid var(--border, #e0e0e0); }
+  .ct-row:last-child { border-bottom: 1.5px solid #e0e0e0; }
 
-  /* ── Скрытые td — прячем всё через data-label ── */
-  .ct-row td {
-    display: none;
-  }
+  /* Скрываем все десктопные td */
+  .ct-row > td { display: none; }
 
-  /* ── td с data-mobile — показываем и строим карточку ── */
-  .ct-row td[data-mobile] {
-    display: block;
-  }
+  /* Показываем мобильные td */
+  .ct-row .mob-header,
+  .ct-row .mob-body,
+  .ct-row .mob-footer { display: block; }
 
-  /* ─── ШАПКА КАРТОЧКИ: логотип + позиция ─── */
-  .ct-row td[data-mobile="header"] {
-    background: var(--dark, #1a1a2e);
+  /* ── ШАПКА ── */
+  .ct-row .mob-header {
+    background: #1a1a2e;
     padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  /* Номер позиции */
-  .ct-row td[data-mobile="header"] .ct-num {
-    font-size: 18px;
-    font-weight: 900;
-    color: rgba(255,255,255,.25);
-    width: 28px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  /* Логотип */
-  .ct-row td[data-mobile="header"] .ct-logo {
-    width: 88px;
-    height: 50px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .ct-row td[data-mobile="header"] .ct-logo img {
-    width: 80px;
-    height: 44px;
-    object-fit: contain;
-  }
-
-  /* Название + сравнить */
-  .ct-row td[data-mobile="header"] .ct-name-block {
-    flex: 1;
-    min-width: 0;
-  }
-  .ct-row td[data-mobile="header"] .ct-name {
-    font-size: 16px;
-    font-weight: 800;
-    color: #fff;
-    display: block;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* ─── ТЕЛО КАРТОЧКИ ─── */
-  .ct-row td[data-mobile="body"] {
-    padding: 14px 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    border-bottom: 1px solid var(--border, #e0e0e0);
-  }
-
-  /* Ячейки тела */
-  .card-field {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .card-field-label {
-    font-size: 10px;
-    font-weight: 800;
-    color: var(--muted, #666);
-    text-transform: uppercase;
-    letter-spacing: .7px;
-  }
-  .card-field-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--dark, #1a1a2e);
-    line-height: 1.3;
-  }
-  .card-field-value .stars {
-    color: var(--gold, #f5a623);
-    font-size: 14px;
-    letter-spacing: 0;
-  }
-  .card-field-value .rating-val {
-    font-size: 12px;
-    color: var(--muted, #666);
-    margin-left: 4px;
-  }
-  .card-field-value .bonus-amount {
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--dark, #1a1a2e);
-    display: block;
-  }
-  .card-field-value .bonus-rules {
-    font-size: 11px;
-    color: var(--muted, #666);
-  }
-  .card-field-value .bezdep-yes {
-    color: var(--green, #27ae60);
-    font-size: 17px;
-  }
-  .card-field-value .bezdep-no {
-    color: #ccc;
-    font-size: 14px;
-  }
-  .card-field-value .devices {
-    font-size: 16px;
-    display: flex;
-    gap: 4px;
-  }
-
-  /* ─── ФУТЕР КАРТОЧКИ: кнопки ─── */
-  .ct-row td[data-mobile="footer"] {
-    padding: 12px 16px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  /* Кнопка Играть внутри карточки */
-  .ct-row td[data-mobile="footer"] .btn-red {
-    flex: 1;
     display: flex !important;
     align-items: center;
-    justify-content: center;
-    padding: 11px 14px !important;
-    font-size: 14px !important;
-    min-height: 46px;
-    border-radius: 9px;
-    font-weight: 800;
-    text-align: center;
+    gap: 12px;
+    border-top: 3px solid #e02020;
   }
+  .ct-row[data-bonus-type="freespins"] .mob-header { border-top-color: #27ae60; }
+  .ct-row[data-bonus-type="cashback"]  .mob-header { border-top-color: #3b82f6; }
+  .ct-row[data-bonus-type="crypto"]    .mob-header { border-top-color: #f5a623; }
 
-  /* Кнопка Сравнить внутри карточки */
-  .ct-row td[data-mobile="footer"] .btn-compare {
-    flex-shrink: 0;
-    padding: 11px 14px;
-    border: 1.5px solid var(--border, #e0e0e0);
-    border-radius: 9px;
-    background: #fff;
-    color: var(--muted, #666);
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-    min-height: 46px;
-    transition: all .2s;
-  }
-  .ct-row td[data-mobile="footer"] .btn-compare:hover,
-  .ct-row td[data-mobile="footer"] .btn-compare.added {
-    border-color: var(--green, #27ae60);
-    color: var(--green, #27ae60);
-    background: #f0faf4;
-  }
+  .mob-pos        { font-size: 18px; font-weight: 900;
+                    width: 26px; text-align: center; flex-shrink: 0; }
 
-  /* ─── Цвета номеров позиций ─── */
-  .ct-row:nth-child(1) td[data-mobile="header"] .ct-num { color: var(--gold, #f5a623); }
-  .ct-row:nth-child(2) td[data-mobile="header"] .ct-num { color: #b0b0b0; }
-  .ct-row:nth-child(3) td[data-mobile="header"] .ct-num { color: #cd7f32; }
+  .mob-header .ct-logo {
+    width: 88px; height: 52px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px; flex-shrink: 0;
+  }
+  .mob-header .ct-logo img { width: 88px; height: 52px; object-fit: contain; }
 
-  /* ─── Бейджи бонус-типа ─── */
-  .ct-row[data-bonus-type="freespins"] td[data-mobile="header"] {
-    border-top: 3px solid var(--green, #27ae60);
+  .mob-name-block { flex: 1; min-width: 0; }
+  .mob-name {
+    font-size: 15px; font-weight: 800; color: #fff;
+    display: block; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px;
   }
-  .ct-row[data-bonus-type="cashback"] td[data-mobile="header"] {
-    border-top: 3px solid #3b82f6;
-  }
-  .ct-row[data-bonus-type="crypto"] td[data-mobile="header"] {
-    border-top: 3px solid var(--gold, #f5a623);
-  }
-
-  /* ─── Промо-бейдж на карточке ─── */
-  .card-promo-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(245,166,35,.12);
+  .mob-promo-tag {
+    display: inline-flex; align-items: center;
+    background: rgba(245,166,35,.15);
     border: 1px dashed rgba(245,166,35,.4);
-    border-radius: 5px;
-    padding: 3px 8px;
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--gold, #f5a623);
-    letter-spacing: 1px;
-    margin-top: 3px;
+    border-radius: 5px; padding: 2px 8px;
+    font-size: 11px; font-weight: 800; color: #f5a623; letter-spacing: 1px;
   }
+  .mob-review-link {
+    flex-shrink: 0; font-size: 11px; color: #aaa;
+    text-decoration: none; white-space: nowrap;
+  }
+  .mob-review-link:hover { color: #fff; }
+
+  /* ── ТЕЛО ── */
+  .ct-row .mob-body {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .mob-field  { display: flex; flex-direction: column; gap: 3px; }
+  .mob-label  { font-size: 10px; font-weight: 800; color: #999;
+                text-transform: uppercase; letter-spacing: .6px; }
+  .mob-val    { font-size: 14px; font-weight: 700; color: #1a1a2e; line-height: 1.35; }
+  .mob-val .stars      { font-size: 13px; }
+  .mob-val .rating-val { font-size: 12px; color: #666; font-weight: 600; }
+  .mob-val .bonus-amount { font-size: 13px; display: block; }
+  .mob-val .bonus-rules  { font-size: 11px; color: #888; display: block; }
+  .mob-val .bezdep-yes { font-size: 18px; }
+  .mob-val .bezdep-no  { color: #ccc; }
+
+  /* ── ФУТЕР ── */
+  .ct-row .mob-footer {
+    display: flex !important;
+    gap: 10px; padding: 12px 16px; align-items: center;
+  }
+  .btn-play-mob {
+    flex: 1; padding: 12px 14px;
+    background: #e02020; color: #fff !important;
+    border-radius: 9px; font-size: 14px; font-weight: 800;
+    text-align: center; text-decoration: none;
+    min-height: 46px; display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .btn-play-mob:hover  { background: #c01818; }
+  .mob-compare {
+    flex-shrink: 0; padding: 12px 14px;
+    border: 1.5px solid #e0e0e0; border-radius: 9px;
+    background: #fff; color: #666;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    white-space: nowrap; min-height: 46px;
+    transition: all .2s; font-family: inherit;
+  }
+  .mob-compare:hover,
+  .mob-compare.added   { border-color: #27ae60; color: #27ae60; background: #f0faf4; }
 
 } /* end @media */
 
 
-/* ────────────────────────────────────────────────────────────────
-   3. ПРОМЕЖУТОЧНЫЕ ЭКРАНЫ (768–1024px)
-   ──────────────────────────────────────────────────────────────── */
-
+/* ── Планшет 768–1023px: скрываем Устройства ── */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Скрываем менее важные колонки */
-  .ct-head > *:nth-child(6),
-  .ct-row > *:nth-child(6) {
-    display: none; /* Устройства */
-  }
-  .ct-row, .ct-head {
-    grid-template-columns: 38px 2fr 100px 1.5fr 65px 110px;
-  }
-}
-
-
-/* ────────────────────────────────────────────────────────────────
-   4. ДЕСКТОП — показываем правильные колонки
-   ──────────────────────────────────────────────────────────────── */
-
-@media (min-width: 768px) {
-
-  /* На десктопе tbody не является flex-контейнером */
-  .casino-table tbody {
-    display: table-row-group;
-  }
-
-  /* Строка — обычный tr (grid переопределяем) */
+  .ct-head,
   .ct-row {
-    display: grid;
-    grid-template-columns: 42px 2.4fr 110px 1.6fr 72px 110px 110px;
-    gap: 8px;
-    padding: 13px 16px;
-    border-bottom: 1px solid var(--border, #e0e0e0);
-    align-items: center;
-    /* Сбрасываем card-стили */
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid var(--border, #e0e0e0);
-    box-shadow: none;
-    overflow: visible;
-    background: transparent;
+    grid-template-columns: 38px 2fr 100px 1.4fr 65px 100px;
   }
-  .ct-row:hover {
-    background: #fafafa;
-    box-shadow: inset 3px 0 0 var(--red, #e02020);
-    transform: none;
-  }
-
-  /* Шапка */
-  .casino-table tbody { display: table-row-group; }
-
-  /* td — все показываем через grid */
-  .ct-row td { display: block; }
-
-  /* Мобильные td — скрыты на десктопе */
-  .ct-row td[data-mobile="header"],
-  .ct-row td[data-mobile="body"],
-  .ct-row td[data-mobile="footer"] {
-    display: none;
-  }
-
-  /* Пропущенный номер — показываем */
-  .ct-row td[data-mobile="skip"] {
-    display: block;
-  }
-
-  /* Десктопные колонки — показываем */
-  .ct-row td[data-mobile="desktop-only"] {
-    display: block !important;
-  }
-
-  /* Сбрасываем стили tbody обратно к таблице */
-  .casino-table tbody {
-    display: revert;
-  }
+  .ct-head > *:nth-child(6) { display: none; }
+  .ct-row  > .devices       { display: none; }
 }
