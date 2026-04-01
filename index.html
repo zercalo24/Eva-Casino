@@ -737,6 +737,50 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
   pointer-events: none;
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── Хлебные крошки ── */
+.breadcrumbs {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.breadcrumbs a {
+  color: #999;
+  text-decoration: none;
+  transition: color .2s;
+}
+.breadcrumbs a:hover { color: var(--red, #e02020); }
+.breadcrumbs .bc-sep {
+  margin: 0 7px;
+  color: #bbb;
+  font-size: 11px;
+  user-select: none;
+}
+.breadcrumbs .bc-current {
+  color: #555;
+  font-weight: 600;
+}
+
+
+.review-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red, #e02020);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: gap .2s;
+}
+.review-read-more:hover { gap: 9px; text-decoration: none; }
+
 </style>
 <link rel="stylesheet" href="mobile-table.css">
 </head>
@@ -812,6 +856,12 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
   <button class="promo-copy-btn" onclick="copyPromo()">КОПИРОВАТЬ</button>
 </div>
 
+
+<!-- Хлебные крошки главная -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://gamblerexpert.com/"}]}</script>
+<nav aria-label="Хлебные крошки" class="breadcrumbs">
+  <span class="bc-current">Главная</span>
+</nav>
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="page-body">
 
@@ -869,7 +919,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/vavada.webp" alt="Vavada" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Vavada</span>
+                    <a href="/casino/vavada/" class="ct-name" target="_self">Vavada</a>
                     <span class="ct-compare btn-compare" data-casino-id="vavada">+ Сравнить</span>
                   </div>
                 </div>
@@ -909,8 +959,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/vavada.webp" alt="Vavada" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Vavada</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/vavada/" class="mob-name" target="_self">Vavada</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/vavada.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -964,7 +1014,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/duel.webp" alt="Duel Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Duel Casino</span>
+                    <a href="/casino/duel/" class="ct-name" target="_self">Duel Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="duel">+ Сравнить</span>
                   </div>
                 </div>
@@ -1004,8 +1054,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/duel.webp" alt="Duel Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Duel Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/duel/" class="mob-name" target="_self">Duel Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/duel.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1059,7 +1109,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/kush.webp" alt="Куш Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Куш Casino</span>
+                    <a href="/casino/kush/" class="ct-name" target="_self">Куш Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="kush">+ Сравнить</span>
                   </div>
                 </div>
@@ -1099,8 +1149,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/kush.webp" alt="Куш Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Куш Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/kush/" class="mob-name" target="_self">Куш Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/kush.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1154,7 +1204,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/cat.webp" alt="Cat Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Cat Casino</span>
+                    <a href="/casino/cat/" class="ct-name" target="_self">Cat Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="cat">+ Сравнить</span>
                   </div>
                 </div>
@@ -1194,8 +1244,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/cat.webp" alt="Cat Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Cat Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/cat/" class="mob-name" target="_self">Cat Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/cat.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1249,7 +1299,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/joy.webp" alt="Joy Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Joy Casino</span>
+                    <a href="/casino/joy/" class="ct-name" target="_self">Joy Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="joy">+ Сравнить</span>
                   </div>
                 </div>
@@ -1289,8 +1339,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/joy.webp" alt="Joy Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Joy Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/joy/" class="mob-name" target="_self">Joy Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/joy.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1344,7 +1394,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/stake.webp" alt="Stake Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Stake Casino</span>
+                    <a href="/casino/stake/" class="ct-name" target="_self">Stake Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="stake">+ Сравнить</span>
                   </div>
                 </div>
@@ -1384,8 +1434,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/stake.webp" alt="Stake Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Stake Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/stake/" class="mob-name" target="_self">Stake Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/stake.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1439,7 +1489,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/rox.webp" alt="Rox Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Rox Casino</span>
+                    <a href="/casino/rox/" class="ct-name" target="_self">Rox Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="rox">+ Сравнить</span>
                   </div>
                 </div>
@@ -1479,8 +1529,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/rox.webp" alt="Rox Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Rox Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/rox/" class="mob-name" target="_self">Rox Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/rox.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1534,7 +1584,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/flagman.webp" alt="Flagman" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Flagman</span>
+                    <a href="/casino/flagman/" class="ct-name" target="_self">Flagman</a>
                     <span class="ct-compare btn-compare" data-casino-id="flagman">+ Сравнить</span>
                   </div>
                 </div>
@@ -1574,8 +1624,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/flagman.webp" alt="Flagman" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Flagman</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/flagman/" class="mob-name" target="_self">Flagman</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/flagman.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1629,7 +1679,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/gama.webp" alt="Gama Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Gama Casino</span>
+                    <a href="/casino/gama/" class="ct-name" target="_self">Gama Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="gama">+ Сравнить</span>
                   </div>
                 </div>
@@ -1669,8 +1719,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/gama.webp" alt="Gama Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Gama Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/gama/" class="mob-name" target="_self">Gama Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/gama.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1724,7 +1774,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Ramenbet</span>
+                    <a href="/casino/ramenbet/" class="ct-name" target="_self">Ramenbet</a>
                     <span class="ct-compare btn-compare" data-casino-id="ramenbet">+ Сравнить</span>
                   </div>
                 </div>
@@ -1764,8 +1814,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/ramenbet.webp" alt="Ramenbet" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Ramenbet</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/ramenbet/" class="mob-name" target="_self">Ramenbet</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/ramenbet.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1819,7 +1869,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/beef.webp" alt="Beef Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Beef Casino</span>
+                    <a href="/casino/beef/" class="ct-name" target="_self">Beef Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="beef">+ Сравнить</span>
                   </div>
                 </div>
@@ -1859,8 +1909,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/beef.webp" alt="Beef Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Beef Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/beef/" class="mob-name" target="_self">Beef Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/beef.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -1914,7 +1964,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/vodka.webp" alt="Vodka Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Vodka Casino</span>
+                    <a href="/casino/vodka/" class="ct-name" target="_self">Vodka Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="vodka">+ Сравнить</span>
                   </div>
                 </div>
@@ -1954,8 +2004,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/vodka.webp" alt="Vodka Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Vodka Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/vodka/" class="mob-name" target="_self">Vodka Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/vodka.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2009,7 +2059,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/fugu.webp" alt="Fugu Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Fugu Casino</span>
+                    <a href="/casino/fugu/" class="ct-name" target="_self">Fugu Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="fugu">+ Сравнить</span>
                   </div>
                 </div>
@@ -2049,8 +2099,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/fugu.webp" alt="Fugu Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Fugu Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/fugu/" class="mob-name" target="_self">Fugu Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/fugu.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2104,7 +2154,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/cactus.webp" alt="Cactus Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Cactus Casino</span>
+                    <a href="/casino/cactus/" class="ct-name" target="_self">Cactus Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="cactus">+ Сравнить</span>
                   </div>
                 </div>
@@ -2144,8 +2194,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/cactus.webp" alt="Cactus Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Cactus Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/cactus/" class="mob-name" target="_self">Cactus Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/cactus.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2199,7 +2249,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/banda.webp" alt="Banda Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Banda Casino</span>
+                    <a href="/casino/banda/" class="ct-name" target="_self">Banda Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="banda">+ Сравнить</span>
                   </div>
                 </div>
@@ -2239,8 +2289,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/banda.webp" alt="Banda Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Banda Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/banda/" class="mob-name" target="_self">Banda Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/banda.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2294,7 +2344,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/champion.webp" alt="Champion Slots" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Champion Slots</span>
+                    <a href="/casino/champion/" class="ct-name" target="_self">Champion Slots</a>
                     <span class="ct-compare btn-compare" data-casino-id="champion">+ Сравнить</span>
                   </div>
                 </div>
@@ -2334,8 +2384,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/champion.webp" alt="Champion Slots" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Champion Slots</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/champion/" class="mob-name" target="_self">Champion Slots</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/champion.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2389,7 +2439,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/casinox.webp" alt="Casino X" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Casino X</span>
+                    <a href="/casino/casinox/" class="ct-name" target="_self">Casino X</a>
                     <span class="ct-compare btn-compare" data-casino-id="casinox">+ Сравнить</span>
                   </div>
                 </div>
@@ -2429,8 +2479,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/casinox.webp" alt="Casino X" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Casino X</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/casinox/" class="mob-name" target="_self">Casino X</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/casinox.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2484,7 +2534,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/cryptoboss.webp" alt="Cryptoboss" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Cryptoboss</span>
+                    <a href="/casino/cryptoboss/" class="ct-name" target="_self">Cryptoboss</a>
                     <span class="ct-compare btn-compare" data-casino-id="cryptoboss">+ Сравнить</span>
                   </div>
                 </div>
@@ -2524,8 +2574,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/cryptoboss.webp" alt="Cryptoboss" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Cryptoboss</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/cryptoboss/" class="mob-name" target="_self">Cryptoboss</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/cryptoboss.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2579,7 +2629,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/kent.webp" alt="Kent Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Kent Casino</span>
+                    <a href="/casino/kent/" class="ct-name" target="_self">Kent Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="kent">+ Сравнить</span>
                   </div>
                 </div>
@@ -2619,8 +2669,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/kent.webp" alt="Kent Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Kent Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/kent/" class="mob-name" target="_self">Kent Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/kent.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2674,7 +2724,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/leebet.webp" alt="Leebet Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Leebet Casino</span>
+                    <a href="/casino/leebet/" class="ct-name" target="_self">Leebet Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="leebet">+ Сравнить</span>
                   </div>
                 </div>
@@ -2714,8 +2764,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/leebet.webp" alt="Leebet Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Leebet Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/leebet/" class="mob-name" target="_self">Leebet Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/leebet.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2769,7 +2819,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/gizbo.webp" alt="Gizbo Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Gizbo Casino</span>
+                    <a href="/casino/gizbo/" class="ct-name" target="_self">Gizbo Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="gizbo">+ Сравнить</span>
                   </div>
                 </div>
@@ -2809,8 +2859,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/gizbo.webp" alt="Gizbo Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Gizbo Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/gizbo/" class="mob-name" target="_self">Gizbo Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/gizbo.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2864,7 +2914,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/auf.webp" alt="Auf Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Auf Casino</span>
+                    <a href="/casino/auf/" class="ct-name" target="_self">Auf Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="auf">+ Сравнить</span>
                   </div>
                 </div>
@@ -2904,8 +2954,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/auf.webp" alt="Auf Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Auf Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/auf/" class="mob-name" target="_self">Auf Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/auf.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -2959,7 +3009,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/starda.webp" alt="Starda Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Starda Casino</span>
+                    <a href="/casino/starda/" class="ct-name" target="_self">Starda Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="starda">+ Сравнить</span>
                   </div>
                 </div>
@@ -2999,8 +3049,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/starda.webp" alt="Starda Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Starda Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/starda/" class="mob-name" target="_self">Starda Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/starda.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3054,7 +3104,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/sol.webp" alt="Sol Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Sol Casino</span>
+                    <a href="/casino/sol/" class="ct-name" target="_self">Sol Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="sol">+ Сравнить</span>
                   </div>
                 </div>
@@ -3094,8 +3144,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/sol.webp" alt="Sol Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Sol Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/sol/" class="mob-name" target="_self">Sol Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/sol.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3149,7 +3199,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/arkada.webp" alt="Arkada Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Arkada Casino</span>
+                    <a href="/casino/arkada/" class="ct-name" target="_self">Arkada Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="arkada">+ Сравнить</span>
                   </div>
                 </div>
@@ -3189,8 +3239,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/arkada.webp" alt="Arkada Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Arkada Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/arkada/" class="mob-name" target="_self">Arkada Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/arkada.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3244,7 +3294,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/izzi.webp" alt="Izzi Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Izzi Casino</span>
+                    <a href="/casino/izzi/" class="ct-name" target="_self">Izzi Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="izzi">+ Сравнить</span>
                   </div>
                 </div>
@@ -3284,8 +3334,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/izzi.webp" alt="Izzi Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Izzi Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/izzi/" class="mob-name" target="_self">Izzi Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/izzi.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3339,7 +3389,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/drip.webp" alt="Drip Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Drip Casino</span>
+                    <a href="/casino/drip/" class="ct-name" target="_self">Drip Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="drip">+ Сравнить</span>
                   </div>
                 </div>
@@ -3379,8 +3429,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/drip.webp" alt="Drip Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Drip Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/drip/" class="mob-name" target="_self">Drip Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/drip.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3434,7 +3484,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/1go.webp" alt="1Go Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">1Go Casino</span>
+                    <a href="/casino/1go/" class="ct-name" target="_self">1Go Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="1go">+ Сравнить</span>
                   </div>
                 </div>
@@ -3474,8 +3524,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/1go.webp" alt="1Go Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">1Go Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/1go/" class="mob-name" target="_self">1Go Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/1go.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3529,7 +3579,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/irvin.webp" alt="Irvin Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Irvin Casino</span>
+                    <a href="/casino/irvin/" class="ct-name" target="_self">Irvin Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="irvin">+ Сравнить</span>
                   </div>
                 </div>
@@ -3569,8 +3619,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/irvin.webp" alt="Irvin Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Irvin Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/irvin/" class="mob-name" target="_self">Irvin Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/irvin.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3624,7 +3674,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/jet.webp" alt="Jet Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Jet Casino</span>
+                    <a href="/casino/jet/" class="ct-name" target="_self">Jet Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="jet">+ Сравнить</span>
                   </div>
                 </div>
@@ -3664,8 +3714,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/jet.webp" alt="Jet Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Jet Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/jet/" class="mob-name" target="_self">Jet Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/jet.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3719,7 +3769,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/daddy.webp" alt="Daddy Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Daddy Casino</span>
+                    <a href="/casino/daddy/" class="ct-name" target="_self">Daddy Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="daddy">+ Сравнить</span>
                   </div>
                 </div>
@@ -3759,8 +3809,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/daddy.webp" alt="Daddy Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Daddy Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/daddy/" class="mob-name" target="_self">Daddy Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/daddy.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3814,7 +3864,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/fresh.webp" alt="Fresh Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Fresh Casino</span>
+                    <a href="/casino/fresh/" class="ct-name" target="_self">Fresh Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="fresh">+ Сравнить</span>
                   </div>
                 </div>
@@ -3854,8 +3904,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/fresh.webp" alt="Fresh Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Fresh Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/fresh/" class="mob-name" target="_self">Fresh Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/fresh.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -3909,7 +3959,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/martin.webp" alt="Martin Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Martin Casino</span>
+                    <a href="/casino/martin/" class="ct-name" target="_self">Martin Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="martin">+ Сравнить</span>
                   </div>
                 </div>
@@ -3949,8 +3999,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/martin.webp" alt="Martin Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Martin Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/martin/" class="mob-name" target="_self">Martin Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/martin.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4004,7 +4054,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/monro.webp" alt="Monro Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Monro Casino</span>
+                    <a href="/casino/monro/" class="ct-name" target="_self">Monro Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="monro">+ Сравнить</span>
                   </div>
                 </div>
@@ -4044,8 +4094,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/monro.webp" alt="Monro Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Monro Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/monro/" class="mob-name" target="_self">Monro Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/monro.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4099,7 +4149,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/lexx.webp" alt="Lexx Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Lexx Casino</span>
+                    <a href="/casino/lexx/" class="ct-name" target="_self">Lexx Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="lexx">+ Сравнить</span>
                   </div>
                 </div>
@@ -4139,8 +4189,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/lexx.webp" alt="Lexx Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Lexx Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/lexx/" class="mob-name" target="_self">Lexx Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/lexx.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4194,7 +4244,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/r7.webp" alt="R7 Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">R7 Casino</span>
+                    <a href="/casino/r7/" class="ct-name" target="_self">R7 Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="r7">+ Сравнить</span>
                   </div>
                 </div>
@@ -4234,8 +4284,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/r7.webp" alt="R7 Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">R7 Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/r7/" class="mob-name" target="_self">R7 Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/r7.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4289,7 +4339,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/volna.webp" alt="Volna Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Volna Casino</span>
+                    <a href="/casino/volna/" class="ct-name" target="_self">Volna Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="volna">+ Сравнить</span>
                   </div>
                 </div>
@@ -4329,8 +4379,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/volna.webp" alt="Volna Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Volna Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/volna/" class="mob-name" target="_self">Volna Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/volna.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4384,7 +4434,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/kometa.webp" alt="Комета Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Комета Casino</span>
+                    <a href="/casino/kometa/" class="ct-name" target="_self">Комета Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="kometa">+ Сравнить</span>
                   </div>
                 </div>
@@ -4424,8 +4474,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/kometa.webp" alt="Комета Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Комета Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/kometa/" class="mob-name" target="_self">Комета Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/kometa.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4479,7 +4529,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/legzo.webp" alt="Legzo Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Legzo Casino</span>
+                    <a href="/casino/legzo/" class="ct-name" target="_self">Legzo Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="legzo">+ Сравнить</span>
                   </div>
                 </div>
@@ -4519,8 +4569,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/legzo.webp" alt="Legzo Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Legzo Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/legzo/" class="mob-name" target="_self">Legzo Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/legzo.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4574,7 +4624,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/unlim.webp" alt="Unlim Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Unlim Casino</span>
+                    <a href="/casino/unlim/" class="ct-name" target="_self">Unlim Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="unlim">+ Сравнить</span>
                   </div>
                 </div>
@@ -4614,8 +4664,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/unlim.webp" alt="Unlim Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Unlim Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/unlim/" class="mob-name" target="_self">Unlim Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/unlim.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4669,7 +4719,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                     <img src="images/hipe.webp" alt="Hype Casino" loading="lazy">
                   </div>
                   <div>
-                    <span class="ct-name">Hype Casino</span>
+                    <a href="/casino/hype/" class="ct-name" target="_self">Hype Casino</a>
                     <span class="ct-compare btn-compare" data-casino-id="hype">+ Сравнить</span>
                   </div>
                 </div>
@@ -4709,8 +4759,8 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
                   <img src="images/hipe.webp" alt="Hype Casino" loading="lazy">
                 </div>
                 <div class="mob-name-block">
-                  <span class="mob-name">Hype Casino</span>
-                  <span class="mob-promo-tag">🎁 RUBLIK</span>
+                  <a href="/casino/hype/" class="mob-name" target="_self">Hype Casino</a>
+                  <span class="mob-promo-tag copy-promo" title="Скопировать промокод">🎁 RUBLIK</span>
                 </div>
                 <a href="reviews/hype.html" class="mob-review-link">Обзор →</a>
               </td>
@@ -4811,7 +4861,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/vavada.webp" alt="Vavada Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Vavada Casino</div>
+            <div class="card-name"><a href="/casino/vavada/" target="_self">Vavada Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>100% до 50 000 ₽</span></div>
             <div class="card-row"><span>Фриспины</span><span>100 ФС</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4824,7 +4874,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/duel.webp" alt="Duel Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Duel Casino</div>
+            <div class="card-name"><a href="/casino/duel/" target="_self">Duel Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>120% + 250 ФС</span></div>
             <div class="card-row"><span>Особенность</span><span>PvP дуэли</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4837,7 +4887,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/kush.webp" alt="Куш Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Куш Casino</div>
+            <div class="card-name"><a href="/casino/kush/" target="_self">Куш Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>200% + 300 ФС</span></div>
             <div class="card-row"><span>Джекпоты</span><span>Ежедневно</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4850,7 +4900,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/cat.webp" alt="Cat Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Cat Casino</div>
+            <div class="card-name"><a href="/casino/cat/" target="_self">Cat Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>200% до 100 000 ₽</span></div>
             <div class="card-row"><span>Кэшбэк</span><span>до 15%</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4863,7 +4913,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/rox.webp" alt="Rox Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Rox Casino</div>
+            <div class="card-name"><a href="/casino/rox/" target="_self">Rox Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>100% на депозит</span></div>
             <div class="card-row"><span>Кэшбэк</span><span>10% без условий</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4876,7 +4926,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/stake.webp" alt="Stake Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Stake Casino</div>
+            <div class="card-name"><a href="/casino/stake/" target="_self">Stake Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>Крипто-бонус</span></div>
             <div class="card-row"><span>KYC</span><span>Не нужен</span></div>
             <div class="card-flag">🌍 BTC · ETH · USDT</div>
@@ -4889,7 +4939,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/flagman.webp" alt="Flagman" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Flagman Casino</div>
+            <div class="card-name"><a href="/casino/flagman/" target="_self">Flagman Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>150% + 250 ФС</span></div>
             <div class="card-row"><span>Позиция</span><span>Топ рунета</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4902,7 +4952,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="casino-card">
           <div class="card-top"><img src="images/joy.webp" alt="Joy Casino" loading="lazy"></div>
           <div class="card-body">
-            <div class="card-name">Joy Casino</div>
+            <div class="card-name"><a href="/casino/joy/" target="_self">Joy Casino</a></div>
             <div class="card-row"><span>Бонус</span><span>200% + 200 ФС</span></div>
             <div class="card-row"><span>Лайв</span><span>Да</span></div>
             <div class="card-flag">Промокод: <strong>RUBLIK</strong></div>
@@ -4924,7 +4974,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
         <div class="review-item">
           <div class="review-logo"><img src="images/vavada.webp" alt="Vavada" loading="lazy"></div>
           <div class="review-body">
-            <div class="review-name">Vavada Casino</div>
+            <div class="review-name"><a href="/casino/vavada/" target="_self">Vavada Casino</a></div>
             <div class="review-meta">★★★★★ 5.0 · Лицензия Curacao · С 2017 года</div>
             <ul class="feature-list">
               <li>4000+ слотов от топ-провайдеров</li>
@@ -4935,12 +4985,13 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
               <a href="reviews/vavada.html" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
+            <a href="/casino/vavada/" class="review-read-more" target="_self">Читать полный обзор →</a>
           </div>
         </div>
         <div class="review-item">
           <div class="review-logo"><img src="images/rox.webp" alt="Rox" loading="lazy"></div>
           <div class="review-body">
-            <div class="review-name">Rox Casino</div>
+            <div class="review-name"><a href="/casino/rox/" target="_self">Rox Casino</a></div>
             <div class="review-meta">★★★★★ 4.7 · Кэшбэк без вейджера · Быстрые выплаты</div>
             <ul class="feature-list">
               <li>Кэшбэк 10% каждую неделю — без условий отыгрыша</li>
@@ -4951,12 +5002,13 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
               <a href="reviews/rox.html" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
+            <a href="/casino/rox/" class="review-read-more" target="_self">Читать полный обзор →</a>
           </div>
         </div>
         <div class="review-item">
           <div class="review-logo"><img src="images/stake.webp" alt="Stake" loading="lazy"></div>
           <div class="review-body">
-            <div class="review-name">Stake Casino</div>
+            <div class="review-name"><a href="/casino/stake/" target="_self">Stake Casino</a></div>
             <div class="review-meta">★★★★★ 4.8 · Мировой лидер крипто-гемблинга</div>
             <ul class="feature-list">
               <li>Bitcoin, Ethereum, USDT и 20+ криптовалют</li>
@@ -4967,6 +5019,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
               <a href="#" class="btn-red" style="font-size:13px;padding:9px 18px;" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
               <a href="reviews/stake.html" class="btn-outline" style="font-size:13px;">Обзор</a>
             </div>
+            <a href="/casino/stake/" class="review-read-more" target="_self">Читать полный обзор →</a>
           </div>
         </div>
       </div>
@@ -4989,11 +5042,11 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
             <div><label>Сумма: </label><span>200% на депозит</span></div>
             <div><label>ФС: </label><span>300 фриспинов</span></div>
           </div>
-          <div class="promo-tag">RUBLIK</div>
+          <div class="promo-tag copy-promo" title="Нажмите, чтобы скопировать">RUBLIK</div>
           <div class="bonus-desc">Двойной бонус + 300 бесплатных вращений. Ежедневные джекпоты для всех игроков.</div>
           <div class="bonus-item-btns">
             <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Получить</a>
-            <a href="#" class="btn-outline">Обзор</a>
+            <a href="/casino/kush/" class="btn-outline" target="_self">Обзор</a>
           </div>
         </div>
 
@@ -5006,11 +5059,11 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
             <div><label>Сумма: </label><span>120%</span></div>
             <div><label>ФС: </label><span>250 фриспинов</span></div>
           </div>
-          <div class="promo-tag">RUBLIK</div>
+          <div class="promo-tag copy-promo" title="Нажмите, чтобы скопировать">RUBLIK</div>
           <div class="bonus-desc">Уникальный PvP-формат дуэлей. 250 фриспинов при старте — один из лучших welcome-пакетов рынка.</div>
           <div class="bonus-item-btns">
             <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Получить</a>
-            <a href="#" class="btn-outline">Обзор</a>
+            <a href="/casino/duel/" class="btn-outline" target="_self">Обзор</a>
           </div>
         </div>
 
@@ -5026,7 +5079,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
           <div class="bonus-desc">Возврат процента со всех ставок, даже при выигрыше. Без условий отыгрыша — самое честное предложение.</div>
           <div class="bonus-item-btns">
             <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Получить</a>
-            <a href="#" class="btn-outline">Обзор</a>
+            <a href="/casino/beef/" class="btn-outline" target="_self">Обзор</a>
           </div>
         </div>
 
@@ -5042,7 +5095,7 @@ footer { background: var(--darker); color: #888; margin-top: 16px; }
           <div class="bonus-desc">Анонимное казино без верификации. Мгновенные выводы, никаких документов.</div>
           <div class="bonus-item-btns">
             <a href="#" class="btn-green" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Получить</a>
-            <a href="#" class="btn-outline">Обзор</a>
+            <a href="/casino/cryptoboss/" class="btn-outline" target="_self">Обзор</a>
           </div>
         </div>
 
