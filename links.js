@@ -17,7 +17,7 @@
 const CASINO_LINKS = {
 
   // ── ТОП КАЗИНО ──────────────────────────────────────────
-  "EVA CASINO":       "https://gameshowrlight.com/drqcqyoqp",
+  "EVA CASINO":       "https://gamedarkshowr.com/drqcqyoqp",
   "VAVADA CASINO":    "https://gate707.com/?promo=d9d43ea1-0cd0-4dd8-9a86-28d352183bfe&target=register",
   "1WIN CASINO":      "https://one-vv893.com/?p=sxqe",
   "STAKE CASINO":     "http://stake1036.com/?c=UdQh5cRu",
@@ -63,7 +63,7 @@ const CASINO_LINKS = {
   "SOL CASINO":       "https://clck.ru/3433Fz",
   "STARDA CASINO":    "https://stardaway2.com/c2f2d2001",
   "UNLIM CASINO":     "https://unlimc.net/d2531e71a",
-  "VODKA CASINO":     "https://vodka305590.com/?id=16210",
+  "VODKA CASINO":     "https://go683.com/?id=17119",
   "VOLNA CASINO":     "https://vln-blrs10.com/c4e395fcb",
 
 };
