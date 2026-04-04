@@ -1,0 +1,513 @@
+/* ================================================================
+   mobile-table.css  |  GamblerExpert.com  |  Redesign 2026
+   Desktop >= 768px : modern pill-row table
+   Mobile  <  768px : each <tr> = card
+   ================================================================ */
+
+/* ── Scroll wrapper ── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+  border-radius: 16px;
+}
+.table-scroll::-webkit-scrollbar       { height: 4px; }
+.table-scroll::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+
+/* ════════════════════════════════════════════
+   DESKTOP TABLE — pill rows, no borders
+════════════════════════════════════════════ */
+.casino-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  min-width: 740px;
+}
+
+/* ── Sticky header ── */
+.ct-head {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+}
+
+.ct-head th {
+  background: #f0f2f7;
+  color: #888;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  padding: 10px 14px;
+  border: none;
+  white-space: nowrap;
+}
+
+.ct-head th:first-child { border-radius: 10px 0 0 10px; }
+.ct-head th:last-child  { border-radius: 0 10px 10px 0; }
+
+/* ── Row ── */
+.ct-row {
+  background: #fff;
+  transition: transform .18s, box-shadow .18s, background .18s;
+  cursor: pointer;
+}
+
+.ct-row td {
+  padding: 14px 14px;
+  border: none;
+  vertical-align: middle;
+  border-top: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.ct-row td:first-child {
+  border-left: 3px solid transparent;
+  border-radius: 12px 0 0 12px;
+  padding-left: 16px;
+  transition: border-color .18s;
+}
+
+.ct-row td:last-child {
+  border-right: 1px solid #f0f2f5;
+  border-radius: 0 12px 12px 0;
+  padding-right: 16px;
+}
+
+.ct-row:hover {
+  transform: translateY(-2px) scale(1.002);
+  box-shadow: 0 6px 28px rgba(0,0,0,.09);
+  background: #fffdf7;
+}
+
+.ct-row:hover td {
+  border-top-color: rgba(245,166,35,.18);
+  border-bottom-color: rgba(245,166,35,.18);
+}
+
+.ct-row:hover td:last-child  { border-right-color: rgba(245,166,35,.18); }
+.ct-row:hover td:first-child { border-left-color: #f5a623 !important; }
+
+.ct-row:last-child { border-bottom: none; }
+.ct-row.hidden     { display: none !important; }
+
+/* Rank accent */
+.ct-row:nth-child(1) td:first-child { border-left-color: #f5a623; }
+.ct-row:nth-child(2) td:first-child { border-left-color: #9ca3af; }
+.ct-row:nth-child(3) td:first-child { border-left-color: #cd7f32; }
+
+/* Mobile-only cells hidden on desktop */
+.ct-row .mob-header,
+.ct-row .mob-body,
+.ct-row .mob-footer { display: none; }
+
+/* ── # column ── */
+.ct-num {
+  font-size: 15px;
+  font-weight: 800;
+  color: #d1d5db;
+  text-align: center;
+  width: 36px;
+}
+.ct-row:nth-child(1) .ct-num { color: #f5a623; }
+.ct-row:nth-child(2) .ct-num { color: #9ca3af; }
+.ct-row:nth-child(3) .ct-num { color: #cd7f32; }
+
+/* ── Brand cell ── */
+.ct-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.ct-logo {
+  width: 64px;
+  height: 40px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+}
+
+.ct-logo img {
+  width: 64px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.ct-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1a2e;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Desktop Обзор button — orange gradient */
+.btn-review-desk {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  padding: 4px 11px;
+  background: linear-gradient(135deg, #ff8c00, #f59e0b);
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity .2s, transform .1s;
+  box-shadow: 0 2px 8px rgba(245,158,11,.3);
+}
+.btn-review-desk:hover {
+  opacity: .9;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: #fff !important;
+}
+
+/* ── Stars ── */
+.td-rating { white-space: nowrap; }
+
+.stars {
+  color: #f5a623;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: block;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(245,166,35,.4);
+}
+
+.rating-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  display: block;
+  margin-top: 3px;
+}
+
+/* ── Bonus ── */
+.bonus-amount {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a1a2e;
+  display: block;
+}
+.bonus-rules {
+  font-size: 11px;
+  color: #9ca3af;
+  display: block;
+  margin-top: 1px;
+}
+
+/* ── Bezdep ── */
+.bezdep-yes { text-align: center; font-size: 18px; line-height: 1; }
+.bezdep-no  { text-align: center; color: #d1d5db; font-size: 14px; }
+
+/* ── Devices ── */
+.devices { font-size: 14px; white-space: nowrap; color: #9ca3af; }
+
+/* ── Desktop Играть — green gradient ── */
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 9px 18px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff !important;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+  min-height: 40px;
+  text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 3px 14px rgba(16,185,129,.35);
+  border: none;
+}
+.btn-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 22px rgba(16,185,129,.5);
+  color: #fff !important;
+  text-decoration: none;
+}
+.btn-red:active { transform: scale(.97); }
+
+/* ══════════════════════════════════════════
+   MOBILE < 768px  —  tr → CARD
+══════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  .table-scroll { overflow: visible; border-radius: 0; }
+
+  .casino-table  { min-width: 0; display: block; border-spacing: 0; }
+  .casino-table thead,
+  .ct-head       { display: none !important; }
+
+  .casino-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 4px 2px 8px;
+  }
+
+  /* tr → card */
+  .ct-row {
+    display: block !important;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,.07);
+    border: 1.5px solid #f0f2f5;
+    transition: transform .2s, box-shadow .2s;
+    cursor: default;
+    transform: none;
+  }
+
+  .ct-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.11);
+  }
+
+  /* Top-3 accent border */
+  .ct-row:nth-child(1) { border-top: 3px solid #f5a623; }
+  .ct-row:nth-child(2) { border-top: 3px solid #9ca3af; }
+  .ct-row:nth-child(3) { border-top: 3px solid #cd7f32; }
+
+  .ct-row:last-child { border-bottom: 1.5px solid #f0f2f5; }
+
+  /* Override td borders for mobile */
+  .ct-row > td { display: none; }
+
+  .ct-row td:first-child,
+  .ct-row td:last-child { border-radius: 0; border: none; }
+
+  /* Show mobile cells */
+  .ct-row .mob-header,
+  .ct-row .mob-body,
+  .ct-row .mob-footer { display: block; }
+
+  /* ══ HEADER ══ */
+  .ct-row .mob-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 14px 16px;
+    display: grid !important;
+    grid-template-columns: 28px 70px 1fr;
+    column-gap: 12px;
+    align-items: center;
+    min-height: 76px;
+  }
+
+  .mob-pos {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    color: #4b5563;
+    grid-column: 1;
+    align-self: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .ct-row:nth-child(1) .mob-pos { color: #f5a623; }
+  .ct-row:nth-child(2) .mob-pos { color: #c0c0c0; }
+  .ct-row:nth-child(3) .mob-pos { color: #cd7f32; }
+
+  .mob-header .ct-logo {
+    grid-column: 2;
+    width: 70px;
+    height: 44px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    align-self: center;
+  }
+
+  .mob-header .ct-logo img {
+    width: 70px;
+    height: 44px;
+    object-fit: contain;
+  }
+
+  .mob-name-block {
+    grid-column: 3;
+    min-width: 0;
+  }
+
+  .mob-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .mob-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .mob-promo-tag {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(245,166,35,.15);
+    border: 1px dashed rgba(245,166,35,.5);
+    border-radius: 6px;
+    padding: 3px 9px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #f5a623;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  /* ══ BODY — 2x2 grid ══ */
+  .ct-row .mob-body {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .mob-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 13px 16px;
+    border-right: 1px solid #f0f2f5;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .mob-field:nth-child(2n)      { border-right: none; }
+  .mob-field:nth-last-child(-n+2){ border-bottom: none; }
+
+  .mob-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+  }
+
+  .mob-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.35;
+  }
+
+  .mob-val .stars {
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline;
+  }
+
+  .mob-val .rating-val {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 600;
+    display: inline;
+    margin-left: 3px;
+  }
+
+  .mob-val .bonus-amount { font-size: 13px; display: block; }
+  .mob-val .bonus-rules  { font-size: 11px; color: #9ca3af; display: block; }
+
+  .mob-val .bezdep-yes {
+    font-size: 20px;
+    line-height: 1;
+    display: block;
+    text-align: left;
+    filter: drop-shadow(0 0 4px rgba(16,185,129,.5));
+  }
+  .mob-val .bezdep-no {
+    font-size: 18px;
+    color: #d1d5db;
+    display: block;
+    text-align: left;
+  }
+
+  /* ══ FOOTER — кнопки ══ */
+  .ct-row .mob-footer {
+    display: flex !important;
+    gap: 10px;
+    padding: 12px 16px;
+    align-items: stretch;
+  }
+
+  /* Играть — green gradient */
+  .btn-play-mob {
+    flex: 1;
+    padding: 13px 10px;
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: #fff !important;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 3px 16px rgba(16,185,129,.3);
+  }
+  .btn-play-mob:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(16,185,129,.45);
+    color: #fff !important;
+    text-decoration: none;
+  }
+  .btn-play-mob:active { transform: scale(.97); }
+
+  /* Обзор — orange gradient */
+  .btn-review-mob {
+    flex-shrink: 0;
+    padding: 13px 18px;
+    background: linear-gradient(135deg, #ff8c00, #f59e0b);
+    color: #fff !important;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 3px 16px rgba(245,158,11,.3);
+    white-space: nowrap;
+  }
+  .btn-review-mob:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(245,158,11,.45);
+    color: #fff !important;
+    text-decoration: none;
+  }
+  .btn-review-mob:active { transform: scale(.97); }
+
+} /* end @media mobile */
+
+
+/* ── Tablet 768–1023px ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ct-head th:nth-child(6),
+  .ct-row  td:nth-child(6) { display: none; }
+}
