@@ -213,6 +213,97 @@ a{text-decoration:none;color:inherit;}
 .g-actions{padding:14px 16px 14px 8px;display:flex;flex-direction:column;gap:7px;min-width:130px;}
 @media(max-width:699px){.g-actions{flex-direction:row;padding:12px 16px;min-width:auto;}}
 
+/* ══════════════════════════════════════
+   МОБИЛЬНЫЕ КАРТОЧКИ < 700px
+══════════════════════════════════════ */
+@media(max-width:699px){
+  .g-row{
+    border-radius:16px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  /* Скрываем стандартную сетку, показываем только бренд и кнопки */
+  .g-inner{
+    display:block;
+  }
+  /* Скрываем desktop-only колонки */
+  .g-bonus,.g-stars,.g-bezdep{display:none!important;}
+
+  /* Верхняя часть карточки — тёмный хедер */
+  .g-rank{
+    display:none;
+  }
+  .g-brand{
+    background:linear-gradient(135deg,rgba(15,12,30,.95) 0%,rgba(20,18,45,.95) 100%);
+    border-bottom:1px solid var(--border);
+    padding:14px 16px;
+    gap:13px;
+    position:relative;
+  }
+  /* Номер позиции — абсолютно в левом углу */
+  .g-brand::before{
+    content:attr(data-rank);
+    position:absolute;
+    top:8px;left:10px;
+    font-family:var(--fh);font-size:11px;font-weight:900;
+    color:rgba(255,255,255,.2);
+    line-height:1;
+  }
+  .g-logo{
+    width:72px;height:44px;
+    border-radius:10px;
+    background:rgba(255,255,255,.06);
+    border-color:rgba(255,255,255,.1);
+    flex-shrink:0;
+  }
+  .g-logo img{width:72px;height:44px;}
+  .g-name{font-size:16px;font-weight:800;margin-bottom:6px;color:#fff;}
+  .g-tags{gap:4px;}
+  .gt{font-size:9px;padding:2px 8px;}
+  .g-mob-bonus{
+    display:block!important;
+    font-size:12px;
+    color:rgba(255,255,255,.55);
+    margin-top:5px;
+  }
+
+  /* Нижняя часть — кнопки */
+  .g-actions{
+    display:grid!important;
+    grid-template-columns:1fr auto;
+    gap:10px;
+    padding:12px 16px;
+    background:rgba(6,5,15,.6);
+    align-items:center;
+  }
+  .btn-play-g{
+    padding:13px 10px;
+    font-size:14px;
+    font-weight:800;
+    min-height:48px;
+    border-radius:10px;
+    box-shadow:0 3px 20px rgba(16,185,129,.35);
+  }
+  .btn-rev-g{
+    padding:13px 16px;
+    font-size:13px;
+    font-weight:800;
+    min-height:48px;
+    border-radius:10px;
+    white-space:nowrap;
+    background:linear-gradient(135deg,#ea580c,#f97316);
+    box-shadow:0 3px 16px rgba(249,115,22,.3);
+  }
+
+  /* Акцент для топ-3 */
+  .t1{border-top:3px solid var(--v1);}
+  .t2{border-top:3px solid #94a3b8;}
+  .t3{border-top:3px solid #d97706;}
+
+  /* Убираем левый border на мобайле */
+  .t1,.t2,.t3{border-left:none;}
+}
+
 .btn-play-g{
   display:inline-flex;align-items:center;justify-content:center;gap:5px;
   padding:10px 18px;border-radius:10px;font-size:13px;font-weight:800;
