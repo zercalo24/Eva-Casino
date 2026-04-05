@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Закрываем служебные файлы
+Disallow: /links.js
+Disallow: /script.js
+
+# Страницу-заглушку не индексируем
+Disallow: /reviews/coming-soon
+
+Sitemap: https://gamblerexpert.com/sitemap.xml
