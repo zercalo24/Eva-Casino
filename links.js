@@ -63,7 +63,7 @@ const CASINO_LINKS = {
   "SOL CASINO":       "https://clck.ru/3433Fz",
   "STARDA CASINO":    "https://stardaway2.com/c2f2d2001",
   "UNLIM CASINO":     "https://unlimc.net/d2531e71a",
-  "VODKA CASINO":     "https://go683.com/?id=17119",
+  "VODKA CASINO":     "https://go052.com?id=17119",
   "VOLNA CASINO":     "https://vln-blrs10.com/c4e395fcb",
 
 };
