@@ -17,7 +17,7 @@
 const CASINO_LINKS = {
 
   // ── ТОП КАЗИНО ──────────────────────────────────────────
-  "EVA CASINO":       "https://gamedarkshowr.com/drqcqyoqp",
+  "EVA CASINO":       "https://bal-ancer-eva.com/drqcqyoqp",
   "VAVADA CASINO":    "https://gate707.com/?promo=d9d43ea1-0cd0-4dd8-9a86-28d352183bfe&target=register",
   "1WIN CASINO":      "https://one-vv893.com/?p=sxqe",
   "STAKE CASINO":     "http://stake1036.com/?c=UdQh5cRu",
