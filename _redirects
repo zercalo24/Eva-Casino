@@ -1,0 +1,31 @@
+# Netlify redirects
+
+/reviews/vavada        /reviews/vavada.html    200
+/reviews/vavada/       /reviews/vavada.html    200
+/reviews/cat           /reviews/cat.html       200
+/reviews/cat/          /reviews/cat.html       200
+/reviews/kush          /reviews/kush.html      200
+/reviews/kush/         /reviews/kush.html      200
+/reviews/joy           /reviews/joy.html       200
+/reviews/joy/          /reviews/joy.html       200
+/reviews/stake         /reviews/stake.html     200
+/reviews/stake/        /reviews/stake.html     200
+/reviews/duel          /reviews/duel.html      200
+/reviews/duel/         /reviews/duel.html      200
+/reviews/rox           /reviews/rox.html       200
+/reviews/rox/          /reviews/rox.html       200
+/reviews/beef          /reviews/beef.html      200
+/reviews/beef/         /reviews/beef.html      200
+/reviews/cryptoboss    /reviews/cryptoboss.html 200
+/reviews/cryptoboss/   /reviews/cryptoboss.html 200
+/reviews/flagman       /reviews/flagman.html   200
+/reviews/flagman/      /reviews/flagman.html   200
+/reviews/gama          /reviews/gama.html      200
+/reviews/gama/         /reviews/gama.html      200
+/reviews/ramenbet      /reviews/ramenbet.html  200
+/reviews/ramenbet/     /reviews/ramenbet.html  200
+/reviews/vodka         /reviews/vodka.html     200
+/reviews/vodka/        /reviews/vodka.html     200
+
+# Fallback
+/*                     /index.html             200
