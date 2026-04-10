@@ -1,11 +1,44 @@
+# ═══════════════════════════════════════════════
+#  gamblerexpert.com — robots.txt
+#  Обновлено: апрель 2026
+# ═══════════════════════════════════════════════
+
 User-agent: *
 Allow: /
+Allow: /reviews/
+Allow: /images/
 
-# Закрываем служебные файлы
+# Служебные JS-файлы — не нужны поисковикам
 Disallow: /links.js
 Disallow: /script.js
+Disallow: /mobile-table.css
 
-# Страницу-заглушку не индексируем
+# Страница-заглушка — не индексировать
 Disallow: /reviews/coming-soon
 
+# Ресурсы изображений — разрешены (для Google Images)
+Allow: /images/*.webp
+Allow: /images/reviews/*.webp
+Allow: /images/slots/*.webp
+
 Sitemap: https://gamblerexpert.com/sitemap.xml
+
+# ───────────────────────────────────────────────
+# Googlebot — без ограничений
+User-agent: Googlebot
+Allow: /
+
+# Googlebot-Image — разрешаем все изображения
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Disallow: /links.js
+Disallow: /script.js
+Disallow: /reviews/coming-soon
+
+# Bing
+User-agent: Bingbot
+Allow: /
