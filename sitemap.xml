@@ -91,48 +91,4 @@
       <image:title>Обзор Rox Casino 2026</image:title>
     </image:image>
   </url>
-
-  <!-- ═══ ОБЗОРЫ — ЗАГЛУШКИ (noindex через мета, но в карте для полноты) ═══ -->
-  <url>
-    <loc>https://gamblerexpert.com/reviews/beef/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://gamblerexpert.com/reviews/cryptoboss/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://gamblerexpert.com/reviews/flagman/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://gamblerexpert.com/reviews/gama/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://gamblerexpert.com/reviews/ramenbet/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://gamblerexpert.com/reviews/vodka/</loc>
-    <lastmod>2026-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
 </urlset>
