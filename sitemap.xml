@@ -91,4 +91,15 @@
       <image:title>Обзор Rox Casino 2026</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://gamblerexpert.com/reviews/flagman/</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gamblerexpert.com/images/flagman.webp</image:loc>
+      <image:title>Обзор Flagman Casino 2026</image:title>
+    </image:image>
+  </url>
+
 </urlset>
