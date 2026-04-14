@@ -26,6 +26,8 @@
 /reviews/ramenbet/     /reviews/ramenbet.html  200
 /reviews/vodka         /reviews/vodka.html     200
 /reviews/vodka/        /reviews/vodka.html     200
+/bonuses    /bonuses.html    200
+/bonuses/   /bonuses.html    200
 
 # Fallback
 /*                     /index.html             200
