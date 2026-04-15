@@ -120,4 +120,15 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://gamblerexpert.com/reviews/vodka/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gamblerexpert.com/images/vodka.webp</image:loc>
+      <image:title>Обзор Vodka Bet Casino 2026</image:title>
+    </image:image>
+  </url>
+
 </urlset>
