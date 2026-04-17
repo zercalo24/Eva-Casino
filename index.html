@@ -7,6 +7,9 @@
 <title>Рейтинг казино 2026 — Gambler Expert | Топ казино</title>
 <meta name="description" content="Топ онлайн казино 2026. Честный рейтинг: реальный депозит, скорость выплат, поддержка. Промокод RUBLIK — увеличенный бонус при регистрации.">
 <link rel="canonical" href="https://gamblerexpert.com/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -50,6 +53,8 @@ body{font-family:'Barlow',sans-serif;background:#08111c;color:#c8ddf0;font-size:
 .nb-right{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0;}
 .promo-pill{background:var(--acc);color:var(--bg0);font-family:var(--fh);font-size:13px;font-weight:800;padding:6px 16px;border-radius:var(--r);letter-spacing:1px;cursor:pointer;border:none;transition:background .15s;}
 .promo-pill:hover{background:var(--acc2);}
+.promo-pill-lg{font-size:15px;padding:10px 24px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
 .burger span{width:20px;height:2px;background:var(--muted);border-radius:1px;display:block;}
 
@@ -75,6 +80,11 @@ body{font-family:'Barlow',sans-serif;background:#08111c;color:#c8ddf0;font-size:
 .stat:last-child{border-right:none;}
 .stat-v{font-family:var(--fh);font-size:28px;font-weight:900;color:var(--acc);line-height:1;}
 .stat-l{font-family:var(--fh);font-size:10px;font-weight:600;color:var(--dim);margin-top:4px;letter-spacing:1px;text-transform:uppercase;}
+
+/* ── SEMANTIC HEADINGS ── */
+.hero-h1{font-family:var(--fh);font-size:clamp(16px,3vw,22px);font-weight:900;color:var(--txt);letter-spacing:-.3px;margin-bottom:4px;}
+.section-h2{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.section-h2::after{content:'';flex:1;height:1px;background:var(--bd);}
 
 /* ── MAIN ── */
 .main{max-width:1280px;margin:0 auto;padding:20px 24px 48px;}
@@ -109,6 +119,7 @@ body{font-family:'Barlow',sans-serif;background:#08111c;color:#c8ddf0;font-size:
 .casino-row.r3{border-left-color:#8a6a40;}
 .casino-row.hidden{display:none;}
 
+.row-anim{animation:fadeUp .3s ease both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
 
 .cell-num{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--faint);}
@@ -262,9 +273,9 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
   <div class="tb-links">
     <a class="tb-link on" href="index.html">Рейтинг</a>
     <a class="tb-link" href="bonuses.html">Бонусы</a>
-    <a class="tb-link" href="#">Зеркала</a>
-    <a class="tb-link" href="#">Гайды</a>
-    <a class="tb-link" href="#">Новости</a>
+    <a class="tb-link" href="mirrors.html">Зеркала</a>
+    <a class="tb-link" href="guides.html">Гайды</a>
+    <a class="tb-link" href="guides.html">Новости</a>
   </div>
   <div class="tb-right">
     <div class="live-txt"><div class="live-dot"></div>LIVE</div>
@@ -279,10 +290,10 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
     <div class="nb-links">
       <a class="nb-link on" href="index.html">Рейтинг казино</a>
       <a class="nb-link" href="bonuses.html">Бонусы</a>
-      <a class="nb-link" href="#" onclick="triggerFilter('crypto');return false;">Крипто</a>
-      <a class="nb-link" href="#" onclick="triggerFilter('live');return false;">Live дилеры</a>
-      <a class="nb-link" href="#">Зеркала</a>
-      <a class="nb-link" href="#">Гайды</a>
+      <a class="nb-link" href="#casino-list" onclick="triggerFilter('crypto');return false;">Крипто</a>
+      <a class="nb-link" href="#casino-list" onclick="triggerFilter('live');return false;">Live дилеры</a>
+      <a class="nb-link" href="mirrors.html">Зеркала</a>
+      <a class="nb-link" href="guides.html">Гайды</a>
     </div>
     <div class="nb-right">
       <button class="promo-pill" onclick="copyPromo()">RUBLIK</button>
@@ -298,17 +309,18 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
   <button class="mob-close" onclick="toggleMenu()">✕</button>
   <a class="nb-link on" href="index.html" onclick="toggleMenu()">Рейтинг казино</a>
   <a class="nb-link" href="bonuses.html" onclick="toggleMenu()">Бонусы</a>
-  <a class="nb-link" href="#" onclick="toggleMenu()">Крипто</a>
-  <a class="nb-link" href="#" onclick="toggleMenu()">Live дилеры</a>
-  <a class="nb-link" href="#" onclick="toggleMenu()">Зеркала</a>
-  <a class="nb-link" href="#" onclick="toggleMenu()">Гайды</a>
-  <div class="mob-promo"><button class="promo-pill" style="font-size:15px;padding:10px 24px;" onclick="copyPromo()">RUBLIK</button></div>
+  <a class="nb-link" href="#casino-list" onclick="triggerFilter('crypto');toggleMenu();return false;">Крипто</a>
+  <a class="nb-link" href="#casino-list" onclick="triggerFilter('live');toggleMenu();return false;">Live дилеры</a>
+  <a class="nb-link" href="mirrors.html" onclick="toggleMenu()">Зеркала</a>
+  <a class="nb-link" href="guides.html" onclick="toggleMenu()">Гайды</a>
+  <div class="mob-promo"><button class="promo-pill promo-pill-lg" onclick="copyPromo()">RUBLIK</button></div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-badge">Апрель 2026</div>
+    <h1 class="hero-h1">Рейтинг онлайн казино 2026</h1>
     <div class="hero-txt">Тестируем казино лично: <strong>реальный депозит, скорость выплат, поддержка.</strong> 20 казино прошли проверку редакции.</div>
     <div class="hero-code" onclick="copyPromo()">Промокод: RUBLIK</div>
   </div>
@@ -348,7 +360,7 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
   </div>
 
   <!-- TABLE -->
-  <div class="twrap">
+  <div class="twrap" id="casino-list">
     <div class="thead">
       <div class="th">#</div>
       <div class="th">Казино</div>
@@ -360,7 +372,7 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
     </div>
     <div id="casinoList">
 
-    <div class="casino-row r1" data-t="top,bezdep,crypto,live" style="animation-delay:0.000s">
+    <div class="casino-row r1" data-t="top,bezdep,crypto,live" class="row-anim">
       <div class="cell-num hi">1</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -383,15 +395,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">5.0</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:100%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:100%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
+        <a class="btn-play" href="https://gate707.com/?promo=d9d43ea1-0cd0-4dd8-9a86-28d352183bfe&target=register" target="_blank" rel="noopener sponsored" data-casino="VAVADA CASINO">Играть</a>
         <a class="btn-review" href="reviews/vavada.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row r2" data-t="top,crypto" style="animation-delay:0.035s">
+    <div class="casino-row r2" data-t="top,crypto" class="row-anim">
       <div class="cell-num hi">2</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -414,15 +426,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.2</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:84%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:84%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a>
+        <a class="btn-play" href="https://duel.com/r/RUBLIK" target="_blank" rel="noopener sponsored" data-casino="DUEL CASINO">Играть</a>
         <a class="btn-review" href="reviews/duel.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row r3" data-t="top,bezdep,live" style="animation-delay:0.070s">
+    <div class="casino-row r3" data-t="top,bezdep,live" class="row-anim">
       <div class="cell-num hi">3</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -445,15 +457,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.9</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:98%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:98%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a>
+        <a class="btn-play" href="https://pl4y-zn-ksh.com/dqyptbuu1" target="_blank" rel="noopener sponsored" data-casino="КУШ CASINO">Играть</a>
         <a class="btn-review" href="reviews/kush.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep,cashback,live" style="animation-delay:0.105s">
+    <div class="casino-row " data-t="bezdep,cashback,live" class="row-anim">
       <div class="cell-num ">4</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -476,15 +488,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.8</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:96%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:96%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a>
+        <a class="btn-play" href="https://triumphant-hall.com/sbrl3ljkm" target="_blank" rel="noopener sponsored" data-casino="CAT CASINO">Играть</a>
         <a class="btn-review" href="reviews/cat.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep,live" style="animation-delay:0.140s">
+    <div class="casino-row " data-t="bezdep,live" class="row-anim">
       <div class="cell-num ">5</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -507,15 +519,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.8</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:96%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:96%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a>
+        <a class="btn-play" href="https://clck.ru/3QXq6p" target="_blank" rel="noopener sponsored" data-casino="JOY CASINO">Играть</a>
         <a class="btn-review" href="reviews/joy.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="crypto,live" style="animation-delay:0.175s">
+    <div class="casino-row " data-t="crypto,live" class="row-anim">
       <div class="cell-num ">6</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -538,15 +550,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.8</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:96%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:96%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
+        <a class="btn-play" href="http://stake1036.com/?c=UdQh5cRu" target="_blank" rel="noopener sponsored" data-casino="STAKE CASINO">Играть</a>
         <a class="btn-review" href="reviews/stake.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep,cashback,crypto" style="animation-delay:0.210s">
+    <div class="casino-row " data-t="bezdep,cashback,crypto" class="row-anim">
       <div class="cell-num ">7</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -569,15 +581,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.7</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:94%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:94%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
+        <a class="btn-play" href="https://clck.ru/34339T" target="_blank" rel="noopener sponsored" data-casino="ROX CASINO">Играть</a>
         <a class="btn-review" href="reviews/rox.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep,live" style="animation-delay:0.245s">
+    <div class="casino-row " data-t="bezdep,live" class="row-anim">
       <div class="cell-num ">8</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -600,15 +612,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.7</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:94%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:94%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a>
+        <a class="btn-play" href="https://flagmanway1.com/c5068b5f6" target="_blank" rel="noopener sponsored" data-casino="FLAGMAN CASINO">Играть</a>
         <a class="btn-review" href="reviews/flagman.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="crypto,live" style="animation-delay:0.280s">
+    <div class="casino-row " data-t="crypto,live" class="row-anim">
       <div class="cell-num ">9</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -631,15 +643,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.7</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:94%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:94%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="GAMA CASINO">Играть</a>
+        <a class="btn-play" href="https://starforge-race.com/sfevqs2sr" target="_blank" rel="noopener sponsored" data-casino="GAMA CASINO">Играть</a>
         <a class="btn-review" href="reviews/gama.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep" style="animation-delay:0.315s">
+    <div class="casino-row " data-t="bezdep" class="row-anim">
       <div class="cell-num ">10</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -662,15 +674,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.6</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:92%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:92%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="RAMENBET">Играть</a>
+        <a class="btn-play" href="https://clck.ru/39JnjJ" target="_blank" rel="noopener sponsored" data-casino="RAMENBET">Играть</a>
         <a class="btn-review" href="reviews/ramenbet.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="cashback,crypto" style="animation-delay:0.350s">
+    <div class="casino-row " data-t="cashback,crypto" class="row-anim">
       <div class="cell-num ">11</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -693,15 +705,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.6</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:92%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:92%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Играть</a>
+        <a class="btn-play" href="https://beefway61.com/c2197b5c3" target="_blank" rel="noopener sponsored" data-casino="BEEF CASINO">Играть</a>
         <a class="btn-review" href="reviews/beef.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="bezdep" style="animation-delay:0.385s">
+    <div class="casino-row " data-t="bezdep" class="row-anim">
       <div class="cell-num ">12</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -724,15 +736,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.5</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:90%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:90%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-yes"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3" stroke="#2dd469" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="VODKA CASINO">Играть</a>
+        <a class="btn-play" href="https://go056.com/?id=17119" target="_blank" rel="noopener sponsored" data-casino="VODKA CASINO">Играть</a>
         <a class="btn-review" href="reviews/vodka.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="crypto" style="animation-delay:0.420s">
+    <div class="casino-row " data-t="crypto" class="row-anim">
       <div class="cell-num ">13</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -755,15 +767,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.5</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:90%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:90%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="FUGU CASINO">Играть</a>
+        <a class="btn-play" href="https://fuguway63.com/c1536be58" target="_blank" rel="noopener sponsored" data-casino="FUGU CASINO">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="cashback" style="animation-delay:0.455s">
+    <div class="casino-row " data-t="cashback" class="row-anim">
       <div class="cell-num ">14</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -786,15 +798,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.4</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:88%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:88%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="CACTUS CASINO">Играть</a>
+        <a class="btn-play" href="https://lavoluntadisabel.xyz/affiliate/c_4wj3z1mk?path=%2Fbonuses" target="_blank" rel="noopener sponsored" data-casino="CACTUS CASINO">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="cashback" style="animation-delay:0.490s">
+    <div class="casino-row " data-t="cashback" class="row-anim">
       <div class="cell-num ">15</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -817,15 +829,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.3</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:86%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:86%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="CASINO X">Играть</a>
+        <a class="btn-play" href="https://21631.gameshere.xyz/ru/registration2?partner=p21631p3326886p3e51" target="_blank" rel="noopener sponsored" data-casino="CASINO X">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="crypto" style="animation-delay:0.525s">
+    <div class="casino-row " data-t="crypto" class="row-anim">
       <div class="cell-num ">16</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -848,15 +860,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.2</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:84%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:84%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Играть</a>
+        <a class="btn-play" href="https://cryptobossc.online/d247e5ab0" target="_blank" rel="noopener sponsored" data-casino="CRYPTOBOSS">Играть</a>
         <a class="btn-review" href="reviews/cryptoboss.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="" style="animation-delay:0.560s">
+    <div class="casino-row " data-t="" class="row-anim">
       <div class="cell-num ">17</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -879,15 +891,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.4</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:88%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:88%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="BANDA CASINO">Играть</a>
+        <a class="btn-play" href="https://play-bnd-zn.com/d73571540" target="_blank" rel="noopener sponsored" data-casino="BANDA CASINO">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="" style="animation-delay:0.595s">
+    <div class="casino-row " data-t="" class="row-anim">
       <div class="cell-num ">18</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -910,15 +922,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.3</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:86%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:86%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="CHAMPION SLOTS">Играть</a>
+        <a class="btn-play" href="https://clck.ru/3PEbRM" target="_blank" rel="noopener sponsored" data-casino="CHAMPION SLOTS">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="" style="animation-delay:0.630s">
+    <div class="casino-row " data-t="" class="row-anim">
       <div class="cell-num ">19</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -941,15 +953,15 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.2</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:84%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:84%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="KENT CASINO">Играть</a>
+        <a class="btn-play" href="https://holo-neonrun.com/sntbu9gqi" target="_blank" rel="noopener sponsored" data-casino="KENT CASINO">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>
-    <div class="casino-row " data-t="" style="animation-delay:0.665s">
+    <div class="casino-row " data-t="" class="row-anim">
       <div class="cell-num ">20</div>
       <div class="cell-info">
         <div class="casino-logo-name">
@@ -972,11 +984,11 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
       </div>
       <div class="cell-rt">
         <div class="rt-num">4.2</div>
-        <div class="rt-bar"><div class="rt-fill" style="width:84%"></div></div>
+        <div class="rt-bar"><div class="rt-fill" style="--w:84%;width:var(--w)"></div></div>
       </div>
       <div class="cell-dep"><div class="dep-no">—</div></div>
       <div class="cell-cta">
-        <a class="btn-play" href="#" target="_blank" rel="noopener sponsored" data-casino="STARDA CASINO">Играть</a>
+        <a class="btn-play" href="https://stardaway2.com/c2f2d2001" target="_blank" rel="noopener sponsored" data-casino="STARDA CASINO">Играть</a>
         <a class="btn-review dim" href="reviews/coming-soon.html">Обзор</a>
       </div>
     </div>      <div class="empty" id="emptyState" style="display:none;">Казино не найдены. Попробуйте другой фильтр.</div>
@@ -987,6 +999,7 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
 
 <!-- INFOBAR -->
 <div class="infobar">
+  <h2 class="sr-only">Методология оценки</h2>
   <div class="info-inner">
     <div class="info-item">Методология: <strong>реальный депозит от 5 000 ₽</strong></div>
     <span style="color:var(--bd2)">·</span>
@@ -1004,11 +1017,11 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
     <div class="ft-top">
       <div class="ft-logo"><em>Gambler</em>Expert</div>
       <div class="ft-links">
-        <a class="ft-link" href="#">Рейтинг</a>
+        <a class="ft-link" href="index.html">Рейтинг казино</a>
         <a class="ft-link" href="bonuses.html">Бонусы</a>
-        <a class="ft-link" href="#">Гайды</a>
-        <a class="ft-link" href="#">О проекте</a>
-        <a class="ft-link" href="#">Контакты</a>
+        <a class="ft-link" href="guides.html">Гайды</a>
+        <a class="ft-link" href="bonuses.html">Бонусы</a>
+        <a class="ft-link" href="sitemap.xml">Карта сайта</a>
       </div>
     </div>
     <div class="ft-copy">© 2026 GamblerExpert.com — независимый рейтинг онлайн казино. Играйте ответственно. 18+</div>
@@ -1060,7 +1073,7 @@ function applyFilters(){
     const matchSearch = !currentSearch || name.includes(currentSearch);
     if(matchFilter && matchSearch){
       row.classList.remove('hidden');
-      row.style.animationDelay = (visible * 0.03) + 's';
+      // animation via CSS
       visible++;
     } else {
       row.classList.add('hidden');
