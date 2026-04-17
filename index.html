@@ -260,7 +260,7 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="tb-links">
-    <a class="tb-link on" href="#">Рейтинг</a>
+    <a class="tb-link on" href="index.html">Рейтинг</a>
     <a class="tb-link" href="bonuses.html">Бонусы</a>
     <a class="tb-link" href="#">Зеркала</a>
     <a class="tb-link" href="#">Гайды</a>
@@ -275,12 +275,12 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nb-inner">
-    <a class="logo" href="#"><em>Gambler</em>Expert</a>
+    <a class="logo" href="index.html"><em>Gambler</em>Expert</a>
     <div class="nb-links">
-      <a class="nb-link on" href="#">Рейтинг казино</a>
+      <a class="nb-link on" href="index.html">Рейтинг казино</a>
       <a class="nb-link" href="bonuses.html">Бонусы</a>
-      <a class="nb-link" href="#">Крипто</a>
-      <a class="nb-link" href="#">Live дилеры</a>
+      <a class="nb-link" href="#" onclick="triggerFilter('crypto');return false;">Крипто</a>
+      <a class="nb-link" href="#" onclick="triggerFilter('live');return false;">Live дилеры</a>
       <a class="nb-link" href="#">Зеркала</a>
       <a class="nb-link" href="#">Гайды</a>
     </div>
@@ -296,7 +296,7 @@ footer{background:var(--bg0);border-top:1px solid var(--bd);padding:24px;}
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" onclick="toggleMenu()">✕</button>
-  <a class="nb-link on" href="#" onclick="toggleMenu()">Рейтинг казино</a>
+  <a class="nb-link on" href="index.html" onclick="toggleMenu()">Рейтинг казино</a>
   <a class="nb-link" href="bonuses.html" onclick="toggleMenu()">Бонусы</a>
   <a class="nb-link" href="#" onclick="toggleMenu()">Крипто</a>
   <a class="nb-link" href="#" onclick="toggleMenu()">Live дилеры</a>
