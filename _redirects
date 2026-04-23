@@ -26,10 +26,15 @@
 /reviews/ramenbet/     /reviews/ramenbet.html  200
 /reviews/vodka         /reviews/vodka.html     200
 /reviews/vodka/        /reviews/vodka.html     200
+/reviews/fugu          /reviews/fugu.html      200
+/reviews/fugu/         /reviews/fugu.html      200
+
 /guides     /guides.html    200
 /guides/    /guides.html    200
-/bonuses    /bonuses.html    200
-/bonuses/   /bonuses.html    200
+/bonuses    /bonuses.html   200
+/bonuses/   /bonuses.html   200
+/mirrors    /mirrors.html   200
+/mirrors/   /mirrors.html   200
 
 # Fallback
 /*                     /index.html             200
