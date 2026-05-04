@@ -25,7 +25,7 @@ const CASINO_LINKS = {
   "КУШ CASINO":       "https://pl4y-zn-ksh.com/dqyptbuu1",
 
   // ── КАЗИНО А-Ж ──────────────────────────────────────────
-  "1GO CASINO":       "https://1go-blrs10.com/ca2275e6d",
+  "1GO CASINO":       "https://onegoway62.com/ceecaba96",
   "ARKADA CASINO":    "https://prismed-cyberlane.com/svd9sjada",
   "AUF CASINO":       "https://aufas.com/d5b5799f1",
   "BANDA CASINO":     "https://play-bnd-zn.com/d73571540",
