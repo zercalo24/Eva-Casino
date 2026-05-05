@@ -20,6 +20,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initPromo();
   initFAQ();
+  initCompare();
   initFilterSearch();
 });
 
@@ -292,6 +293,197 @@ function initFAQ() {
 
 
 
+
+
+/* ═══════════════════════════════════════════════════════════════
+   МОДУЛЬ 3: ПАНЕЛЬ СРАВНЕНИЯ КАЗИНО
+   ═══════════════════════════════════════════════════════════════
+   Нужные HTML-элементы:
+
+   Чекбокс в строке казино:
+     <input type="checkbox" class="compare-cb" data-name="EVA CASINO" data-rating="4.8">
+
+   Панель (создаётся автоматически):
+     <div id="compare-panel"></div>
+
+   ─────────────────────────────────────────────────────────────
+   Функции:
+   • Выбор до 3 казино через чекбоксы
+   • Всплывающая панель с выбранными казино
+   • Кнопка «Сравнить» — скроллит к таблице сравнения
+   • Кнопка «Очистить» — снимает все чекбоксы
+   ═══════════════════════════════════════════════════════════════ */
+
+function initCompare() {
+  const MAX = 3;
+
+  // Создаём панель если её ещё нет
+  let panel = document.getElementById('compare-panel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'compare-panel';
+    document.body.appendChild(panel);
+  }
+
+  // Стили панели
+  injectStyle('compare-panel-style', `
+    #compare-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0d1e2e;
+      border-top: 2px solid #ff9500;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      z-index: 9000;
+      transform: translateY(100%);
+      transition: transform .3s ease;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.5);
+    }
+    #compare-panel.visible {
+      transform: translateY(0);
+    }
+    #compare-panel .cp-label {
+      font-weight: 700;
+      color: #ff9500;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    #compare-panel .cp-items {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    #compare-panel .cp-tag {
+      background: #172d42;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 13px;
+      color: #e8f4ff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #compare-panel .cp-tag button {
+      background: none;
+      border: none;
+      color: #6a8fa8;
+      cursor: pointer;
+      font-size: 15px;
+      line-height: 1;
+      padding: 0;
+    }
+    #compare-panel .cp-tag button:hover { color: #ff4040; }
+    #compare-panel .cp-actions {
+      display: flex;
+      gap: 8px;
+    }
+    #compare-panel .cp-btn {
+      padding: 7px 18px;
+      border-radius: 6px;
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    #compare-panel .cp-btn:hover { opacity: .85; }
+    #compare-panel .cp-compare {
+      background: #ff9500;
+      color: #000;
+    }
+    #compare-panel .cp-clear {
+      background: #172d42;
+      color: #c8ddf0;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+  `);
+
+  const selected = new Map(); // name → { name, rating }
+
+  function updatePanel() {
+    if (selected.size === 0) {
+      panel.classList.remove('visible');
+      return;
+    }
+
+    panel.innerHTML = `
+      <span class="cp-label">Сравнение (${selected.size}/${MAX}):</span>
+      <div class="cp-items">
+        ${[...selected.values()].map(c => `
+          <div class="cp-tag">
+            ${c.name}
+            <button data-remove="${c.name}" title="Убрать">×</button>
+          </div>
+        `).join('')}
+      </div>
+      <div class="cp-actions">
+        <button class="cp-btn cp-compare">Сравнить</button>
+        <button class="cp-btn cp-clear">Очистить</button>
+      </div>
+    `;
+    panel.classList.add('visible');
+
+    // Удаление из панели
+    panel.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-remove');
+        selected.delete(name);
+        // Снять чекбокс
+        document.querySelectorAll(`.compare-cb[data-name="${CSS.escape(name)}"]`)
+          .forEach(cb => { cb.checked = false; });
+        updatePanel();
+      });
+    });
+
+    // Сравнить — скроллим к секции #compare-table если есть
+    const compareBtn = panel.querySelector('.cp-compare');
+    if (compareBtn) {
+      compareBtn.addEventListener('click', () => {
+        const target = document.getElementById('compare-table');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Очистить
+    const clearBtn = panel.querySelector('.cp-clear');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        selected.clear();
+        document.querySelectorAll('.compare-cb').forEach(cb => { cb.checked = false; });
+        updatePanel();
+      });
+    }
+  }
+
+  // Навешиваем обработчики на все чекбоксы
+  document.addEventListener('change', e => {
+    const cb = e.target;
+    if (!cb.classList.contains('compare-cb')) return;
+
+    const name   = cb.getAttribute('data-name') || cb.value || 'Казино';
+    const rating = cb.getAttribute('data-rating') || '';
+
+    if (cb.checked) {
+      if (selected.size >= MAX) {
+        cb.checked = false;
+        return;
+      }
+      selected.set(name, { name, rating });
+    } else {
+      selected.delete(name);
+    }
+    updatePanel();
+  });
+}
 
 
 /* ═══════════════════════════════════════════════════════════════

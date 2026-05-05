@@ -37,4 +37,6 @@
 /mirrors/   /mirrors.html   200
 
 # Fallback
+/reviews/cactus    /reviews/cactus/index.html    200
+/reviews/cactus/   /reviews/cactus/index.html    200
 /*                     /index.html             200
