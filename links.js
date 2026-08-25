@@ -20,8 +20,8 @@ const CASINO_LINKS = {
 
   // ── ТОП КАЗИНО ──────────────────────────────────────────
   "EVA CASINO":       "https://string-26eva.com/dxntblcsp",
-  "VAVADA CASINO":    "https://vvvcasinovada.com/?promo=d9d43ea1-0cd0-4dd8-9a86-28d352183bfe&target=register",
-  "1WIN CASINO":      "https://one-vv893.com/?p=sxqe",
+  "VAVADA CASINO":    "https://getruvada.com/?promo=d9d43ea1-0cd0-4dd8-9a86-28d352183bfe&target=register",
+  "1WIN CASINO":      "https://one-vv8428.com/?p=sxqe",
   "STAKE CASINO":     "http://stake1036.com/?c=BoDMIqL9",
   "DUEL CASINO":      "https://duel.com/r/RUBLIK",
   "КУШ CASINO":       "https://neo7-cr9t-ksh.com/d6855ad6c",
